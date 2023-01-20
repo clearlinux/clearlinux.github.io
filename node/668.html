@@ -1,0 +1,811 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--668.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="By Abraham Duenas" />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/news-blogs/profile-guided-optimization-mariadb-benchmarks" />
+<meta property="og:title" content="Profile-Guided Optimization with MariaDB Benchmarks" />
+<meta property="og:description" content="By Abraham Duenas" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="668.html" />
+<link rel="shortlink" href="668.html" />
+<script src="https://clearlinux.org/sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js?rl3r25" defer></script>
+
+    <title>Profile-Guided Optimization with MariaDB Benchmarks | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/ajax-progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/align.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/autocomplete-loading.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/fieldgroup.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/container-inline.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/clearfix.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/details.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/hidden.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/item-list.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/js.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/nowrap.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/position-container.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/reset-appearance.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/resize.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/sticky-header.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-counter.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-counters.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-general-info.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tabledrag.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tablesort.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tree-child.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/extlink/extlink.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/libraries/codesnippet/lib/highlight/styles/monokai_sublime.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="https://clearlinux.org/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+<script src="https://clearlinux.org/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
+
+</head>
+<body class="alias--news-blogs-profile-guided-optimization-mariadb-benchmarks nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="668.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--668.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="https://clearlinux.org/">
+                          <img class="header__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31099.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31103.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="https://clearlinux.org/software">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="https://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--668--full.html.twig
+   * node--668.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=2.html' title='Power and Performance'>Power and Performance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Profile-Guided Optimization with MariaDB Benchmarks</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">23 Nov, 2015</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p><em>By Abraham Duenas</em></p>
+
+<p>For questions and comments, write to the <a href="mailto:dev@lists.clearlinux.org">dev@lists.clearlinux.org</a><span> project mailing list. Visit <a href="https://lists.clearlinux.org/">https://lists.clearlinux.org/</a> to subscribe. </span><br /><br />
+As the Clear Linux* Project continues to redefine the boundaries for what is possible in a cloud-based Linux distribution running on Intel silicon, both power and performance play an increasingly important role. The goal of this newsletter is to highlight some of the improvements made by the Power and Performance (PnP) quad.<span><span><span><span> </span></span></span></span></p>
+
+<p><span><span><span><span>This week’s newsletter looks at:  <strong>Profile-Guided Optimization with MariaDB Benchmarks</strong></span></span></span></span></p>
+
+<p><span>MariaDB is a community-developed fork of the MySQL* relational database management system (RDBMS) intended to remain free under the GNU GPL. RDBMS have been a popular choice for financial records, manufacturing and logistical information, personnel data, and other applications since the 1980s. One could not imagine the cloud world without a relational database management system. MySQL, MariaDB or Percona Server are the de-facto standards for OpenStack*, in terms of internal database options. </span></p>
+
+<p><span><span><span><span>There are many different ways to optimize how well MariaDB performs. You can, for example, optimize a wide variety of configuration options or analyze and optimize your queries. Yet another option is to optimize the actual binaries of MariaDB at compilation time.</span></span></span></span></p>
+
+<p><span><span><span><span>As we have seen in previous newsletters, GCC supports something called Profile-Guided Optimization (PGO). The underlying idea behind PGO is to use data collected from test runs to determine which areas of the code are the most commonly used ones, and to optimize the output binary accordingly. This week the team looked at MariaDB improvement with PGO. MariaDB binaries were produced with this approach and compared to binaries that weren't. <a href="https://mariadb.com/kb/en/mariadb-enterprise/mariadb-enterprise-cluster-profile-guided-optimization-pgo-benchmark/">The experiment is is based on MariaDB's official article</a>.</span></span></span></span></p>
+
+<p><span><span><span><span>The benchmark used in this test (<a href="http://www.storagereview.com/sysbench_oltp_benchmark">sysbench</a>) does some rather short transactions on well-indexed tables in order to mimic the workload of a production system. The benchmark measures both the throughput (in transactions per second) and the average response time. </span></span></span></span></p>
+
+<p><span><span><span><span>After enabling PGO for the MariaDB code, significant improvements (up to 20%) in all the benchmarks were reported. <em>Table 1</em> shows the test of reading form the database with multiple threads when the datadir lives in a RAM disk.</span></span></span></span></p>
+
+<table><tbody><tr><td>
+			<p><span><span><span>Number of threads</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>baseline, 2 socket, ram disk</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>PGO, 2 socket, ram disk</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>% of improvement</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>1</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>515.26</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>662.42</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>22.21551282</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>9</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1130.6</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1387.7</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>18.52705916</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>18</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1352.8</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1648.8</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>17.95245027</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>36</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1304.6</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1583.4</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>17.60767968</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>72</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1304.2</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1546.3</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>15.65672897</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>Average</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1121.492</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1365.724</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>17.88296903</span></span></span></p>
+			</td>
+		</tr></tbody></table><p><span><span>Table 1. Transaction per second in read only mode</span></span></p>
+
+<p><span><span><span><span> </span></span></span></span></p>
+
+<p><span><span><span><span><em>Table 2</em> shows the same experiment, but these results come from a test that reads and writes from the same database.</span></span></span></span></p>
+
+<p><span><span><span><span> </span></span></span></span></p>
+
+<table><tbody><tr><td>
+			<p><span><span><span>Number of threads</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>baseline, 2 socket, ram disk</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>PGO, 2 socket, ram disk</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>% of improvement</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>1</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>461.53</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>586.81</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>21.34932943</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>9</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>888.88</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1061.2</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>16.23822088</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>18</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>958.46</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1094.3</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>12.41341497</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>36</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>890.8</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1076.7</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>17.26571933</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>72</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>819.46</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1030.5</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>20.47937894</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>Average</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>803.826</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>969.902</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>17.12296706</span></span></span></p>
+			</td>
+		</tr></tbody></table><p><span><span>Table 2. Transaction per second in read/write mode</span></span></p>
+
+<p><span><span><span><span>The same experiment was executed for the “Response time” test. Tables 3 and 4 show the response time of read only and read/write tests. As we can see, the best response time decreased more than 20 percent. </span></span></span></span></p>
+
+<table><tbody><tr><td>
+			<p><span><span><span>Number of threads</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>baseline, 2 socket, ram disk</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>PGO, 2 socket, ram disk</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>% of improvement</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>1</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1.94</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1.51</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>22.16494845</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>9</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>7.96</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>6.48</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>18.59296482</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>18</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>13.3</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>10.91</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>17.96992481</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>36</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>27.59</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>22.73</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>17.61507793</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>72</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>55.18</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>46.56</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>15.62160203</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>Average</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>21.194</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>17.638</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>16.77833349</span></span></span></p>
+			</td>
+		</tr></tbody></table><p><span><span>Table 3. Response time in read only mode</span></span></p>
+
+<p><span><span><span><span> </span></span></span></span></p>
+
+<p><span><span><span><span> </span></span></span></span></p>
+
+<p><span><span><span><span> </span></span></span></span></p>
+
+<table><tbody><tr><td>
+			<p><span><span><span>Number of threads</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>baseline, 2 socket, ram disk</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>PGO, 2 socket, ram disk</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>% of improvement</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>1</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>2.17</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>1.7</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>21.65898618</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>9</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>10.12</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>8.48</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>16.2055336</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>18</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>18.78</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>16.45</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>12.40681576</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>36</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>40.41</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>33.43</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>17.27295224</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>72</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>87.84</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>69.86</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>20.46903461</span></span></span></p>
+			</td>
+		</tr><tr><td>
+			<p><span><span><span>Average</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>31.864</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>25.984</span></span></span></p>
+			</td>
+			<td>
+			<p><span><span><span>18.45342707</span></span></span></p>
+			</td>
+		</tr></tbody></table><p><span><span>Table 4. Response time in read/write mode</span></span></p>
+
+<p><span><span><span><span>As you can see, performance improvement thanks to PGO is almost 20 percent -- in either the number of transactions per second, or in the response time. </span></span></span></span></p>
+
+<p><span><span><span><span>At this point we wanted to go further and answer the question: "How might this performance improvement benefit a typical cloud system?"  In order to answer the question we need to set up a cloud environment and run specific cloud tests to measure the effect of PGO. </span></span></span></span></p>
+
+<p><span><span><span><span>The cloud test suite we decided to use is <a href="https://wiki.openstack.org/wiki/Rally">Rally</a>. Rally is a benchmarking tool that automates and unifies multi-node OpenStack deployments, cloud verification, benchmarking and profiling. It can be used as a basic tool for an OpenStack system that would continuously improve its performance and stability.</span></span></span></span></p>
+
+<p><span><span><span><span>The test we decided to run is the “Keystone Create User”. We saw up to 8 percent improvement with this test. PGO's test runs helped optimize the most commonly-used areas of code.  In this experiment, we found that the best trainer for MariaDB is not the Rally test itself, but rather the <code class="inline">sysbench</code> test due to the fact that the Rally benchmark training gave slightly lower performance overall.</span></span></span></span></p>
+
+<p><span><span><span><span>In conclusion, the numbers above show a solid performance improvement of up to 20% with the PGO capabilities of the GCC compiler. None of the sysbench test cases showed negative performance impact from compiling with profile-guided optimizations; and even better, it improved performance of the OpenStack test up to  8 percent. With this, </span></span><span><span>the Clear Linux* Project continues to redefine the performance boundaries for what is possible in a cloud-based Linux* distribution running on Intel silicon.</span></span></span></span></p>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="668.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/668","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="https://clearlinux.org/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+<script src="https://clearlinux.org/core/misc/polyfills/element.matches.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="https://clearlinux.org/core/misc/drupalSettingsLoader.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.init.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/extlink/extlink.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/google_analytics/js/google_analytics.js?v=9.4.8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
+<script src="https://clearlinux.org/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=9.4.8" defer></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js?rl3r25"></script>
+<script src="https://clearlinux.org/libraries/codesnippet/lib/highlight/highlight.pack.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/codesnippet/js/codesnippet.js?v=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

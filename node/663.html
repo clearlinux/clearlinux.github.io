@@ -1,0 +1,540 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--663.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="By Eric Adams and John Andersen, Intel Corporation. Overview The Dirty COW exploit (CVE-2016-5195) is a race condition that allows an attacker to gain root access to any vulnerable system, and can even be exploited from within a Docker* container. This vulnerability existed in the Linux* kernel for nine years before it was discovered." />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/news-blogs/how-intel-clear-containers-protects-against-root-kernel-exploits-dirty-cow" />
+<meta property="og:title" content="How Intel® Clear Containers protects against root kernel exploits like Dirty COW" />
+<meta property="og:description" content="By Eric Adams and John Andersen, Intel Corporation. Overview The Dirty COW exploit (CVE-2016-5195) is a race condition that allows an attacker to gain root access to any vulnerable system, and can even be exploited from within a Docker* container. This vulnerability existed in the Linux* kernel for nine years before it was discovered." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="663.html" />
+<link rel="shortlink" href="663.html" />
+<script src="https://clearlinux.org/sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js?rl3r25" defer></script>
+
+    <title>How Intel® Clear Containers protects against root kernel exploits like Dirty COW | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/ajax-progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/align.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/autocomplete-loading.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/fieldgroup.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/container-inline.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/clearfix.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/details.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/hidden.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/item-list.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/js.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/nowrap.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/position-container.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/reset-appearance.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/resize.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/sticky-header.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-counter.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-counters.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-general-info.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tabledrag.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tablesort.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tree-child.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/extlink/extlink.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/libraries/codesnippet/lib/highlight/styles/monokai_sublime.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="https://clearlinux.org/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+<script src="https://clearlinux.org/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
+
+</head>
+<body class="alias--news-blogs-how-intel-clear-containers-protects-against-root-kernel-exploits-dirty-cow nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="663.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--663.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="https://clearlinux.org/">
+                          <img class="header__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31099.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31103.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="https://clearlinux.org/software">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="https://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--663--full.html.twig
+   * node--663.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=5.html' title='Maintenance'>Maintenance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>How Intel® Clear Containers protects against root kernel exploits like Dirty COW</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">21 Mar, 2017</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p><em>By Eric Adams and John Andersen, Intel Corporation.</em></p>
+
+<h2>Overview</h2>
+
+<p><span>The Dirty COW exploit (CVE-2016-5195) is a race condition that allows an attacker to gain root access to any vulnerable system, and can even be exploited from within a Docker* container. This vulnerability existed in the Linux* kernel for nine years before it was discovered.</span></p>
+
+<p>Concerns like this prevent many companies from running containers in a public cloud because sensitive workloads like financial transactions or health records could be exposed to hackers. In this article we demonstrate the Dirty COW exploit on Docker on an unpatched system using the standard Docker <em>runc</em> runtime, and then show how this exploit and other kernel exploits are blocked with Intel® Clear Containers using Intel® VT.</p>
+
+<h2>How the exploit works</h2>
+
+<p>Because of a nine-year-old kernel bug, it is possible to create a race condition where one thread tries to write to a read only memory location, creating a modified copy in the process. Meanwhile, a second thread uses a function called <em>madvise</em> to tell the kernel that newly allocated memory is not needed in the immediate future. By executing these two threads simultaneously in a loop, the kernel eventually gets tricked into pointing to the modified copy of a file in memory that should be read only. You can see some great videos that show exactly how this exploit works at <a href="https://www.youtube.com/watch?v=kEsshExn7aE">https://www.youtube.com/watch?v=kEsshExn7aE</a>.</p>
+
+<p>A user named <em>scumjr</em> posted a proof of concept of the Dirty COW exploit working from within a Docker container at <a href="https://github.com/scumjr/dirtycow-vdso">https://github.com/scumjr/dirtycow-vdso</a>. Linux has a virtual dynamic shared object (vDSO) that allows user space programs to execute common kernel functions like <em>clock_gettime()</em> without having to do an expensive context switch. This race condition can exploit this memory object to allow it to be modified by the Dirty COW vulnerability. The unused memory of the vDSO object is modified with a reverse TCP shell back to the host system with full root access so that the next time <em>clock_gettime()</em> is run by some random root process, the reverse shell payload is executed. The vDSO object is then modified back to its original version while the root shell is left open.</p>
+
+<p>This particular exploit allows a Docker container to gain root access to the host system! This is obviously a very serious flaw that should concern all public cloud companies. Even Amazon AWS* was affected by this old kernel vulnerability. You can see a video of an Amazon AWS host system being compromised at <a href="https://www.youtube.com/watch?v=BwUfHJXgYg0">https://www.youtube.com/watch?v=BwUfHJXgYg0</a> before these systems were patched.</p>
+
+<p>Scumjr’s original code has been modified so that it could work across different versions of Linux and has also been modified to use <strong>/self/proc/mem</strong> on Ubuntu* instead of <strong>ptrace()</strong> because newer Docker versions implement <em>seccomp</em>, which blocks <strong>ptrace() </strong>from working.</p>
+
+<h2>How Intel® Clear Containers help protect against Dirty COW</h2>
+
+<p>A typical container runtime uses <em>cgroups</em> and namespaces to isolate processes from each other. This is why kernel vulnerabilities are security risks for any container runtime like Docker. Intel® Clear Containers use an alternative Docker runtime called Clear Container OCI Runtime (<em>cor</em>) to quickly launch a very lightweight virtual machine using Intel® Clear Linux as a guest OS. The VM isolates containers using Intel® VT, which is much more secure than the kernel alone. Each VM gets its own memory region so that compromised files can’t effect the host and can’t effect other containers on the system. It effectively helps prevent a guest OS from breaking outside of its walled garden. Securing containers this way is absolutely necessary in multi-tenant environments.</p>
+
+<p>The first figure below shows an example of the Dirty COW exploit using the standard Docker runtime. The second figure shows how Intel® VT effectively helps prevent escapes like Dirty COW from happening.</p>
+
+<p><img alt="Dirty COW configuration 1" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/dirtycowfig1.png" /></p>
+
+<p>Figure 1: Docker using runc"</p>
+
+<p> </p>
+
+<p><img alt="Dirty COW configuration 2" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/dirtycowfig2.png" /></p>
+
+<p>Figure 2: Docker using Intel® Clear Containers</p>
+
+<p> </p>
+
+<p>The guest page tables in each virtual machine instance isolate the guest OS memory location from the host OS. This type of segregation helps prevent undiscovered kernel exploits from allowing container-to-container escapes, and more importantly, container-to-host escapes like we saw in the Amazon example above.</p>
+
+<p>The VM used for Intel® Clear Containers is optimized to make its memory footprint as lightweight as possible. Features like DAX, which removes the extra copy when accessing memory from a VM, are used to negate some of the resource penalties for using a VM. Other features like <em>qemu-lite</em> remove some PC-centric features, like BIOS support, that are not needed for running and protecting containers. You can read more about these optimizations at <a href="https://clearlinux.org/documentation/clear-containers.html">https://clearlinux.org/documentation/clear-containers.html</a>.</p>
+
+<p>The more intuitive security experts who read through the optimization features described in the link above might be wondering if container-to-container escapes might still be possible utilizing kernel samepage merging (KSM). The KSM feature works by identifying memory pages marked as mergeable that are exactly the same, discarding redundant copies, and having each process point to a single page. The good news is that after doing some testing we found that Intel® VT isolates container-to-container escapes through the extended page tables in such a way that a modified vDSO object in one Clear Container does not effect other Clear Containers. Intel tested and confirmed that modifying the vDSO object using the Dirty COW exploit inside of an Intel® Clear Container causes that container to point to the modified vDSO while other Intel® Clear Container instances still reference the original, unmodified, read only vDSO object. This effectively helps prevent container-to-container escapes.</p>
+
+<h2>Demo of Dirty COW on Intel® Clear Containers</h2>
+
+<p>This demo is shown on Ubuntu 16.04.1 before it was patched with the Dirty COW fix. The following instructions are derived from <a href="https://github.com/01org/cc-oci-runtime/wiki/Installation">https://github.com/01org/cc-oci-runtime/wiki/Installation</a> but are modified to point to the older installation packages. This is necessary to see the exploit in action, and more importantly to see how Intel® Clear Containers effectively isolates the exploit from affecting other active containers or the host itself.</p>
+
+<h2>Set up Docker and Intel® Clear Containers for Ubuntu* 16.04.1</h2>
+
+<p>First you need to set up an Ubuntu 16.04.1 system using the 64-bit version without installing any updates so we can avoid accidentally installing a patched kernel. You can download this version at http://old-releases.ubuntu.com/releases/xenial/. If an updated kernel is installed then you will have to choose the earlier kernel from the advanced options in the grub boot menu when booting the system. The following instructions describe how to install the version of Docker that was available when the exploit first came out in October of 2016 along with Intel® Clear Containers.</p>
+
+<ol><li>Install the older version 2.0 Clear Container runtime: <code>$ sudo sh -c "echo 'deb http://download.opensuse.org/repositories/home:/clearlinux:/preview:/clear-containers-2.0/xUbuntu_16.04/ /' &gt;&gt; /etc/apt/sources.list.d/cc-oci-runtime.list"<br />
+	$ curl -fSL http://download.opensuse.org/repositories/home:/clearlinux:/preview:/clear-containers-2.0/xUbuntu_16.04/Release.key | sudo apt-key add -<br />
+	$ sudo apt-get update<br />
+	$ sudo apt-get install cc-oci-runtime </code></li>
+	<li>Install Docker 1.12.1: <code>$ sudo apt-get install apt-transport-https ca-certificates<br />
+	$ curl -fsSL https://yum.dockerproject.org/gpg | sudo apt-key add -<br />
+	$ sudo add-apt-repository "deb https://apt.dockerproject.org/repo/ ubuntu-$(lsb_release -cs) main"<br />
+	$ sudo apt-get update<br />
+	$ sudo apt-get install docker-engine=1.12.1-0~xenial</code></li>
+	<li>Configure Docker to use Clear Containers by default: <code>$ sudo mkdir -p /etc/systemd/system/docker.service.d/<br />
+	$ sudo nano /etc/systemd/system/docker.service.d/clr-containers.conf<br /><br />
+	[Service]<br />
+	ExecStart= ExecStart=/usr/bin/dockerd -D --add-runtime cor=/usr/bin/cc-oci-runtime --default-runtime=cor</code></li>
+	<li>Downgrade the Clear Container guest kernel to a version affected by Dirty COW: <code><span>$ cd /usr/share/clear-containers </span><br /><span>$ sudo wget <span>'</span></span><a class="external-link" href="https://download.clearlinux.org/releases/10000/clear/x86_64/os/Packages/clear-containers-image-9810-4.x86_64.rpm">https://download.clearlinux.org/releases/10000/clear/x86_64/os/Packages/clear-containers-image-9810-4.x86_64.rpm<span>'</span></a><br /><span>$ sudo rpm2cpio clear-containers-image-9810-4.x86_64.rpm | sudo cpio -idmv</span><br /><span>$ sudo rm -f clear-containers.img </span><br /><span>$ sudo mv ./usr/share/clear-containers/clear-* .</span><br /><span>$ sudo wget 'https://download.clearlinux.org/releases/10000/clear/x86_64/os/Packages/linux-container-4.5-49.x86_64.rpm' </span><br /><span>$ sudo rpm2cpio linux-container-4.5-49.x86_64.rpm | sudo cpio -idmv </span><br /><span>$ sudo rm -f linux-container-4.5-49.x86_64.rpm </span><br /><span>$ sudo cp ./usr/share/clear-containers/vmlinux-4.5-49.container ./ </span><br /><span>$ sudo rm -rf ./usr </span><br /><span>$ sudo rm -f vmlinux.container </span><br /><span>$ sudo ln -s vmlinux-4.5-49.container vmlinux.container</span></code></li>
+	<li>Restart the Docker <em>systemd</em> service: <code>$ sudo systemctl daemon-reload<br />
+	$ sudo systemctl restart docker</code></li>
+	<li>Test that the Docker <em>runc</em> runtime and Clear Container <em>cor</em> runtime both work: <code>$ sudo docker run --rm -ti --runtime=runc ubuntu<br />
+	$ sudo docker run --rm -ti --runtime=cor ubuntu</code></li>
+</ol><h2>Run Dirty COW exploit</h2>
+
+<p>Next, build the exploit and container image from the demo repo (<a href="https://github.com/clearcontainers/cc-dirtycow-demo">https://github.com/clearcontainers/cc-dirtycow-demo</a>). Clone or <a href="https://github.com/clearcontainers/cc-dirtycow-demo/archive/v1.0.tar.gz">extract</a> these files to a known location, and follow the instructions below to build and run the container image. This container runs the setup script, which modifies the <em>cc-oci-runtime</em> guest OS kernel and replaces it with an older kernel that is vulnerable to Dirty COW. We do this to show how Intel® VT effectively blocks Dirty COW from affecting the host or other running containers even with an affected kernel in the guest OS.</p>
+
+<p>You’ll need to build the exploit and a new container image called proc and add it to your Docker library. This container has the exploit.</p>
+
+<p><code># apt install build-essential nasm<br />
+# make<br />
+# docker build -t proc .</code></p>
+
+<p>Verify that you are running a kernel older than 4.4.0-45.66 to see the exploit on Ubuntu 16.04.1 LTS. Running <strong>apt-get</strong> will likely update the kernel to a patched version. Reboot to the grub boot menu, and select <em>Advanced Options</em> to choose an older kernel to boot. If one does not exist then you will need to downgrade to a previous kernel. Use the following command to check the kernel version.</p>
+
+<p><code># uname -r</code></p>
+
+<p>Finally, test the exploit from both the standard Docker <em>runc</em> runtime and from the Intel® Clear Container runtime.</p>
+
+<p><code># docker run --rm -ti --runtime=runc proc<br />
+# docker run --rm -ti --runtime=cor proc</code></p>
+
+<p>The easiest way to verify the exploit is to create a file in <em>/root</em> from the container image using the <strong>echo</strong> command. When using standard Docker <em>runc</em>, the file is created on the host system in <em>/root</em> with root permissions. That is the exploit! No file or directory owned by root should be writeable in this way, especially from within a running container! When using the Intel® Clear Container runtime the guest OS <em>/root</em> is modified, but the host system and other Clear Containers running on the system are not affected. This type of isolation and protection is very important for public cloud companies, and is how Intel® Clear Containers technology provides another security layer for more secure containers. <code># echo DirtyCOW &gt; /root/dirtycow.txt</code></p>
+
+<p> </p>
+
+<p><img alt="Dirty COW configuration 3" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/dirtycowfig3.png" /></p>
+
+<p>Figure 3: Docker runc container escape with Dirty COW</p>
+
+<p> </p>
+
+<p><img alt="Dirty COW configuration 4" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/dirtycowfig4.png" /></p>
+
+<p>Figure 4: Docker clear container runtime blocking of Dirty COW</p>
+
+<p> </p>
+
+<h2>Summary</h2>
+
+<p>The Dirty COW vulnerability has been in the kernel for nine years, and is a serious security concern for both public and private clouds as demonstrated above. Technologies like Intel® Clear Containers add an extra layer of security backed by Intel® VT to help protect against existing and future, as-yet-undiscovered kernel exploits. This is done without compromising on the fast speed and low memory utilization that make containers the exciting new technology for running cloud workloads.</p>
+
+<h2>Disclaimers</h2>
+
+<ul><li>Intel technologies’ features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No computer system can be absolutely secure. Check with your system manufacturer or retailer or learn more at intel.com.</li>
+	<li>Intel, the Intel logo, Intel® Clear Containers, Intel® Clear Linux, and Intel® VT are trademarks of Intel Corporation or its subsidiaries in the U.S. and/or other countries.</li>
+	<li>*Other names and brands may be claimed as the property of others.</li>
+</ul>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="663.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/663","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="https://clearlinux.org/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+<script src="https://clearlinux.org/core/misc/polyfills/element.matches.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="https://clearlinux.org/core/misc/drupalSettingsLoader.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.init.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/extlink/extlink.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/google_analytics/js/google_analytics.js?v=9.4.8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
+<script src="https://clearlinux.org/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=9.4.8" defer></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js?rl3r25"></script>
+<script src="https://clearlinux.org/libraries/codesnippet/lib/highlight/highlight.pack.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/codesnippet/js/codesnippet.js?v=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

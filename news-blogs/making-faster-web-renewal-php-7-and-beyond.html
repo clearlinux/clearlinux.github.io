@@ -1,0 +1,838 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--661.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content=" " />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/news-blogs/making-faster-web-renewal-php-7-and-beyond" />
+<meta property="og:title" content="Making a faster Web: The renewal of PHP 7 and beyond" />
+<meta property="og:description" content=" " />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="../node/661.html" />
+<link rel="shortlink" href="../node/661.html" />
+<script src="../sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js%3Frl3r25" defer></script>
+
+    <title>Making a faster Web: The renewal of PHP 7 and beyond | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/ajax-progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/align.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/autocomplete-loading.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/fieldgroup.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/container-inline.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/clearfix.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/details.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/hidden.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/item-list.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/js.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/nowrap.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/position-container.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/reset-appearance.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/resize.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/sticky-header.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-counter.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-counters.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-general-info.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tabledrag.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tablesort.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tree-child.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/extlink/extlink.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/paragraphs/css/paragraphs.unpublished.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../libraries/codesnippet/lib/highlight/styles/monokai_sublime.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="../core/assets/vendor/modernizr/modernizr.min.js%3Fv=3.11.7"></script>
+<script src="../core/misc/modernizr-additional-tests.js%3Fv=3.11.7"></script>
+
+</head>
+<body class="alias--news-blogs-making-faster-web-renewal-php-7-and-beyond nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="making-faster-web-renewal-php-7-and-beyond.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--661.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="../index.html">
+                          <img class="header__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../about.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../developer.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../software.html">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="http://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--661--full.html.twig
+   * node--661.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=5.html' title='Maintenance'>Maintenance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Making a faster Web: The renewal of PHP 7 and beyond</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">12 Apr, 2017</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p> </p>
+
+<ul></ul>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--field-components--blog.html.twig
+   x field--node--field-components.html.twig
+   * field--node--blog.html.twig
+   * field--field-components.html.twig
+   * field--entity-reference-revisions.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--field-components.html.twig' -->
+<div class="content--wrapper">
+      <section class="padding--top-bottom two_column  ">
+    <div class="container clearfix">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'paragraph' -->
+<!-- FILE NAME SUGGESTIONS:
+   * paragraph--two-column--default.html.twig
+   x paragraph--two-column.html.twig
+   * paragraph--default.html.twig
+   * paragraph.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--two-column.html.twig' -->
+
+
+
+
+<div class="Column ">
+    <div class="Column__item column__first">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-column-one--two-column.html.twig
+   * field--paragraph--field-column-one.html.twig
+   * field--paragraph--two-column.html.twig
+   * field--field-column-one.html.twig
+   * field--entity-reference-revisions.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+      <div class="field field--name-field-column-one field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field field--name-field-column-one field--type-entity-reference-revisions field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'paragraph' -->
+<!-- FILE NAME SUGGESTIONS:
+   * paragraph--text-block-full-width--default.html.twig
+   x paragraph--text-block-full-width.html.twig
+   * paragraph--default.html.twig
+   * paragraph.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--text-block-full-width.html.twig' -->
+
+
+<div class="Text">
+  <div class="container">
+    <h2 class="Text__title"></h2>
+
+    
+    <div class="Text__description">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-text-block--text-block-full-width.html.twig
+   * field--paragraph--field-text-block.html.twig
+   * field--paragraph--text-block-full-width.html.twig
+   * field--field-text-block.html.twig
+   * field--text-long.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-text-block field--type-text-long field--label-hidden field__item"><p><em>by Victor Rodriguez Bahena</em></p>
+
+<p>The Internet has changed the world in a way that history has never seen before. Every year new programming languages, tools, and platforms revolutionize what the Internet is capable of. One of the technologies behind this revolution is the hypertext preprocessor, or PHP. PHP is one of the most common programming languages used for website and web application development. PHP is a general purpose, server-side scripting language that was designed to make dynamic pages and applications [1]. The latest numbers show that PHP is used by 82.4% of all websites [2]. Because of this, any performance changes in PHP are extremely important to the industry.</p>
+
+<p>PHP has evolved steadily since its origins in 1994 [3]. With more than 20 years of open source development, PHP has improved both in functionality and performance. With the deployment of PHP 7 in 2016, the world witnessed the first major PHP release in over a decade. This new version comes with many new features, including new operators, better error handling, type declarations, and improvements in execution performance.</p>
+
+<p>In terms of performance, significant collaboration between Intel® and the PHP community leveraged new hardware features that improved processing efficiency and increased the execution speed of PHP 7 [4]. Benchmarks for PHP 7 consistently demonstrated speeds twice as fast as PHP 5.6 [4]. An article in the Phoronix* benchmarking site [9] reported that PHP 7 delivers an overall performance increase of up to two-and-a-half times that of PHP 5†.</p>
+
+<p>The key changes made in PHP 7 to achieve such great performance are described in the whitepaper, <em>Half the footprint, twice the speed: Accelerating performance for server-side PHP 7</em> [5]. These changes start with hardware-based optimizations, such as better memory management, more powerful branch miss prediction algorithms, the use of advanced vector extensions (AVX2) technology, and an enhanced <em>fast_memcpy()</em> function optimized using some of Intel's specialized SSE2 instructions.</p>
+
+<p>In the Clear Linux* Project, we want to showcase the best of Intel® Architecture technology and performance, from low-level kernel features to complex applications that span the entire operating system stack. We are fully focused on power and performance optimizations throughout the operating system as a whole. This mission drove our decision to use PHP 7, since we know compiler flags are one of the most important keys to improving the performance of operating systems. The Clear Linux* Project ships with more aggressive defaults, including default compiler flags for faster performance of the resulting binaries.</p></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+    </div>
+  </div>
+</div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--text-block-full-width.html.twig' -->
+
+</div>
+          </div>
+  
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </div>
+      <div class="Column__item column__second">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-column-two--two-column.html.twig
+   * field--paragraph--field-column-two.html.twig
+   * field--paragraph--two-column.html.twig
+   * field--field-column-two.html.twig
+   * field--entity-reference-revisions.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+      <div class="field field--name-field-column-two field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field field--name-field-column-two field--type-entity-reference-revisions field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'paragraph' -->
+<!-- FILE NAME SUGGESTIONS:
+   * paragraph--text-block-full-width--default.html.twig
+   x paragraph--text-block-full-width.html.twig
+   * paragraph--default.html.twig
+   * paragraph.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--text-block-full-width.html.twig' -->
+
+
+<div class="Text">
+  <div class="container">
+    <h2 class="Text__title"></h2>
+
+    
+    <div class="Text__description">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-text-block--text-block-full-width.html.twig
+   * field--paragraph--field-text-block.html.twig
+   * field--paragraph--text-block-full-width.html.twig
+   * field--field-text-block.html.twig
+   * field--text-long.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-text-block field--type-text-long field--label-hidden field__item"><p>In conjunction with the compiler flags, the use of Profile Guided Optimization (PGO)—also known as feedback-directed optimization (FDO)—helps to improve the performance based on real workloads. As we can see in [6], PGO can provide almost a 20%† improvement in performance.</p>
+
+<p>The technology behind PGO applied to the GNU Compiler Collection* (GCC) is the use of static instrumentation to collect edge and value profiles. GCC uses execution profiles that consist of basic block and edge frequency counts to guide optimizations, such as instruction scheduling, basic block reordering, function splitting, and register allocation. The current method of PGO in GCC involves the following steps [7]:</p>
+
+<ol><li>Build an instrumented version of the program for edge and value profiling.</li>
+	<li>Run the instrumented version with representative training data to collect the execution profile. These runs typically incur significant overhead due to executing additional instrumentation code.</li>
+	<li>Build an optimized version of the program by using the collected execution profile to guide the optimizations.</li>
+</ol><p>The instrumentation and PGO builds are tightly coupled. GCC requires both builds use the same inline decisions and similar optimization flags. This ensures the control-flow graph (CFG) is instrumented in the instrumentation build and that it matches the CFG annotated with the profile data in the PGO build.</p>
+
+<p>Despite all these advantages, only 2.4% of all websites where the server-side programming language is known use PHP version 7 [8]. This shows that only a very small part of the industry is taking advantage of the new technology provided by PHP 7 and GCC. In a world of rapid technological change, it is necessary to have fastest web we can, and we can't afford to leave optimizations on the table that enable robust solutions for datacenters.</p></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+    </div>
+  </div>
+</div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--text-block-full-width.html.twig' -->
+
+</div>
+          </div>
+  
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </div>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--two-column.html.twig' -->
+
+
+    </div>
+    </section>
+      <section class="padding--top-bottom two_column  ">
+    <div class="container clearfix">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'paragraph' -->
+<!-- FILE NAME SUGGESTIONS:
+   * paragraph--two-column--default.html.twig
+   x paragraph--two-column.html.twig
+   * paragraph--default.html.twig
+   * paragraph.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--two-column.html.twig' -->
+
+
+
+
+<div class="Column ">
+    <div class="Column__item column__first">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-column-one--two-column.html.twig
+   * field--paragraph--field-column-one.html.twig
+   * field--paragraph--two-column.html.twig
+   * field--field-column-one.html.twig
+   * field--entity-reference-revisions.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+      <div class="field field--name-field-column-one field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field field--name-field-column-one field--type-entity-reference-revisions field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'paragraph' -->
+<!-- FILE NAME SUGGESTIONS:
+   * paragraph--text-block-full-width--default.html.twig
+   x paragraph--text-block-full-width.html.twig
+   * paragraph--default.html.twig
+   * paragraph.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--text-block-full-width.html.twig' -->
+
+
+<div class="Text">
+  <div class="container">
+    <h2 class="Text__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-title--text-block-full-width.html.twig
+   * field--paragraph--field-title.html.twig
+   * field--paragraph--text-block-full-width.html.twig
+   * field--field-title.html.twig
+   * field--string.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-title field--type-string field--label-hidden field__item">Footnotes</div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+</h2>
+
+    
+    <div class="Text__description">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-text-block--text-block-full-width.html.twig
+   * field--paragraph--field-text-block.html.twig
+   * field--paragraph--text-block-full-width.html.twig
+   * field--field-text-block.html.twig
+   * field--text-long.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-text-block field--type-text-long field--label-hidden field__item"><ol><li>Agarwal, M. S. (n.d.). Digital Pugs Media. Retrieved 02 02, 2017, from The Importance Of PHP Web Development : https://www.digitalpugs.com/articles/the-importance-of-php-web-development.php</li>
+	<li>W3Techs - World Wide Web Technology Surveys . (n.d.). Retrieved 02 02, 2017, from Comparison of the usage of PHP vs. Lua for websites : https://w3techs.com/technologies/comparison/pl-lua,pl-php</li>
+	<li>Achour, M. (n.d.). PHP Manual. Retrieved 02 02, 2017, from History of PHP: http://php.net/manual/en/history.php.php</li>
+	<li>Holligan, A. (2016, January 27). Treehouse. Retrieved January 02, 2017, from 5 New Features in PHP 7: http://blog.teamtreehouse.com/5-new-features-php-7</li>
+	<li>Intel Developer Zone. (2016, July 20). Retrieved January 02, 2017, from Half the footprint, twice the speed: Accelerating performance for server-side PHP 7 : https://software.intel.com/en-us/articles/half-the-footprint-twice-the-speed-accelerating-performance-for-server-side-php-7</li>
+	<li>Larabel, M. (2017, February 03). phoronix. Retrieved January 02, 2017, from Clear Linux's Latest Performance-Optimizing Effort: Greater PHP Performance : http://phoronix.com/scan.php?page=news_item&amp;px=Clear-Linux-PHP7-PGO-Opt</li>
+	<li>Rodriguez, V. (n.d.). Clear Linux* Project. Retrieved January 02, 2017, from AutoFDO Automatic Feedback-Directed Optimizer: https://clearlinux.org/features/autofdo</li>
+	<li>W3Techs - World Wide Web Technology Surveys . (n.d.). Retrieved February 02, 2017, from Usage statistics and market share of PHP version 7 for websites : https://w3techs.com/technologies/details/pl-php/7/all</li>
+	<li>Larabel, M. (2016, June 01). Phoronix. PHP 5.3 Through PHP 7.1-dev Tests Along With HHVM On Ubuntu 16.04 - Phoronix: https://www.phoronix.com/scan.php?page=news_item&amp;px=PHP-Tests-PTS-6.4</li>
+</ol></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+    </div>
+  </div>
+</div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--text-block-full-width.html.twig' -->
+
+</div>
+          </div>
+  
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </div>
+      <div class="Column__item column__second">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-column-two--two-column.html.twig
+   * field--paragraph--field-column-two.html.twig
+   * field--paragraph--two-column.html.twig
+   * field--field-column-two.html.twig
+   * field--entity-reference-revisions.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+      <div class="field field--name-field-column-two field--type-entity-reference-revisions field--label-hidden field__items">
+              <div class="field field--name-field-column-two field--type-entity-reference-revisions field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'paragraph' -->
+<!-- FILE NAME SUGGESTIONS:
+   * paragraph--text-block-full-width--default.html.twig
+   x paragraph--text-block-full-width.html.twig
+   * paragraph--default.html.twig
+   * paragraph.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--text-block-full-width.html.twig' -->
+
+
+<div class="Text">
+  <div class="container">
+    <h2 class="Text__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-title--text-block-full-width.html.twig
+   * field--paragraph--field-title.html.twig
+   * field--paragraph--text-block-full-width.html.twig
+   * field--field-title.html.twig
+   * field--string.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-title field--type-string field--label-hidden field__item">Legal disclaimers</div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+</h2>
+
+    
+    <div class="Text__description">
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--paragraph--field-text-block--text-block-full-width.html.twig
+   * field--paragraph--field-text-block.html.twig
+   * field--paragraph--text-block-full-width.html.twig
+   * field--field-text-block.html.twig
+   * field--text-long.html.twig
+   x field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+            <div class="field field--name-field-text-block field--type-text-long field--label-hidden field__item"><ul><li>Intel technologies’ features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No computer system can be absolutely secure. Check with your system manufacturer or retailer or learn more at www.intel.com.</li>
+	<li>†Software and workloads used in performance tests may have been optimized for performance only on Intel microprocessors. Performance tests, such as SYSmark and MobileMark, are measured using specific computer systems, components, software, operations and functions. Any change to any of those factors may cause the results to vary. You should consult other information and performance tests to assist you in fully evaluating your contemplated purchases, including the performance of that product when combined with other products. For more information go to www.intel.com/benchmarks. <em>Configurations</em>: Review the configurations use by Phoronix here: http://phoronix.com/scan.php?page=news_item&amp;px=Clear-Linux-PHP7-PGO-Opt.</li>
+	<li>Intel, the Intel logo, Clear Linux are trademarks of Intel Corporation in the U.S. and/or other countries.</li>
+	<li>*Other names and brands may be claimed as the property of others.</li>
+	<li>© Intel Corporation.</li>
+</ul></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+    </div>
+  </div>
+</div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--text-block-full-width.html.twig' -->
+
+</div>
+          </div>
+  
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </div>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/paragraphs/paragraph--two-column.html.twig' -->
+
+
+    </div>
+    </section>
+  
+</div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--field-components.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="making-faster-web-renewal-php-7-and-beyond.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/661","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="../core/assets/vendor/jquery/jquery.min.js%3Fv=3.6.0"></script>
+<script src="../core/misc/polyfills/element.matches.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/once/once.min.js%3Fv=1.0.1"></script>
+<script src="../core/misc/drupalSettingsLoader.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.init.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/extlink/extlink.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/google_analytics/js/google_analytics.js%3Fv=9.4.8"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/js-cookie/js.cookie.min.js%3Fv=3.0.1"></script>
+<script src="../modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js%3Fv=9.4.8" defer></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/components/video/video.js%3Frl3r25"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js%3Frl3r25"></script>
+<script src="../libraries/codesnippet/lib/highlight/highlight.pack.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/codesnippet/js/codesnippet.js%3Fv=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

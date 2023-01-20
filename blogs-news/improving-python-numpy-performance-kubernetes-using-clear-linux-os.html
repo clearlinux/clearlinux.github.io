@@ -1,0 +1,1079 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--31695.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="Improving Python* NumPy Performance on Kubernetes* using Clear Linux* OS Authors: Long Wang, Rick Y Wang, and Ken Lu  " />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/blogs-news/improving-python-numpy-performance-kubernetes-using-clear-linux-os" />
+<meta property="og:title" content="Improving Python* NumPy Performance on Kubernetes* using Clear Linux* OS" />
+<meta property="og:description" content="Improving Python* NumPy Performance on Kubernetes* using Clear Linux* OS Authors: Long Wang, Rick Y Wang, and Ken Lu  " />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="../node/31695.html" />
+<link rel="shortlink" href="../node/31695.html" />
+<script src="../sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js%3Frl3r25" defer></script>
+
+    <title>Improving Python* NumPy Performance on Kubernetes* using Clear Linux* OS | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/ajax-progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/align.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/autocomplete-loading.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/fieldgroup.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/container-inline.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/clearfix.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/details.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/hidden.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/item-list.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/js.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/nowrap.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/position-container.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/reset-appearance.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/resize.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/sticky-header.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-counter.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-counters.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-general-info.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tabledrag.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tablesort.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tree-child.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/filter/filter.caption.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/entity_embed/css/entity_embed.filter.caption.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/extlink/extlink.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="../libraries/codesnippet/lib/highlight/styles/monokai_sublime.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="../core/assets/vendor/modernizr/modernizr.min.js%3Fv=3.11.7"></script>
+<script src="../core/misc/modernizr-additional-tests.js%3Fv=3.11.7"></script>
+
+</head>
+<body class="alias--blogs-news-improving-python-numpy-performance-kubernetes-using-clear-linux-os nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="improving-python-numpy-performance-kubernetes-using-clear-linux-os.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--31695.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="../index.html">
+                          <img class="header__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../about.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../developer.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../software.html">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="http://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--31695--full.html.twig
+   * node--31695.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=2.html' title='Power and Performance'>Power and Performance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Improving Python* NumPy Performance on Kubernetes* using Clear Linux* OS</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+      <p class="blog_detail__author">
+              Puneet Sethi
+                  </p>
+  
+      <p class="blog_detail__date">04 Mar, 2020</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <h1><span><span><span><span><span><span>Improving Python* NumPy Performance on Kubernetes* using Clear Linux* OS</span></span></span></span></span></span></h1>
+
+<p class="text-align-center"><em><span><span><span><span><span><span>Authors: Long Wang, Rick Y Wang, and Ken Lu</span></span></span></span></span></span></em></p>
+
+<p class="text-align-center"> </p>
+
+<h2><span><span><span><span><span><span>Introduction</span></span></span></span></span></span></h2>
+
+<p class="normal"><span><span><span><span><span><span><span>This article shows how Python NumPy performance can be improved on Kubernetes using a Clear Linux* OS-based Docker* container with an adaptive configuration strategy. The container image, clearlinux/numpy-mp, provides an adaptive configuration strategy for Kubernetes or traditional High Performance Computing (HPC) scenarios using </span></span></span></span></span></span></span><span><span><span><span><span><span> </span></span></span></span></span></span><a href="https://www.intel.com/content/www/us/en/architecture-and-technology/avx-512-overview.html"><span><span><span><span><span><span><span><span>Intel® Advanced Vector Extensions 512</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> (Intel® AVX-512)</span></span></span></span></span></span><span><span><span><span><span><span><span> optimized</span></span></span></span></span></span></span><span><span><span><span><span><span> </span></span></span></span></span></span><a href="https://www.openblas.net/"><span><span><span><span><span><span><span><span>OpenBLAS</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> </span></span></span></span></span></span><span><span><span><span><span><span><span>and </span></span></span></span></span></span></span><span><span><span><span><span><span><a href="https://www.openmp.org/">OpenMP</a>*</span></span></span></span></span></span><span><span><span><span><span><span><span>.</span></span></span></span></span></span></span></p>
+
+<p class="normal"><span><span><span><span><span><span>The numpy-mp dockerfile is available on </span></span></span></span></span></span><a href="https://github.com/clearlinux/dockerfiles/tree/master/numpy-mp"><span><span><span><span><span><span><span><span>GitHub</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>* and the clearlinux/numpy-mp Docker image is published on </span></span></span></span></span></span><a href="https://hub.docker.com/r/clearlinux/numpy-mp"><span><span><span><span><span><span><span><span>DockerHub</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>*.</span></span></span></span></span></span></p>
+
+<p class="normal"> </p>
+
+<h2><span><span><span><span><span><span>Background</span></span></span></span></span></span></h2>
+
+<p class="normal"><span><span><span><span><span><span><a href="https://marutitech.com/python-data-science/">Python has emerged as one of the top programming languages for data science and machine learning</a>. Python's low learning curve, the inclusion of data science libraries such as NumPy, SciPy, and Pandas, and its flexibility in problem-solving make it more ideally suited for data science applications</span></span></span></span></span></span></p>
+
+<p class="normal"><span><span><span><span><span><span>NumPy is Python's vectorization solution and the foundational library of the Python data science stack, as shown in Figure 1. Vectorization of matrices transforms the data in a matrix from multiple columns into a single column format. This allows a single operation to be applied to a list (the column), instead of multiple operations applied to multiple items (multiple columns). This simplification is fundamental to solving many data science problems because it enables parallelism and minimizes the number of operations required to compute answers.</span></span></span></span></span></span></p>
+
+<p class="normal"> </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 1: The Python data science stack" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="31aec4fd-f39e-4620-bd88-e8185f1b9434" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/numpy-mp-fig1.png" width="624" height="439" alt="The Python data science stack" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="normal text-align-center"> </p>
+
+<p class="normal"><span><span><span><span><span><span>NumPy performance for vectorization workloads can be optimized by making use of SIMD processor instructions, such as Intel AVX-512 or Intel® Advanced Vector Extensions 2 (Intel® AVX2). These CPU instructions help performance in the </span></span></span></span></span></span><a href="https://en.wikipedia.org/wiki/Basic_Linear_Algebra_Subprograms"><span><span><span><span><span><span><span><span>Basic Linear Algebra Subprograms</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> (BLAS) layer and the parallel threading layer libraries commonly used in HPC solutions such as OpenMP, Intel® Threading Building Blocks (Intel® TBB), and </span></span></span></span></span></span><a href="https://numba.pydata.org/numba-doc/latest/user/threading-layer.html"><span><span><span><span><span><span><span><span>Numba workqueue</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>. The optimizations from both the BLAS and parallel threading layers are important to the final result.</span></span></span></span></span></span></p>
+
+<p class="normal"><span><span><span><span><span><span>Container technology is widely used in both HPC and Kubernetes ecosystems, however the <a href="https://kubernetes.io/blog/2017/08/kubernetes-meets-high-performance/">HPC workload scheduling is very different compared to the pod-based Kubernetes scheduling</a></span></span></span></span></span></span><span><span><span><span><span><span>. For example, HPC applications leverage a multiple processing layer like OpenMP to maximize parallel computing within a cluster. In contrast, <a href="https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/">Kubernetes schedules resources within a cluster based on CPU metrics via CPU quota and cpuset</a></span></span></span></span></span></span><span><span><span><span><span><span>.</span></span></span></span></span></span></p>
+
+<p class="normal"><span><span><span><span><span><span>Even though the containerized NumPy stack came from the HPC world, it is also used with Kubernetes for use cases such as image processing, machine learning, and deep learning. Due to how Kubernetes manages resource scheduling, <a href="https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-resource-requests-and-limits">additional overhead can be introduced</a>, restricting NumPy throughput</span></span></span></span></span></span><span><span><span><span><span><span>. </span></span></span></span></span></span></p>
+
+<p class="normal"> </p>
+
+<h2><span><span><span><span><span><span>Experiments</span></span></span></span></span></span></h2>
+
+<p class="normal"><span><span><span><span><span><span>To identify where NumPy performance could be improved on Kubernetes, single-precision floating </span></span></span></span></span></span><a href="https://spatial-lang.org/gemm"><span><span><span><span><span><span><span><span>General Matrix Multiply</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> (SGEMM) dot product performance was measured. Experiments were run on the official </span></span></span></span></span></span><a href="https://hub.docker.com/_/clearlinux"><span><span><span><span><span><span><span><span>Clear Linux OS Docker container image</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> using the </span></span></span></span></span></span><a href="https://github.com/xianyi/OpenBLAS/blob/develop/benchmark/scripts/NUMPY/sgemm.py"><span><span><span><span><span><span><span><span>OpenBLAS NumPy SGEMM script</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>  to test throughput of SGEMM, a common operation used in machine learning. Figure 2 shows the general configuration of the experiments. The hardware and software configurations used in the experiments are described in Table 1 and Table 2.</span></span></span></span></span></span></p>
+
+<p class="normal"> </p>
+
+<table><caption>Table 1: Hardware configurations used for the experiments</caption>
+	<thead><tr><th colspan="2">
+			<p><span><span><span><span><span><strong><span><span>Hardware</span></span></strong></span></span></span></span></span></p>
+			</th>
+		</tr></thead><tbody><tr><th>
+			<p><span><span><span><span><span><span><span><span>Platform</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>Dell Precision 5820 Tower X-Series</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Number of sockets</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>1**</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>CPU</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>Intel</span></span></span></span></span></span><span><span><span><span><span><span>®</span></span></span></span></span></span><span><span><span><span><span><span> Core</span></span></span></span></span></span><span><span><span><span><span><span>™ i9-9900X CPU @ 3.50GHz</span></span></span></span></span></span><span><span><span><span><span><span> </span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Number of Cores</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>10 (20 threads)</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Hyperthreading (HT)</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>On</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Intel</span></span></span></span></span></span><span><span><span><span><span><span>® Turbo Boost</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>On</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>BIOS version</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>1.9.2</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th><span><span><span><span><span><span><span><span>Ucode</span></span></span></span></span></span></span></span></th>
+			<td><span><span><span><span><span><span><span><span>0x2000065</span></span></span></span></span></span></span></span></td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>System DDR memory configuration:</span></span></span></span></span></span></span></span></p>
+
+			<p><span><span><span><span><span><span><span><span>slots / cap / run-speed</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>4 slots / 64 GB / 2666 MHz / DDR4 DIMM</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Network interface controller (NIC)</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>Ethernet Connection (5) I219-LM</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Platform controller hub (PCH)</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>Intel® Z370 chipset</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr></tbody></table><p class="normal"><span><span><span><span><em><span>** Note: This paper focuses on a single socket use case. The multiple socket use case is more complex and would need to consider additional application-level optimizations.</span></em></span></span></span></span></p>
+
+<p class="normal"> </p>
+
+<p> </p>
+
+<table><caption>Table 2: Software configurations used for the experiments</caption>
+	<thead><tr><th colspan="2">
+			<p><span><span><span><span><span><strong><span><span>Software Versions</span></span></strong></span></span></span></span></span></p>
+			</th>
+		</tr></thead><tbody><tr><th>
+			<p><span><span><span><span><span><span><span><span>Clear Linux OS</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>31700</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Linux Kernel</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>5.3.12-871.native</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Mitigation variants (1,2,3,3a,4, L1TF)</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>Full mitigation</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Python*</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>3.7.4</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>NumPy</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>1.17.2</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>OpenBLAS</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>0.3.7</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>GOMP (OpenMP)</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>9.2.0</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Docker* </span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>19.03.2</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr><tr><th>
+			<p><span><span><span><span><span><span><span><span>Kubernetes*</span></span></span></span></span></span></span></span></p>
+			</th>
+			<td>
+			<p><span><span><span><span><span><span><span><span>1.16.3</span></span></span></span></span></span></span></span></p>
+			</td>
+		</tr></tbody></table><p> </p>
+
+<p><span><span><span><span><span><span>In Clear Linux OS, the default NumPy stack is built on the following open source components:</span></span></span></span></span></span></p>
+
+<ul><li><span><span><span><strong><span><span>OpenBLAS: </span></span></strong></span></span></span><span><span><span><span><span><span>An optimized open source BLAS library based on GotoBLAS2 1.13 BSD version. It provides a BLAS layer implementation with Intel AVX-512 acceleration that is adaptable to Intel AVX2 or<span><span><span><strong><span><span> </span></span></strong></span></span></span><span>Intel</span></span></span></span></span></span></span>®<span><span><span><span><span><span><span> Streaming SIMD Extensions (</span>Intel</span></span></span></span></span></span><span><span><span><span><span><span><span>®</span></span></span></span></span></span></span><span><span><span><span><span><span> SSE)</span></span></span></span></span></span><span><span><span><strong><span><span> </span></span></strong></span></span></span><span><span><span><span><span><span>only platforms. The Clear Linux OS </span></span></span></span></span></span><a href="../blogs/transparent-use-library-packages-optimized-intel-architecture.html"><span><span><span><span><span><span><span><span>multiple library build</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> approach automatically uses the library most optimized for the capabilities of the running processor.</span></span></span></span></span></span><br /><br /><span><span><span><span><span><span>Alternatively, </span></span></span></span></span></span><a href="https://software.intel.com/en-us/articles/numpyscipy-with-intel-mkl"><span><span><span><span><span><span><span><span>the Intel® Math Kernel Library can be configured as a BLAS backend</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>.</span></span></span></span></span></span></li>
+	<li><span><span><span><strong><span><span>OpenMP: </span></span></strong></span></span></span><span><span><span><span><span><span>An API that supports multi-platform shared memory multiprocessing programming in C, C++, and Fortran. It provides a threading layer with configurable environment variables such as OMP_NUM_THREADS, OMP_DYNAMIC, and OMP_THREAD_LIMIT that provide orchestration to balance maximum performance and resource scheduling.  </span></span></span></span></span></span></li>
+</ul><p> </p>
+
+<p> </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 2: OpenBLAS built-in benchmark for NumPy SGEMM" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="d9a5a2cc-add5-4249-b54f-cd984c3a2f66" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/numpy-mp-fig2.png" width="527" height="464" alt="Diagram of numpy-mp container using OpenMP and OpenBLAS to run the built-in SGEMM benchmark for NumPy" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="text-align-center"> </p>
+
+<h3><span><span><span><span><span><span>Experiment 1: Results with different numbers of threads</span></span></span></span></span></span></h3>
+
+<p class="normal"><span><span><span><span><span><span>The </span></span></span></span></span></span><a href="https://www.openmp.org/spec-html/5.0/openmpse50.html#x289-20540006.2"><span><span><span><span><span><span><span><span>OpenMP OMP_NUM_THREADS</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> variable specifies the number of threads to use in parallel regions. To observe the impact of OpenMP thread count on performance on a fixed matrix, the SGEMM benchmark was run in the container with the <a href="https://github.com/xianyi/OpenBLAS#setting-the-number-of-threads-using-environment-variables">OMP_NUM_THREADS variable set to a range of values</a> from 1 to 20</span></span></span></span></span></span><span><span><span><span><span><span>. Both Intel AVX2 and Intel AVX-512 were tested to determine if the impact of OMP_NUM_THREADS was observable on different instruction sets.  </span></span></span></span></span></span></p>
+
+<p class="normal"><span><span><span><span><span><span>Figure 3 shows the SGEMM dot product results with matrix size 1280 (M=K=N) for different thread numbers. It shows that OMP_NUM_THREADS influences SGEMM performance. The SGEMM benchmark reached maximum performance when OMP_NUM_THREADS = 10.</span></span></span></span></span></span></p>
+
+<p class="normal"><span><span><span><span><span><span>The impact of OMP_NUM_THREADS on performance was similar on both the Intel AVX2 and Intel AVX-512.</span></span></span></span></span></span></p>
+
+<p class="normal"> </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 3: SGEMM dot product performance for Intel AVX-512 and Intel AVX2 with matrix size 1280 (M=K=N) for different thread numbers" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="759839ef-ec6b-4423-98ce-f995f18d6ba9" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/numpy-mp-fig3.png" width="624" height="341" alt="SGEMM dot product performance for Intel AVX-512 and Intel AVX2 with matrix size 1280 (M=K=N) for different thread numbers." typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="normal text-align-center"> </p>
+
+<h3><span><span><span><span><span><span>Experiment 2: Results with different matrix sizes</span></span></span></span></span></span></h3>
+
+<p class="normal"><span><span><span><span><span><span>Experiment 2 builds on the results of experiment one. The number of OMP_NUM_THREADS was set to 10 and the SGEMM benchmark was run for different matrix sizes (M=K=N) ranging from 512 to 2048. Both Intel AVX2 and Intel AVX-512 were tested to determine if the impact of matrix size was observable on different instruction sets.  </span></span></span></span></span></span></p>
+
+<p class="normal"><span><span><span><span><span><span>Figure 4 shows the SGEMM dot product performance with OMP_NUM_THREADS=10 for different matrix sizes. It shows that with a fixed OMP_NUM_THREADS setting, the SGEMM performance across different matrix sizes is relatively stable. The impact of matrix size on performance was similar on both the Intel AVX2 and Intel AVX-512.</span></span></span></span></span></span></p>
+
+<p class="normal"> </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 4: SGEMM dot product performance for both Intel AVX-512 and Intel AVX2  with OMP_NUM_THREADS=10 for different matrix sizes (M=K=N)" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="e01bddf2-7c27-42ef-8cfd-44f6031b7fcf" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/numpy-mp-fig4.png" width="624" height="340" alt="SGEMM dot product performance for both Intel AVX-512 and Intel AVX2  with OMP_NUM_THREADS=10 for different matrix sizes (M=K=N). " typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="normal text-align-center"> </p>
+
+<p class="normal"><span><span><span><span><span><span>Experiment 1 and 2 show that OMP_NUM_THREADS and matrix size have a similar impact on performance for both Intel AVX-512 and Intel AVX2. For simplicity, the newer Intel AVX-512 was selected as the basis for subsequent experiments.</span></span></span></span></span></span></p>
+
+<p class="normal"> </p>
+
+<h3><span><span><span><span><span><span>Experiment 3: Results with different matrix sizes and numbers of threads</span></span></span></span></span></span></h3>
+
+<p><span><span><span><span><span><span>Experiment 3 shows how the number set for OMP_NUM_THREADS impacts performance for different matrix sizes (M=K=N). Using the Intel AVX-512 container, OMP_NUM_THREADS was set to values ranging from 1 to 20 and the SGEMM benchmark was run for matrices ranging from 512 to 2048. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Figure 5 shows the SGEMM dot product performance with Intel AVX-512 for various thread counts and matrix sizes. The chart shows that the benchmark reached maximum performance for most matrix sizes when OMP_NUM_THREADS = 10.</span></span></span></span></span></span></p>
+
+<p> </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 5: SGEMM dot product performance with Intel AVX-512 for various threads and matrix sizes (M=K=N)" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="b5a55b66-4c74-408a-a4c1-4a33d738d441" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/numpy-mp-fig5.png" width="624" height="341" alt="SGEMM dot product performance with Intel AVX-512 for various threads and matrix sizes (M=K=N)." typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="text-align-center"> </p>
+
+<p class="text-align-center"> </p>
+
+<h3><span><span><span><span><span><span>Experiment 4: Comparison of different CPU resource management strategies in Kubernetes</span></span></span></span></span></span></h3>
+
+<p><span><span><span><span><span><span>For CPU-bound workloads like SGEMM, the performance is impacted by both the number of SIMD/threads and by the type of infrastructure it is deployed on. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>CPUs are referred to as <a href="https://kubernetes.io/docs/concepts/configuration/manage-compute-resources-container/">compute resources in Kubernetes</a>. Compute resources are measurable quantities that can be requested, allocated, and consumed</span></span></span></span></span></span><span><span><span><span><span><span>. There are multiple  <a href="https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/">CPU management policies</a> and quality of service policies, including the default policy with </span></span></span></span></span></span><a href="https://en.wikipedia.org/wiki/Completely_Fair_Scheduler"><span><span><span><span><span><span><span><span>Completely Fair Scheduler (CFS)</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> quota, a static policy with BestEffort, Burstable, and Guaranteed QoS</span></span></span></span></span></span><span><span><span><span><span><span>. Each of these policies depends on CPU quota, managed by cgroupfs within the <a href="https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt">Linux kernel CPU subsystem</a></span></span></span></span></span></span><span><span><span><span><span><span>.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>In experiment 4, two strategies were tested on a matrix size 1280 (M=K=N) across a range of limits: </span></span></span></span></span></span></p>
+
+<p><span><span><span><strong><span><span>Strategy A:</span></span></strong></span></span></span><span><span><span><span><span><span> Set OMP_NUM_THREADS=10 statically in the Kubernetes service, based on the outcome of experiment 3.</span></span></span></span></span></span></p>
+
+<p><span><span><span><strong><span><span>Strategy B:</span></span></strong></span></span></span><span><span><span><span><span><span> Set OMP_NUM_THREADS equal to the limits of CPU quota specified by the Kubernetes service configuration. The following example shows an excerpt from the Kubernetes service YAML file implementing Strategy B with a value of 5:</span></span></span></span></span></span></p>
+
+<pre>
+<code class="language-yaml">   spec:
+     containers:
+     - name: numpy-mp
+       image: clearlinux/numpy-mp
+       resources:
+         limits:
+           cpu: “5”
+       env:
+       - name: OMP_NUM_THREADS
+         value: “5”
+</code></pre>
+
+<p class="normal"> </p>
+
+<p class="normal"><span><span><span><span><span><span>Figure 6 compares the results of running the SGEMM benchmark with both strategies. The chart shows that Kubernetes limits=10 is the inflection point. It is notable that 10 is the number of physical cores on the CPU of the test system. When the CPU resources requested by the container are less than the number of physical cores of the CPU (left of limits=10 in Figure 6) Strategy B was more performant.  When the CPU resources requested by the container are greater than the number of physical cores of the CPU (right of limits=10 in Figure 6) Strategy A was more performant. Interestingly, neither approach achieved the best performance across all Kubernetes limits settings.</span></span></span></span></span></span></p>
+
+<p class="normal text-align-center"><br />
+ </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 6: SGEMM performance with Intel AVX-512 on Kubernetes for matrix size 1280 (M=K=N) using different CPU resource management strategies" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="4c3440d0-cc14-4b21-9f77-9ecfb56a77d4" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/numpy-mp-fig6.png" width="624" height="340" alt="SGEMM performance with Intel AVX-512 on Kubernetes for matrix size 1280 (M=K=N) using different CPU resource management strategies  " typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="normal text-align-center"><br />
+ </p>
+
+<h2><span><span><span><strong><span><span>Analysis and Tuning</span></span></strong></span></span></span></h2>
+
+<p><span><span><span><span><span><span>OpenBLAS calculates OMP_NUM_THREADS according to the Linux </span></span></span></span></span></span><a href="http://man7.org/linux/man-pages/man3/sysconf.3.html"><span><span><span><span><span><span><span><span>sysconf</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>() function in a traditional way. It is not aware of Kubernetes CPU quota configurations. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Using limits=5 as an example of a CPU limit less than the number of physical cores on the system, the CPU resource available to the NumPy pod is limited by Kubernetes to 5. With limits=5:</span></span></span></span></span></span></p>
+
+<ul><li><span><span><span><span><span><span>OpenBLAS sets the number of threads to 10 in Strategy A, as shown in Figure 6. All threads run on a total of 10 cores, but only get half time slices each due to the Kubernetes quota limit. To limit CPU resources of the pod to 5, Kubernetes will throttle the container and artificially restrict the CPU, which <a href="https://cloud.google.com/blog/products/gcp/kubernetes-best-practices-resource-requests-and-limits">introduces additional overhead</a></span></span></span></span></span></span><span><span><span><span><span><span>.</span></span></span></span></span></span><br />
+	 </li>
+	<li><span><span><span><span><span><span>OpenBLAS sets the thread number to 5 in Strategy B, as shown in Figure 6. These 5 threads run on 5 cores with full-time slices. Kubernetes does not intercept CPU throttling. Consequently, there is no additional overhead.</span></span></span></span></span></span></li>
+</ul><p><span><span><span><span><span><span>Using limits=15 as an example of a CPU limit greater than the number of physical cores on the system, the CPU resources available to NumPy is limited by Kubernetes to 15. With limits=15:</span></span></span></span></span></span></p>
+
+<ul><li><span><span><span><span><span><span>OpenBLAS still sets the number of threads to 10 in Strategy A. All threads run on a total of 10 cores and get full-time slices. There is no additional overhead.</span></span></span></span></span></span><br />
+	 </li>
+	<li><span><span><span><span><span><span>OpenBLAS sets the number of threads to 15 in Strategy B. These 15 threads run on 15 cores (only 10 physical cores) with multithreading. There is additional overhead due to overscheduling.</span></span></span></span></span></span><br /><br /><span><span><span><span><span><span>For CPU-bound workloads, one thread can consume the full computing capability of one physical core. Multiple concurrent threads running on the same physical core will contend for the CPU resources and introduce additional overhead.</span></span></span></span></span></span></li>
+</ul><p> </p>
+
+<h2><span><span><span><span><span><span>Solution</span></span></span></span></span></span></h2>
+
+<p><span><span><span><span><span><span>Based on these findings, an adaptive approach was developed that computes the number of OpenMP threads to use in order to minimize CPU overhead, with consideration to the assigned compute resource in Kubernetes. The number of threads is determined based on a number of CPU attributes including Kubernetes CPU quota, number of physical cores, the affinities, and topology of the cores. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>The adaptive approach implements a simple algorithm:</span></span></span></span></span></span></p>
+
+<ul><li><span><span><span><span><span><span>When round-up(</span></span></span></span></span></span><span><span><span><span><em><span>assigned compute resource</span></em></span></span></span></span><span><span><span><span><span><span>) &lt;= </span></span></span></span></span></span><span><span><span><span><em><span>number of physical cores</span></em></span></span></span></span>
+
+	<ul><li><span><span><span><span><span><span>set </span></span></span></span></span></span><span><span><span><strong><span><span>OMP_NUM_THREADS</span></span></strong></span></span></span><span><span><span><span><span><span>=round-up(</span></span></span></span></span></span><span><span><span><span><em><span>assigned compute resource</span></em></span></span></span></span><span><span><span><span><span><span>)</span></span></span></span></span></span><br />
+		 </li>
+	</ul></li>
+	<li><span><span><span><span><span><span>When round-up(assigned compute resource) &gt; </span></span></span></span></span></span><span><span><span><span><em><span>number of physical cores</span></em></span></span></span></span>
+	<ul><li><span><span><span><span><span><span>set </span></span></span></span></span></span><span><span><span><strong><span><span>OMP_NUM_THREADS</span></span></strong></span></span></span><span><span><span><span><span><span>=</span></span></span></span></span></span><span><span><span><span><em><span>number of physical cores</span></em></span></span></span></span></li>
+	</ul></li>
+</ul><p><span><span><span><span><span><span>Figure 7 compares the results of running the SGEMM benchmark with the adaptive strategy, compared to the other static strategies.  The adaptive strategy provided a solution that achieves an optimized solution across all the tested Kubernetes CPU quota scenarios.</span></span></span></span></span></span></p>
+
+<p> </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 7: SGEMM performance with Intel AVX-512 on Kubernetes for matrix size 1280 (M=K=N) using different CPU resource management strategies" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="b9880a01-d818-4a4a-ad63-b297a3cf5fc4" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/numpy-mp-fig7.png" width="624" height="341" alt="SGEMM performance with Intel AVX-512 on Kubernetes for matrix size 1280 (M=K=N) using different CPU resource management strategies" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="text-align-center"> </p>
+
+<p><span><span><span><span><span><span>The adaptive approach is an ideal solution for multithreaded workloads on a single socket CPU with multiple cores and is applicable for both Docker and Kubernetes containers. For a system with multiple sockets and Non-Uniform Memory Access (NUMA), it’s recommended to split the workload into parallel processes and run concurrently on each NUMA-node using the described adaptive strategy. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Other strategies for resource management that may positively impact performance are not covered in this article. For example, an alternate strategy could divide the input matrix into appropriately sized “chunks” before processing across multiple threads. More advanced customers could consider developing their own CPU resource management strategy.</span></span></span></span></span></span></p>
+
+<p> </p>
+
+<h3><span><span><span><span><span><span>numpy-mp container</span></span></span></span></span></span></h3>
+
+<p><span><span><span><span><span><span>To make this adaptive strategy easy to use, the </span></span></span></span></span></span><a href="https://hub.docker.com/r/clearlinux/numpy-mp"><span><span><span><span><span><span><span><span>clearlinux/numpy-mp container image </span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> was created and published. It is based on Clear Linux OS and includes Python, NumPy, OpenBLAS, and OpenMP. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><em><span>Note: The numpy-mp container is built on open source components from Clear Linux OS, but does not use the proprietary Python library </span></em></span></span></span></span><a href="https://pypi.org/project/intel-numpy/"><span><span><span><span><em><span><span><span>intel-numpy</span></span></span></em></span></span></span></span></a><span><span><span><span><em><span>.The optimizations and configurations of the OpenMP threads setting for Kubernetes are also suitable for other BLAS/MP libraries.</span></em></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>The numpy-mp container provides several configuration variables. Normally these configuration values are not easily accessed inside a container or are set statically at build-time. In the numpy-mp container image, these configuration values are exposed so they can be set by the operator. The configuration variables are:</span></span></span></span></span></span></p>
+
+<ul><li><strong><span><span><span><span><span><span>OMP_NUM_THREADS</span></span></span></span></span></span></strong><br /><span><span><span><span><span><span>Specifies the default number of threads to use in parallel regions.<br /><br />
+	If undefined, an optimized value will be set by the adaptive strategy script </span></span></span></span></span></span><a href="https://github.com/clearlinux/dockerfiles/blob/master/numpy-mp/set-num-threads.sh"><span><span><span><span><span><span><span><span>set-num-threads.sh</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>. This script is called by </span></span></span></span></span></span><a href="https://github.com/clearlinux/dockerfiles/blob/master/numpy-mp/docker-entrypoint.sh"><span><span><span><span><span><span><span><span>docker-entrypoint.sh</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> at container start.</span></span></span></span></span></span><br /><br /><span><span><span><span><span><span>Alternatively, the user may explicitly set its value in either the Docker run command or in the Kubernetes yaml file, according to the application scenario. For example, if the developer splits the workload from the application layer into multiple processes, the OpenMP threads can be set to 1.</span></span></span></span></span></span><br />
+	 </li>
+	<li><strong><span><span><span><span><span><span>OMP_THREAD_LIMIT</span></span></span></span></span></span></strong><br /><span><span><span><span><span><span>Specifies the number of threads to use for the whole program. If undefined, the number of threads is not limited.</span></span></span></span></span></span><br />
+	 </li>
+	<li><strong><span><span><span><span><span><span>OMP_DYNAMIC</span></span></span></span></span></span></strong><br /><span><span><span><span><span><span>Enable or disable the dynamic adjustment of the number of threads within a team. If undefined, dynamic adjustment is disabled by default.</span></span></span></span></span></span><br />
+	 </li>
+	<li><strong><span><span><span><span><span><span>OMP_SCHEDULE</span></span></span></span></span></span></strong><br /><span><span><span><span><span><span>Specifies schedule type and chunk size. If undefined, dynamic scheduling and a chunk size of 1 is used.</span></span></span></span></span></span><br />
+	 </li>
+	<li><strong><span><span><span><span><span><span>OMP_NESTED</span></span></span></span></span></span></strong><br /><span><span><span><span><span><span>Enable or disable nested parallel regions, such as whether team members can create new teams. If undefined, nested parallel regions are disabled by default.</span></span></span></span></span></span></li>
+</ul><h2> </h2>
+
+<h2><span><span><span><strong><span><span>Summary</span></span></strong></span></span></span></h2>
+
+<p><span><span><span><span><span><span>This article analyzes NumPy workload performance on Kubernetes. Factors were identified that impact performance including Kubernetes CPU quota, the number of CPU cores, and active Python parallelization numbers for threads and processes.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>The </span></span></span></span></span></span><a href="https://hub.docker.com/r/clearlinux/numpy-mp"><span><span><span><span><span><span><span><span>clearlinux/numpy-mp</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> container was created with Intel AVX-512 optimized Clear Linux OS content to package the adaptive strategy and make it easy to use. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>An adaptive OpenMP multithreading strategy for Kubernetes was developed that provides configuration points to address the identified factors impacting performance. This solution reduces CPU active cores and achieves improved performance on a Kubernetes cluster when tested with the </span></span></span></span></span></span><a href="https://github.com/xianyi/OpenBLAS/blob/develop/benchmark/scripts/NUMPY/sgemm.py"><span><span><span><span><span><span><span><span>OpenBLAS built-in benchmark for NumPy SGEMM</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>.</span></span></span></span></span></span></p>
+
+<p> </p>
+
+<blockquote>
+<p><span><span><span><span><span><strong><span><span>Notices &amp; Disclaimers</span></span></strong></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span><span><span>Software and workloads used in performance tests may have been optimized for performance only on Intel microprocessors.  Performance tests, such as SYSmark and MobileMark, are measured using specific computer systems, components, software, operations and functions.  Any change to any of those factors may cause the results to vary. You should consult other information and performance tests to assist you in fully evaluating your contemplated purchases, including the performance of that product when combined with other products.   For more complete information visit </span></span></span></span></span></span><a href="http://www.intel.com/benchmarks"><span><span><span><span><span><span><span><span>www.intel.com/benchmarks</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>.</span></span></span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span><span><span>Performance results are based on testing as of <strong>2019/11/21</strong> and may not reflect all publicly available security updates.  See backup for configuration details. No product or component can be absolutely secure. </span></span></span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span><span><span>Your costs and results may vary. </span></span></span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span><span><span>Intel technologies may require enabled hardware, software or service activation.</span></span></span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span><span><span>© Intel Corporation.  Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation or its subsidiaries.  Other names and brands may be claimed as the property of others. ​</span></span></span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span><span><span><span>See backup for configuration details.  For more complete information about performance and benchmark results, visit </span></span></span></span></span></span></span><a href="http://www.intel.com/benchmarks"><span><span><span><span><span><span><span>www.intel.com/benchmarks</span></span></span></span></span></span></span></a><span><span><span><span><span><span><span>    </span></span></span></span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span><span><span><span>Intel does not control or audit third-party data.  You should consult other sources to evaluate accuracy.</span></span></span></span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span><span><span><span>Intel's compilers may or may not optimize to the same degree for non-Intel microprocessors for optimizations that are not unique to Intel microprocessors. These optimizations include SSE2, SSE3, and SSSE3 instruction sets and other optimizations. Intel does not guarantee the availability, functionality, or effectiveness of any optimization on microprocessors not manufactured by Intel. Microprocessor-dependent optimizations in this product are intended for use with Intel microprocessors. Certain optimizations not specific to Intel microarchitecture are reserved for Intel microprocessors. Please refer to the applicable product User and Reference Guides for more information regarding the specific instruction sets covered by this notice.  Notice Revision #20110804</span></span></span></span></span></span></span></span></span></p>
+</blockquote>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="improving-python-numpy-performance-kubernetes-using-clear-linux-os.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/31695","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="../core/assets/vendor/jquery/jquery.min.js%3Fv=3.6.0"></script>
+<script src="../core/misc/polyfills/element.matches.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/once/once.min.js%3Fv=1.0.1"></script>
+<script src="../core/misc/drupalSettingsLoader.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.init.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/extlink/extlink.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/google_analytics/js/google_analytics.js%3Fv=9.4.8"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/js-cookie/js.cookie.min.js%3Fv=3.0.1"></script>
+<script src="../modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js%3Fv=9.4.8" defer></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js%3Frl3r25"></script>
+<script src="../libraries/codesnippet/lib/highlight/highlight.pack.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/codesnippet/js/codesnippet.js%3Fv=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

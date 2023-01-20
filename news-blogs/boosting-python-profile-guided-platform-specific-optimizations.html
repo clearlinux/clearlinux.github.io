@@ -1,0 +1,642 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--819.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="by Victor Rodriguez Bahena This blog is the second in a &quot;behind the magic&quot; series: Part 1: Transparent use of library packages optimized for Intel® architecture Part 2: Profile guided optimizations (this article) Part 3: Boot time: how to fix it Subsequent blogs in this series will be published and linked as they become available." />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/news-blogs/boosting-python-profile-guided-platform-specific-optimizations" />
+<meta property="og:title" content="Boosting Python* from profile-guided to platform-specific optimizations" />
+<meta property="og:description" content="by Victor Rodriguez Bahena This blog is the second in a &quot;behind the magic&quot; series: Part 1: Transparent use of library packages optimized for Intel® architecture Part 2: Profile guided optimizations (this article) Part 3: Boot time: how to fix it Subsequent blogs in this series will be published and linked as they become available." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="../node/819.html" />
+<link rel="shortlink" href="../node/819.html" />
+<script src="../sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js%3Frl3r25" defer></script>
+
+    <title>Boosting Python* from profile-guided to platform-specific optimizations | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/ajax-progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/align.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/autocomplete-loading.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/fieldgroup.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/container-inline.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/clearfix.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/details.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/hidden.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/item-list.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/js.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/nowrap.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/position-container.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/reset-appearance.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/resize.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/sticky-header.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-counter.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-counters.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-general-info.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tabledrag.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tablesort.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tree-child.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/filter/filter.caption.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/entity_embed/css/entity_embed.filter.caption.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/extlink/extlink.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="../libraries/codesnippet/lib/highlight/styles/monokai_sublime.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="../core/assets/vendor/modernizr/modernizr.min.js%3Fv=3.11.7"></script>
+<script src="../core/misc/modernizr-additional-tests.js%3Fv=3.11.7"></script>
+
+</head>
+<body class="alias--news-blogs-boosting-python-profile-guided-platform-specific-optimizations nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="boosting-python-profile-guided-platform-specific-optimizations.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--819.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="../index.html">
+                          <img class="header__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../about.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../developer.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../software.html">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="http://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--819--full.html.twig
+   * node--819.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=2.html' title='Power and Performance'>Power and Performance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Boosting Python* from profile-guided to platform-specific optimizations</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">12 Feb, 2019</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p><em>by Victor Rodriguez Bahena</em></p>
+
+<p dir="ltr">This blog is the second in a "behind the magic" series:</p>
+
+<ul dir="ltr"><li>Part 1: <a href="../blogs/transparent-use-library-packages-optimized-intel-architecture.html">Transparent use of library packages optimized for Intel® architecture</a></li>
+	<li>Part 2: Profile guided optimizations (this article)</li>
+	<li>Part 3: Boot time: how to fix it</li>
+</ul><p>Subsequent blogs in this series will be published and linked as they become available.</p>
+
+<h2><span lang="EN" xml:lang="EN" xml:lang="EN">Introduction </span></h2>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">Python* is a major force in the computing industry. From its humble beginnings as a hobbyist project created to fill time over a Christmas holiday, Python has become one of the <span><a href="https://www.forbes.com/sites/jeffkauflin/2017/05/12/the-five-most-in-demand-coding-languages/#41efe989b3f5"><span>most popular</span></a></span> general-purpose interpreted languages. Its flexibility and ease of use have led to widespread adoption and an enthusiastic user community. Python is now widely used for automation scripts, cloud computing infrastructure, and deep learning.</span></p>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">Python developers are always looking for ways to improve performance. The Python wiki contains some <span><a href="https://wiki.python.org/moin/PythonSpeed"><span>recommendations</span></a></span> to improve performance and scalability in a Python application that range from using the best algorithms to taking advantage of interpreter optimizations. Most of these proposed optimizations are strategies and suggestions on how to best use Python language features and are outside the scope of what a modern Linux distribution can control. However, even if these suggestions are followed, it's quite possible that a Python application is not realizing its maximum performance because there are optimizations that a Linux distribution does heavily influence -- enabling Python and accompanying modules and shared libraries to make the best use of the underlying hardware.</span></p>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">Clear Linux developers have invested heavily in improving the performance of libraries and tools across multiple levels of the Python stack. The goal is to enable developers to realize the full potential of Intel® architecture without having to do anything special themselves. This is achieved by using techniques like profile-guided optimizations and platform-specific optimizations.</span></p>
+
+<h2><span lang="EN" xml:lang="EN" xml:lang="EN">Platform optimizations across the Python stack</span></h2>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">The next sections describe the following platform optimizations across the Python stack in the Clear Linux project. </span></p>
+
+<ul><li><span lang="EN" xml:lang="EN" xml:lang="EN">Patches to implement Intel® Advanced Vector Extensions compiler flags for distutils and math library</span></li>
+	<li><span lang="EN" xml:lang="EN" xml:lang="EN">Compiler flags to build CPython code </span></li>
+</ul><p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">All changes and patches to Python itself in Clear Linux are documented in the <span><a href="https://github.com/clearlinux-pkgs/python3/blob/master/python3.spec"><span>python3.spec</span></a></span> file, and the <span><a href="https://github.com/clearlinux-pkgs/python3"><span>patches</span></a></span> applied to the original <span><a href="https://www.python.org/ftp/python/"><span>upstream source code</span></a></span> are publically available.</span></p>
+
+<h3><span lang="EN" xml:lang="EN" xml:lang="EN">Distutils</span></h3>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">The first section to review are the patches to enable the build of Intel® Advanced Vector Extensions (Intel® AVX) technology across the Python libraries. The distutils package provides the end user with a vast list of Python libraries for multiple development tools, some of which allow users to build and install additional modules into a Python installation. <span>To build Python libraries for packages that use the upstream Python provided distutils optimized for x86-64 systems, the Clear Linux team modified the </span>distutils<span> tool scripts with the following </span><span><a href="https://github.com/clearlinux-pkgs/python3/blob/master/0004-Add-avx2-and-avx512-support.patch"><span>patch</span></a>: </span></span></p>
+
+<pre>
+<span lang="EN" xml:lang="EN" xml:lang="EN">diff --git a/Lib/distutils/unixccompiler.py b/Lib/distutils/unixccompiler.py</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">index ab4d4de..de09d99 100644</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">--- a/Lib/distutils/unixccompiler.py</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+++ b/Lib/distutils/unixccompiler.py</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">@@ -116,6 +116,10 @@ class UnixCCompiler(CCompiler):</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>         </span>try:</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>        </span><span>     </span>self.spawn(compiler_so + cc_args + [src, '-o', obj] +</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>                        </span>extra_postargs)</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>            </span>self.spawn(compiler_so + cc_args+ ["-march=haswell", "-O3", "-fno-semantic-interposition", "-ffat-lto-objects", "-flto=4"] + [src, '-o', obj + ".avx2"] +</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>                       </span>extra_postargs)</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>            </span>self.spawn(compiler_so + cc_args+ ["-march=skylake-avx512", "-O3", "-fno-semantic-interposition", "-ffat-lto-objects", "-flto=4", "-mprefer-vector-width=512"] + [src, '-o', obj + ".avx512"] +</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>                       </span>extra_postargs)</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>         </span>except DistutilsExecError as msg:</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>             </span>raise CompileError(msg)</span></pre>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">This part of the patch builds two more versions of the Python libraries using these flags: </span></p>
+
+<pre>
+<span lang="EN" xml:lang="EN" xml:lang="EN">-march=haswell</span><span lang="EN" xml:lang="EN" xml:lang="EN"> </span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">-march=skylake-avx512</span></pre>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">Each library compiled with these flags ends with the suffix </span><span lang="EN" xml:lang="EN" xml:lang="EN">.avx2</span><span lang="EN" xml:lang="EN" xml:lang="EN"> and </span><span lang="EN" xml:lang="EN" xml:lang="EN">.avx512</span><span lang="EN" xml:lang="EN" xml:lang="EN"> respectively. They are installed in the </span><code>/usr/lib/python3.7/site-packages/</code><span lang="EN" xml:lang="EN" xml:lang="EN"> directory as the pandas library file as follows: </span></p>
+
+<pre>
+<span lang="EN" xml:lang="EN" xml:lang="EN">pandas/_libs/skiplist.cpython-37m-x86_64-linux-gnu.so.avx2</span></pre>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">(The <span>Python library for data manipulation and analysis</span><span> is called the pandas library.</span>)</span></p>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">In addition, we added support for dynamic loading of extension modules. This is done with a <span><a href="https://github.com/clearlinux-pkgs/python3/blob/master/0004-Add-avx2-and-avx512-support.patch#L52"><span>hack</span></a></span> on the file <span><a href="https://github.com/python/cpython/blob/master/Python/dynload_shlib.c"><span>dynload_shlib.c</span></a></span> as shown below:</span></p>
+
+<pre>
+<span lang="EN" xml:lang="EN" xml:lang="EN">diff --git a/Python/dynload_shlib.c b/Python/dynload_shlib.c</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">index f271193..4315237 100644</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">--- a/Python/dynload_shlib.c</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+++ b/Python/dynload_shlib.c</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">@@ -62,6 +62,8 @@ _PyImport_FindSharedFuncptr(const char *prefix,</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>     </span>char funcname[258];</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>     </span>char pathbuf[260];</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>     </span>int dlopenflags=0;</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>char *pathname2;</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>char *pathname3;</span>
+
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>     </span>if (strchr(pathname, '/') == NULL) {</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>         </span>/* Prefix bare filename with "./" */</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">@@ -93,7 +95,19 @@ _PyImport_FindSharedFuncptr(const char *prefix,</span>
+
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>     </span>dlopenflags = PyThreadState_GET()-&gt;interp-&gt;dlopenflags;</span>
+
+<span lang="EN" xml:lang="EN" xml:lang="EN">-<span>    </span>handle = dlopen(pathname, dlopenflags);</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>   </span><span> </span>pathname2 = malloc(strlen(pathname) + strlen(".avx2") + 1);</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>sprintf(pathname2, "%s%s", pathname, ".avx2");</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>pathname3 = malloc(strlen(pathname) + strlen(".avx512") + 1);</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>sprintf(pathname3, "%s%s", pathname, ".avx512");</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>if (__builtin_cpu_supports("avx512dq") &amp;&amp; access(pathname3, R_OK) == 0)</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>        </span>handle = dlopen(pathname3, dlopenflags);</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>else if (__builtin_cpu_supports("avx2") &amp;&amp; access(pathname2, R_OK) == 0)</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>        </span>handle = dlopen(pathname2, dlopenflags);</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>else</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>        </span>handle = dlopen(pathname, dlopenflags);</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>free(pathname2);</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">+<span>    </span>free(pathname3);</span>
+
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>     </span>if (handle == NULL) {</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>         </span>PyObject *mod_name;</span></pre>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">This change enables dynamic loading of extension modules based on the platform where our Python module is running.</span></p>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">By integrating these patches, it is possible to have Intel® AVX2 and Intel® AVX-512 compiled libraries of Python plugin packages such as: </span></p>
+
+<ul><li><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://github.com/clearlinux-pkgs/scikit-learn"><span>scikit-learn</span></a></span></li>
+	<li><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://github.com/clearlinux-pkgs/pandas"><span>Pandas</span></a></span></li>
+	<li><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://github.com/clearlinux-pkgs/Matplotlib"><span>Matplotlib</span></a></span></li>
+</ul><p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">However, if we review the SPEC files of these projects, we will not see any patches for Intel® AVX technology enablement or multiple %build</span><span lang="EN" xml:lang="EN" xml:lang="EN"> sections on the SPEC files. This is because most libraries generate platform specific libraries correctly, thanks to the above patch to distutils.</span></p>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">Similar distutil patches must be implemented for packages that use their own distutils, like the NumPy project, which is the fundamental package for scientific computing on Python. The NumPy project contains embedded distutils. For this reason, the Clear Linux project team implemented similar patches (<span><a href="https://github.com/clearlinux-pkgs/numpy/blob/master/avx2-distutils.patch"><span>avx2-distutils.patch</span></a></span> and <span><a href="https://github.com/clearlinux-pkgs/numpy/blob/master/avx2-fortran-distutils.patch"><span>avx2-fortran-distutils.patch</span></a></span>) to enable the Intel® AVX technology across the NumPy stack.</span></p>
+
+<h3><span lang="EN" xml:lang="EN" xml:lang="EN">Math library</span></h3>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">The top-level makefile for Python has one section for the <a href="https://github.com/python/cpython/blob/master/Makefile.pre.in#L599"><span>math</span></a> library, which is a library shared by the math and cmath modules. The math module provides access to the mathematical functions defined by the C standard and the <a href="https://docs.python.org/3/library/cmath.html#module-cmath"><span>cmath</span></a> module is used for complex numbers<span>. The Clear Linux project added </span>platform optimization by enabling the Intel® AVX technology for this library via the following <span><a href="https://github.com/clearlinux-pkgs/python3/blob/master/0005-Build-avx2-and-avx512-versions-of-the-math-library.patch"><span>patch</span></a></span>: </span></p>
+
+<pre>
+<span lang="EN" xml:lang="EN" xml:lang="EN">diff --git a/Makefile.pre.in b/Makefile.pre.in
+index baa1d0a..7b07d60 100644
+--- a/Makefile.pre.in
++++ b/Makefile.pre.in
+@@ -591,6 +591,8 @@ pybuilddir.txt: $(BUILDPYTHON)
+<span> </span># This is shared by the math and cmath modules
+<span> </span>Modules/_math.o: Modules/_math.c Modules/_math.h
+<span> </span><span>     </span>$(CC) -c $(CCSHARED) $(PY_CORE_CFLAGS) -o $@ $&lt;
++<span>     </span>$(CC) -c $(CCSHARED) $(PY_CORE_CFLAGS) -march=haswell -o $@.avx2 $&lt;
++<span>     </span>$(CC) -c $(CCSHARED) $(PY_CORE_CFLAGS) -march=skylake-avx512 -o $@.avx512 $&lt;</span></pre>
+
+<h3><span lang="EN" xml:lang="EN" xml:lang="EN">CPython code</span></h3>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://github.com/python/cpython"><span>CPython</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN"> is the most widely-used implementation reference implementation of the Python programming language. Written in C and Python, CPython use the auto tools project to configure, build, and install the binaries. In the Clear Linux project, the python3 spec file creates two build environments for platform optimizations. One regular environment: </span></p>
+
+<pre>
+<span lang="EN" xml:lang="EN" xml:lang="EN">%configure %python_configure_flags --enable-shared</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">make %{?_smp_mflags}</span></pre>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">The second environment uses the 64-bit CPU optimizations for </span><span lang="EN" xml:lang="EN" xml:lang="EN">4th generation Intel® Core™ processors</span><span lang="EN" xml:lang="EN" xml:lang="EN"> (formerly codenamed Haswell): </span></p>
+
+<pre>
+<span lang="EN" xml:lang="EN" xml:lang="EN">pushd ../Python-avx2</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">export CFLAGS="$CFLAGS -march=haswell -mfma<span>  </span>"</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">export CXXFLAGS="$CXXFLAGS -march=haswell -mfma"</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">%configure %python_configure_flags --enable-shared --bindir=/usr/bin/haswell</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">make %{?_smp_mflags}</span></pre>
+
+<h2><span lang="EN" xml:lang="EN" xml:lang="EN">Profile-guided optimizations across Python </span></h2>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">The other part of our approach for improving Clear Linux for Python performance uses <span><a href="https://gcc.gnu.org/wiki/AutoFDO/Tutorial"><span>profile-guided optimization (PGO)</span></a></span>. PGO, also known as feedback-directed optimization (FDO), is a compiler optimization technique that uses profiling to improve program runtime performance. PGO in GCC uses static instrumentation to collect profiles, then GCC uses execution profiles to guide optimizations such as instruction scheduling, branch prediction, basic block reordering, function splitting, and register allocation. </span></p>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">In GCC, the current method of PGO optimization involves the following steps: </span></p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-type="media" data-entity-uuid="e0327994-01bc-49dc-8388-2c3f467fa957" data-langcode="en" data-entity-embed-display-settings="[]" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/python-opt-120.png" width="698" height="120" alt="Profile guided optimization" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<ol start="1" type="1"><li><span lang="EN" xml:lang="EN" xml:lang="EN">Build an instrumented version of the program using the GCC flag </span><code>-fprofile-generate</code></li>
+	<li><span lang="EN" xml:lang="EN" xml:lang="EN">Run the instrumented program with representative training data to collect the execution profile.</span></li>
+	<li><span lang="EN" xml:lang="EN" xml:lang="EN">Rebuild the source using the profile date as feedback with the GCC option </span><code>-fprofile-use=sort.gcda</code></li>
+</ol><p><span lang="EN" xml:lang="EN" xml:lang="EN">The upstream Python project provides an easy mechanism in the makefile to change the training task according to the user needs. Clear Linux takes advantage of this and applies a <span><a href="https://github.com/python/cpython/blob/master/Makefile.pre.in#L502"><span>patch</span></a></span> to the Python 3 makefile to change the task to run:</span></p>
+
+<pre>
+<span lang="EN" xml:lang="EN" xml:lang="EN">run_profile_task:</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN"><span>       </span>$(LLVM_PROF_FILE) $(RUNSHARED) ./$(BUILDPYTHON) $(PROFILE_TASK) || true</span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">where the </span><span lang="EN" xml:lang="EN" xml:lang="EN">PROFILE_TASK </span><span lang="EN" xml:lang="EN" xml:lang="EN">is defined in: </span>
+<span lang="EN" xml:lang="EN" xml:lang="EN">PROFILE_TASK=&lt;choose your favorite training app&gt;</span></pre>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">This change is critical because choosing the proper training task is crucial in the FDO technology. Why? Because each application will generate different block and edge frequency counts. The information in one profile could optimize the performance of one use case, but could also have a negative effect on the performance of other applications at the same time. For this reason, we highly recommend that developers have the option to define the proper training task for their application use case. </span></p>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">Clear Linux provides an example of how to set up a training task with the patch <span><a href="https://github.com/clearlinux-pkgs/python3/blob/master/0003-Use-pybench-to-optimize-python.patch"><span>use-pybench-to-optimize-python.patch</span></a></span>, however other benchmarks can be used for multiple applications and use cases. Another example of benchmarks to be used as a training task is the <span><a href="https://github.com/python/performance"><span>Python performance benchmark suite</span></a></span>.</span></p>
+
+<h2><span lang="EN" xml:lang="EN" xml:lang="EN">Conclusion</span></h2>
+
+<p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">In this blog post, we have shown two methodologies to improve the performance of Python libraries as well as the language interpreter (</span><code>/usrbin/python</code><span lang="EN" xml:lang="EN" xml:lang="EN">) for multiple scenarios: </span></p>
+
+<ul><li><span lang="EN" xml:lang="EN" xml:lang="EN">If we want to use optimized instruction sets provided by new x86 platforms, we need to make sure that our operating system provides the platform optimizations that we need. Arithmetic applications such as big data and machine learning are examples of end user applications that could benefit from this performance boost methodology. </span></li>
+	<li><span lang="EN" xml:lang="EN" xml:lang="EN">If our operating system runs only one kind of application, like a container use case, we could use the FDO performance boost methodology, where the Python interpreter has been optimized for a specific task, such as instruction scheduling, basic block reordering, function splitting, or register allocation. </span></li>
+</ul><p class="MsoNormal"><span lang="EN" xml:lang="EN" xml:lang="EN">In the end, the methodology chosen to improve the performance of a Python application is tightly coupled to the data and experiments that sustain it. However, regardless of the workload and use case, Python on Clear Linux will maximize the performance of the underlying hardware.</span></p>
+
+<p> </p>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="boosting-python-profile-guided-platform-specific-optimizations.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/819","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="../core/assets/vendor/jquery/jquery.min.js%3Fv=3.6.0"></script>
+<script src="../core/misc/polyfills/element.matches.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/once/once.min.js%3Fv=1.0.1"></script>
+<script src="../core/misc/drupalSettingsLoader.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.init.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/extlink/extlink.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/google_analytics/js/google_analytics.js%3Fv=9.4.8"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/js-cookie/js.cookie.min.js%3Fv=3.0.1"></script>
+<script src="../modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js%3Fv=9.4.8" defer></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js%3Frl3r25"></script>
+<script src="../libraries/codesnippet/lib/highlight/highlight.pack.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/codesnippet/js/codesnippet.js%3Fv=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

@@ -1,0 +1,527 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--729.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="by Victor Rodriguez Bahena This blog is the first in a &quot;behind the magic&quot; series: Part 1: Transparent use of library packages optimized for Intel® architecture Part 2: Profile guided optimizations  Part 3: Boot time: how to fix it Subsequent blogs in this series will be published and linked as they become available." />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/news-blogs/transparent-use-library-packages-optimized-intel-architecture" />
+<meta property="og:title" content="Transparent use of library packages optimized for Intel® architecture" />
+<meta property="og:description" content="by Victor Rodriguez Bahena This blog is the first in a &quot;behind the magic&quot; series: Part 1: Transparent use of library packages optimized for Intel® architecture Part 2: Profile guided optimizations  Part 3: Boot time: how to fix it Subsequent blogs in this series will be published and linked as they become available." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="../blogs/transparent-use-library-packages-optimized-intel-architecture.html" />
+<link rel="shortlink" href="729.html" />
+<script src="https://clearlinux.org/sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js?rl3r25" defer></script>
+
+    <title>Transparent use of library packages optimized for Intel® architecture | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/ajax-progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/align.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/autocomplete-loading.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/fieldgroup.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/container-inline.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/clearfix.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/details.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/hidden.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/item-list.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/js.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/nowrap.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/position-container.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/reset-appearance.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/resize.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/sticky-header.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-counter.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-counters.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-general-info.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tabledrag.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tablesort.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tree-child.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/extlink/extlink.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/libraries/codesnippet/lib/highlight/styles/monokai_sublime.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="https://clearlinux.org/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+<script src="https://clearlinux.org/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
+
+</head>
+<body class="alias--news-blogs-transparent-use-library-packages-optimized-intel-architecture nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="../blogs/transparent-use-library-packages-optimized-intel-architecture.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--729.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="https://clearlinux.org/">
+                          <img class="header__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31099.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31103.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="https://clearlinux.org/software">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="https://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--729--full.html.twig
+   * node--729.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=2.html' title='Power and Performance'>Power and Performance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Transparent use of library packages optimized for Intel® architecture</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">03 Apr, 2018</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p><em>by Victor Rodriguez Bahena</em></p>
+
+<p>This blog is the first in a "behind the magic" series:</p>
+
+<ul><li>Part 1: Transparent use of library packages optimized for Intel<sup>®</sup> architecture</li>
+	<li>Part 2: <a href="../blogs/boosting-python-profile-guided-platform-specific-optimizations.html">Profile guided optimizations</a> </li>
+	<li>Part 3: Boot time: how to fix it</li>
+</ul><p>Subsequent blogs in this series will be published and linked as they become available.</p>
+
+<h1>Introduction and problem statement</h1>
+
+<p>In the past year, impressive technologies for the data center market were launched; however, many developers do not take advantage of these advances immediately. CPU architectures gain interesting new instructions, but developers choose backward compatibility instead of leveraging innovative architectures. For example, a recent hardware evolution incorporated powerful vectorization instructions, yet many Linux* distributions do not use these instructions in their code. Developers are faced with the challenge of improving operations while supporting existing installations.</p>
+
+<p>In a previous article, we presented <a href="https://lwn.net/Articles/691932/">function multi-versioning (FMV)</a> as one solution to this problem. Starting with GCC 6, FMV is supported in both C and C++. The FMV compiler feature makes it easier to develop Linux applications that take advantage of CPU enhanced instructions without the overhead of replicating functions for each target. However, modifying the source code with an “<code>__attribute__</code>” for each function that is a candidate for vectorization is not always a feasible option.</p>
+
+<p>To address the problem of maximizing performance while preserving compatibility, the glibc project recently introduced the capability to generate optimized binaries for multiple platform targets without source code changes. This article describes the solution and provides an application example that uses a container.</p>
+
+<h1>How to solve the problem</h1>
+
+<p><span><a href="https://sourceware.org/ml/libc-alpha/2017-08/msg00010.html"><span>glibc 2.26</span></a> adds a mechanism to support a single binary library package optimized for different platforms where library selection is performed at runtime. Hongjiu Lu, one of the authors of this article, developed the <a href="https://sourceware.org/git/?p=glibc.git;a=commit;h=1432d38ea04ab5e96f21a38"><span>patch</span></a> to make this solution possible.</span></p>
+
+<p><span><span lang="EN" xml:lang="EN" xml:lang="EN">The patch enables the following:</span> </span></p>
+
+<ul><li>glibc uses hardware detection capabilities during startup to determine the platform in use.</li>
+	<li>glibc builds an array of hardware capability names, which are added to the search path when loading shared objects.</li>
+	<li>During startup, the <code>dl_x86_cpu_features option</code> sets the hardware characteristics by reusing the <code>dl_platform</code>, <code>dl_hwcap</code>, and <code>dl_hwcap_mask</code> variables.</li>
+	<li>During runtime, <code>CPU_FEATURES_ARCH_P</code> (cpu_features) and <code>CPU_FEATURES_CPU_P</code> (cpu_features) are used to set <code>dl_platform</code> with <code>GLRO</code>(dl_platform) = "&lt;platform&gt;".</li>
+	<li><span>glibc uses platform-specific paths to find its shared libraries, for example: <span lang="EN" xml:lang="EN" xml:lang="EN"><code>/usr/lib64/haswell/</code></span> or <span lang="EN" xml:lang="EN" xml:lang="EN"><code>/usr/lib64/haswell/avx512_1/</code></span>. </span></li>
+</ul><p><span>For x86-64, the supported platforms are:</span></p>
+
+<ul><li>haswell: 4th generation Intel® Core™ processors with BMI1, BMI2, LZCNT, MOVBE, POPCNT, Intel® Advanced Vector Extensions 2 (Intel® AVX2), and Intel Fast Memory Access (FMA). A capability, avx512_1, is also added to x86-64 for Advanced Vector Extensions 512 (AVX-512) instruction sets: AVX512F, AVX512CD, AVX512BW, AVX512DQ, and AVX512VL.</li>
+	<li>xeon_phi:  Intel® Xeon Phi™ processors with AVX512F, AVX512CD, AVX512ER, and AVX512PF.</li>
+</ul><h1>Application examples</h1>
+
+<p>The <a href="https://clearlinux.org/">Clear Linux* Project</a> demonstrates how to use this glibc capability in a Linux distribution. First, you must select and compile specific math-heavy libraries for vector instruction optimizations, such as: <code>-march=haswell</code><span lang="EN" xml:lang="EN" xml:lang="EN"> and </span><span lang="EN" xml:lang="EN" xml:lang="EN"><span><code>-march=skylake-avx512</code>. Libraries that benefit from an optimized library package are widely used for machine learning, signal processing, and big data analytics.</span></span></p>
+
+<p>One library used in these fields is OpenBLAS, the core library for math operations. OpenBLAS is an open source implementation of Basic Linear Algebra Subprograms (BLAS). It provides standard interfaces for linear algebra. Replacing the default linear algebra libraries with vector instructions increases speed.</p>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">The following examples show the computation of the dot function for matrix multiplication used in diverse scientific applications with the OpenBLAS library. </span></p>
+
+<pre>
+<code>static double a[4] = {1,2,5,6};
+static double b[4] = {3,4,7,8};
+static double c[4] = {17,20,57,68};
+int N = 2;
+double res;
+for (int i = 0; i &lt; N; i++)
+  for (int j=0; j&lt;N; j++)
+    res = cblas_ddot(N,&amp;a[N*i],1,&amp;b[j],2)</code></pre>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">When we execute this code on a system with a 4th generation Intel® Core™ processor with Intel® AVX2 capabilities but with no </span><span lang="EN" xml:lang="EN" xml:lang="EN">/usr/lib64/haswell/</span><span lang="EN" xml:lang="EN" xml:lang="EN"> optimized library, the strace output shows that the system looks for </span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>/usr/lib64/haswell/libopenblas.so.0</span></span><span lang="EN" xml:lang="EN" xml:lang="EN"> and cannot find it. The glibc resolver ends up using</span><span lang="EN" xml:lang="EN" xml:lang="EN"><span> /usr/lib64/libopenblas.so.0</span></span><span lang="EN" xml:lang="EN" xml:lang="EN"> to provide a valid, but not optimized, </span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>cblas_ddot</span></span><span lang="EN" xml:lang="EN" xml:lang="EN"> function.</span></p>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">However, if we compile OpenBLAS with platform optimizations (</span><a href="https://github.com/clearlinux-pkgs/openblas/blob/master/openblas.spec"><span><span>see this example</span></span></a><span>), then we have </span>the following list of files:</p>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN"><span><span><span><code>/usr/lib64/haswell/libopenblas.so<br />
+/usr/lib64/haswell/libopenblas.so.0<br />
+/usr/lib64/haswell/libopenblas_haswellp-r0.2.20.so</code></span></span></span></span></p>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">When we run the same dot matrix multiplication with glibc 2.26 and the optimized OpenBLAS libraries, the strace output shows that glibc finds and uses </span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>/usr/lib64/haswell/libopenblas.so.0</span></span><span lang="EN" xml:lang="EN" xml:lang="EN">. This success is based on the result of </span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>dl_platform</span></span><span lang="EN" xml:lang="EN" xml:lang="EN"> and </span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>dl_hwcap</span></span><span lang="EN" xml:lang="EN" xml:lang="EN"> we set at boot time. </span></p>
+
+<p><span><span lang="EN" xml:lang="EN" xml:lang="EN">In the Clear Linux* Project, the OpenBLAS package includes files for systems with and without Intel® AVX2 support. Support for both system types allows workload handling improvements depending on the available processor capabilities. The improvements extend to machine learning and big data analytics projects that have benefited from vectorized instructions. </span></span></p>
+
+<p><span><span lang="EN" xml:lang="EN" xml:lang="EN">According to </span><a href="http://www.kdnuggets.com/2014/08/four-main-languages-analytics-data-mining-data-science.html"><span><span>KDnuggets magazine</span></span></a><span>, four languages for analytics, data mining, and data science have become dominant in the last few years. These languages are R*, SAS*, Python*, and SQL*. The KDnuggets article confirms that these languages are used by 91% of data scientists. Applying the advancements in newer computing architectures to these programming languages improves the performance of data science applications.</span></span></p>
+
+<p><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>The next example shows how this solution also benefits a matrix multiplication in R language:</span></span></span></p>
+
+<pre>
+<code>v1 &lt;- matrix(data=c(1,5,2,6),nrow=2,ncol=2)
+v2 &lt;- matrix(data=c(3,7,4,8),nrow=2,ncol=2)
+v1 %*% v2
+Answer
+      [,1] [,2]
+[1,]   17   20
+[2,]   57   68</code></pre>
+
+<p><span><span lang="EN" xml:lang="EN" xml:lang="EN">When we look at the strace output for a program running on a processor with Intel® AVX2 capabilities, </span>we see that the glibc-linked library is /usr/lib64/haswell/libopenblas.so.0 based on the platform discovered at process startup time. Reading the file (using readelf -Ws) shows the functions for matrix multiplication, such as cblas_ddot(), cblas_sdot(), and others. Checking the instructions (using objdump) of the Haswell-optimized OpenBLAS library, we can see the use of the fused multiply and add instruction:</span></p>
+
+<pre>
+<code>vfmadd132ss %xmm6,%xmm3,%xmm0
+vfnmadd213sd (%r9),%xmm1,%xmm2</code></pre>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN"><span>Accessing these types of optimized instructions, using either Intel FMA or Intel® AVX, is possible using the new glibc feature supporting a single binary library package optimized for different platforms linked transparently at run time. </span></span></p>
+
+<h1>Ways to use on containers and virtualization</h1>
+
+<p><span><span lang="EN" xml:lang="EN" xml:lang="EN">Another important factor to consider is deployability. In today's data center world, the need to deploy solutions to customers quickly forces operating system engineers to make a solution available for virtual systems as containers and virtual machines. </span></span></p>
+
+<p><span><span lang="EN" xml:lang="EN" xml:lang="EN">Containers provide a lightweight and stand-alone system including everything needed to run a program, such as system tools, system libraries, and settings. With precompiled and optimized package libraries handled by glibc2.26, a Docker* container user can take advantage of the new architecture's specialized instruction set extensions by running the command: </span></span></p>
+
+<pre>
+<code>docker run -it clearlinux/machine-learning</code></pre>
+
+<p><span><span lang="EN" xml:lang="EN" xml:lang="EN">From a data center administrator’s point of view, this scalable and easy-to-deploy solution allows current data center applications to take advantage of new instruction set extensions without modifying the host operating system. With this change in glibc, users can execute an application inside a container and link to an optimized library provided by the container for the architecture of the host system without having to do anything else. </span></span></p>
+
+<h1><span>Conclusion</span></h1>
+
+<p>Every year, data center technology sees the birth of new instructions and computer architecture technologies. Operating systems and software applications can implement these features to allow customers and users to benefit from their implementation.</p>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">Developers can maximize their use of Intel</span><sup><span lang="EN" xml:lang="EN" xml:lang="EN"><span><span><span><span>®</span></span></span></span></span></sup><span lang="EN" xml:lang="EN" xml:lang="EN"> architecture technology during runtime by implementing either one of these solutions: </span>adding the mechanism to support a single binary library package optimized for different platforms or with <span>multiple versions of the function targeting the specified instruction. </span>As software developers, we are responsible for providing ways to use this technology in scalable and easy-to-deploy solutions like the ones described in this paper.<br /><br />
+Credits: <span>Hongjiu Lu (co-author)</span></p>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="../blogs/transparent-use-library-packages-optimized-intel-architecture.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/729","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="https://clearlinux.org/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+<script src="https://clearlinux.org/core/misc/polyfills/element.matches.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="https://clearlinux.org/core/misc/drupalSettingsLoader.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.init.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/extlink/extlink.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/google_analytics/js/google_analytics.js?v=9.4.8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
+<script src="https://clearlinux.org/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=9.4.8" defer></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js?rl3r25"></script>
+<script src="https://clearlinux.org/libraries/codesnippet/lib/highlight/highlight.pack.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/codesnippet/js/codesnippet.js?v=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

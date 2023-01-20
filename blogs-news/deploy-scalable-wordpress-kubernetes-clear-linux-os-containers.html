@@ -1,0 +1,816 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--31541.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="Describes how to deploy a scalable WordPress instance on a Kubernetes cluster with Clear Linux OS-based containers." />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/blogs-news/deploy-scalable-wordpress-kubernetes-clear-linux-os-containers" />
+<meta property="og:title" content="Deploy scalable WordPress* on Kubernetes* with Clear Linux* OS containers" />
+<meta property="og:description" content="Describes how to deploy a scalable WordPress instance on a Kubernetes cluster with Clear Linux OS-based containers." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="../node/31541.html" />
+<link rel="shortlink" href="../node/31541.html" />
+<script src="../sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js%3Frl3r25" defer></script>
+
+    <title>Deploy scalable WordPress* on Kubernetes* with Clear Linux* OS containers | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/ajax-progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/align.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/autocomplete-loading.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/fieldgroup.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/container-inline.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/clearfix.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/details.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/hidden.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/item-list.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/js.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/nowrap.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/position-container.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/reset-appearance.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/resize.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/sticky-header.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-counter.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-counters.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-general-info.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tabledrag.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tablesort.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tree-child.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/filter/filter.caption.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/entity_embed/css/entity_embed.filter.caption.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/extlink/extlink.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="../libraries/codesnippet/lib/highlight/styles/monokai_sublime.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="../core/assets/vendor/modernizr/modernizr.min.js%3Fv=3.11.7"></script>
+<script src="../core/misc/modernizr-additional-tests.js%3Fv=3.11.7"></script>
+
+</head>
+<body class="alias--blogs-news-deploy-scalable-wordpress-kubernetes-clear-linux-os-containers nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="deploy-scalable-wordpress-kubernetes-clear-linux-os-containers.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--31541.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="../index.html">
+                          <img class="header__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../about.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../developer.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../software.html">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="http://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--31541--full.html.twig
+   * node--31541.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=5.html' title='Maintenance'>Maintenance</a>
+        ,              <a tabindex='3' href='../blogs%3Fcategory=2.html' title='Power and Performance'>Power and Performance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Deploy scalable WordPress* on Kubernetes* with Clear Linux* OS containers</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">07 Nov, 2019</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p class="text-align-center"><em>By Qi Zheng and Rusty Lynch</em></p>
+
+<p><span><span><span>This proof of concept describes how to deploy a scalable WordPress instance on a Kubernetes cluster with Clear Linux OS-based containers.</span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://kubernetes.io/docs/home/"><span>Kubernetes</span></a></span> is an open source orchestration system for automating deployment, scaling, and management of containerized applications. It groups containers that make up an application into logical units for easy management and discovery.</span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://en.wikipedia.org/wiki/WordPress"><span>WordPress</span></a></span> is a popular free and open source blogging tool and a content management system (CMS). It is a <strong>service</strong> based on a popular components of a web hosting stack including a<strong> web server</strong>, <strong>PHP</strong>, and <strong>MySQL</strong>. The components in the WordPress stack include:</span></span></span></p>
+
+<ul><li><span><span><span><strong>PHP: </strong>WordPress is an application written in PHP.</span></span></span></li>
+	<li><span><span><span><strong>MySQL: </strong>WordPress requires a SQL database to persist and maintain data, it is usually MySQL or MariaDB. </span></span></span></li>
+	<li><span><span><span><strong>Web server: </strong>WordPress must be installed on a web server, like Apache or NGINX, to serve as a network ho<span><span>st to be accessed by users.</span></span></span></span></span></li>
+</ul><p><span><span><span>To deploy WordPress on Kubernetes, it helps to remember that containers are the fundamental components of an application. Clear Linux OS provides size-, performance-, and security-optimized containers on <span><a href="https://hub.docker.com/u/clearlinux/"><span>DockerHub</span></a></span>. Three container images are available that include the necessary components for building out the WordPress service.</span></span></span></p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="246c6c1e-34c1-4478-8de5-eb8ef84ad3f6" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/deploy-wp-1.png" width="971" height="335" alt="Figure 1" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p><span><span><span>The details on how to implement Clear Linux OS containers can be found on <span><a href="https://github.com/clearlinux/dockerfiles"><span>GitHub*</span></a></span>.</span></span></span></p>
+
+<h1><span><span><span><span><strong>Prerequisites</strong></span></span></span></span></h1>
+
+<p><span><span><span>This tutorial assumes you have a Kubernetes cluster with three nodes running Clear Linux OS, which can be bare metal or virtual machines. One functions as the master node and the other two function as worker nodes in the Kubernetes cluster.</span></span></span></p>
+
+<ul><li><span><span><span>For detailed instructions on how to install Clear Linux OS, see the <span><a href="https://docs.01.org/clearlinux/latest/get-started/index.html"><span>Clear Linux OS getting started documentation</span></a></span>.</span></span></span></li>
+	<li><span><span><span>For a detailed guide on how to set up Kubernetes, see the documentation on setting up a <span><a href="https://docs.01.org/clearlinux/latest/tutorials/kubernetes.html"><span>Kubernetes cluster with Clear Linux OS</span></a></span>.</span></span></span></li>
+</ul><p><span><span><span>Shared storage, such as NFS, is required to enable scalability across the Kubernetes cluster. Install NFS support on each node by installing the </span></span></span><code>nfs-utils</code><span><span><span> bundle.</span></span></span></p>
+
+<pre>
+<code>$ sudo swupd bundle-add nfs-utils</code></pre>
+
+<p><span><span><span>Verify the health of the Kubernetes cluster before continuing:</span></span></span></p>
+
+<pre>
+<code>$ kubectl get node
+NAME             STATUS   ROLES    AGE    VERSION
+clr-worker1      Ready    &lt;none&gt;    1h   v1.15.2
+clr-worker2      Ready    &lt;none&gt;    1h   v1.15.2
+clr-master       Ready    master    1h   v1.15.1</code></pre>
+
+<h2><span><span><span><span><strong>Scalability philosophy </strong></span></span></span></span><br />
+ </h2>
+
+<h3><span><span><span><span><span>Scaling WordPress</span></span></span></span></span></h3>
+
+<p><span><span><span>Scaling cloud-native-designed applications becomes relatively straightforward since they are designed with decoupled components (commonly referred to as a microservice), using data that is persisted and synchronized across multiple replicas. Because of this architecture, scaling largely involves spawning additional instances of a component with a <span><span>LoadBalancer </span></span>placed in front to distribute the incoming load evenly across backend containers. Since WordPress not a cloud-native application and is a traditionally-designed application by default, scaling it is trickier, but still doable. </span></span></span></p>
+
+<p><span><span><span>Wordpress has persistent data in two locations that require consideration when thinking about scaling: the data in the database and the content on the web server. Typically, the database and web server are close to each other, if not on the same disk on the same server. In this design, multiple instances of the WordPress application communicate with the same database and web server instances, although they may not be on the same host. When scaling the WordPress service, the WordPress application layer should be focused on.</span></span></span></p>
+
+<h3><span><span><span><span><span>Scaling Kubernetes </span></span></span></span></span></h3>
+
+<p><span><span><span>With this type of architecture, shared persistent storage is imperative to achieving the flexibility for scaling. The ReadWriteMany (RWX) <span><a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes"><span>Access Modes</span></a></span> for Kubernetes persistent volume should be used to make sure replicas in different nodes can access the same volumes. <span><a href="https://github.com/kubernetes-incubator/external-storage/tree/master/nfs"><span>nfs-provisioner</span></a></span> is a module that simplifies dynamic storage provisioning on Kubernetes nodes that provide the persistent volumes for the WordPress cluster.</span></span></span></p>
+
+<p><span><span><span>The following diagram shows a summary of the WordPress cluster on Kubernetes. Green lines indicate the interaction between pods and orange lines indicate the interaction between pod and persistent volume.</span></span></span></p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="60d14d2a-0cd7-4654-94fd-c4d5e9453ea2" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/deploy-wp-2.png" width="1266" height="571" alt="Figure 2" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="normal"><span><span><span>In this example, the service is exposed with <span><a href="https://kubernetes.io/docs/concepts/services-networking/service/#nodeport"><span>NodePort</span></a></span> and the WordPress application can be accessed in a browser by simply navigating to:  </span></span></span><code>http://$NodeIP:$NodePort </code></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>NodePort depends on IPtables on the Kubernetes node to randomly select a destination target pods. For details, refer to the doc: </span></span><span lang="EN" xml:lang="EN" xml:lang="EN"><span><a href="https://www.livefire.solutions/nsx-t/Kubernetes-services-exposing-an-application-with-nodeport/"><span>Kubernetes Services – exposing an application with NodePort</span></a></span></span>.</span></span></span></p>
+
+<h1><span><span><span><span><strong>Deploy on Kubernetes</strong></span></span></span></span></h1>
+
+<p><span><span><span>The YAML files used to deploy Wordpress components on Kubernetes are all available in the <span><a href="https://github.com/clearlinux/dockerfiles/tree/master/wordpress"><span>Clear Linux OS Dockerfiles repository</span></a></span>. Use these files as reference templates, they are not for production.</span></span></span></p>
+
+<h2><span><span><span><span><strong>Prepare the NFS persistent volumes</strong></span></span></span></span></h2>
+
+<p><span><span><span>The details of setting up networking and storage for NFS depends on your operating environment and is beyond the scope of this tutorial. This design follows the example in <span><a href="https://github.com/kubernetes-incubator/external-storage/tree/master/nfs"><span>nfs-provisioner</span></a></span> with minor customization.</span></span></span></p>
+
+<ol><li><span><span><span>Enter the commands:</span></span></span></li>
+</ol><pre>
+<code class="language-bash">$ kubectl apply -f rbac.yaml
+$ kubectl apply -f nfs-deployment.yaml
+$ kubectl apply -f pvc-nfs.yaml
+</code></pre>
+
+<ol start="2"><li><span><span><span>Confirm the bounded persistent volumes and claims with the commands:</span></span></span></li>
+</ol><pre>
+<code class="language-bash">$ kubectl get pvNAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM            STORAGECLASS   REASON   AGE
+pvc-b3ff50cf-56c0-4487-8255-33d7785b6aec   500Mi      RWX            Delete           Bound    default/pvc-wp   example-nfs             34s
+pvc-d24ba4d2-3020-48ec-a660-f57d3a76b2e6   500Mi      RWX            Delete           Bound    default/pvc-db   example-nfs             34s
+
+$ kubectl get pvc
+NAME     STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   AGE
+pvc-db   Bound    pvc-d24ba4d2-3020-48ec-a660-f57d3a76b2e6   500Mi      RWX            example-nfs    49s
+pvc-wp   Bound    pvc-b3ff50cf-56c0-4487-8255-33d7785b6aec   500Mi      RWX            example-nfs    49s
+</code></pre>
+
+<p><span><span><span>In this example, the pod is “randomly” assigned to one worker node </span></span></span><code>clr-worker1</code><span><span><span>, all the final database and web host content are persistent in that node.</span></span></span></p>
+
+<p><span><span><span>Note: In this example, the NFS pod is not assigned to one dedicated node (which is best for persistent data performance). If you want to assign a pod to a node, please refer to <span><a href="https://kubernetes.io/docs/concepts/configuration/assign-pod-node/"><span>Assigning Pods to Nodes</span></a></span> for details. </span></span></span></p>
+
+<pre>
+<code class="language-bash">$ kubectl get po -o wide
+NAME                               READY   STATUS    RESTARTS   AGE     IP             NODE             NOMINATED NODE   READINESS GATES
+nfs-provisioner-76957d5487-72twp   1/1     Running   0          4m37s   10.244.1.173   clr-worker1   &lt;none&gt;           &lt;none&gt;
+</code></pre>
+
+<p> </p>
+
+<h2><span><span><span><span><strong>Deploy database and WordPress</strong></span></span></span></span><br />
+ </h2>
+
+<h3><span><span><span><span><span>Create secret password for database</span></span></span></span></span></h3>
+
+<p><span><span><span>The database requires a password. The user defaults to root in this example.</span></span></span></p>
+
+<ol><li><span><span><span>Use the command shown below to generate a password. The password </span></span></span><code>clearlinux</code><span><span><span> is used below just as an example. Always follow password policy best practices.</span></span></span></li>
+</ol><pre>
+<code class="language-bash">$ echo -n "clearlinux" | base64
+Y2xlYXJsaW51eA==
+</code></pre>
+
+<ol start="2"><li><span><span><span>The </span></span></span><code>secret.yaml</code> <span><span><span>file contains: </span></span></span></li>
+</ol><pre>
+<code class="language-bash">apiVersion: v1
+kind: Secret
+metadata:
+  name: mysql-pass
+type: Opaque
+data:
+  password: Y2xlYXJsaW51eA==
+
+$ kubectl apply -f secret.yaml</code></pre>
+
+<ol start="3"><li><span><span><span>With this </span></span></span><code>mysql-pass</code><span><span><span> secret, MariaDB and WordPress can get the password and pass it to MariaDB as environment variables. Here is an example of the part in <span><a href="https://github.com/clearlinux/dockerfiles/blob/master/wordpress/wordpress-deployment.yaml"><span>wordpress-deployment.yaml</span></a></span>.</span></span></span></li>
+</ol><pre>
+<code>    - image: clearlinux/wordpress
+        name: wordpress
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: wordpress-mysql
+        - name: WORDPRESS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-pass
+              key: password</code></pre>
+
+<ol start="4"><li><span><span><span>To expose the WordPress service to users, you must choose <span><a href="https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types"><span>ServiceTypes</span></a></span>. Choose <span><a href="https://kubernetes.io/docs/concepts/services-networking/service/#nodeport"><span>NodePort</span></a></span>. (The type <span><a href="https://kubernetes.io/docs/concepts/services-networking/service/#loadbalancer"><span>LoadBalancer</span></a></span> is not the proper choice, because it is not running in a CSP environment.)</span></span></span></li>
+</ol><pre>
+<code class="language-bash">apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+  labels:
+    app: wordpress
+spec:
+  ports:
+    - port: 80
+      nodePort: 30180
+  selector:
+    app: wordpress
+    tier: frontend
+#  type: LoadBalancer
+  type: NodePort
+</code></pre>
+
+<ol start="5"><li><span><span><span>Deploy using the commands:</span></span></span></li>
+</ol><pre>
+<code class="language-bash">$ kubectl apply -f mysql-deployment.yaml
+service/wordpress-mysql created
+deployment.apps/wordpress-mysql created
+
+$ kubectl apply -f wordpress-deployment.yaml
+service/wordpress created
+configmap/nginx-config created
+deployment.apps/wordpress created
+</code></pre>
+
+<ol start="6"><li><span><span><span>Check the pod status:</span></span></span></li>
+</ol><pre>
+<code class="language-bash">$ kubectl get po -o wide
+NAME                               READY   STATUS    RESTARTS   AGE     IP             NODE             NOMINATED NODE   READINESS GATES
+nfs-provisioner-76957d5487-72twp   1/1     Running   0          68m     10.244.1.173   clr-worker1   &lt;none&gt;           &lt;none&gt;
+wordpress-866d67dc78-5j2jz         2/2     Running   0          3m35s   10.244.6.4     clr-worker2       &lt;none&gt;           &lt;none&gt;
+wordpress-mysql-6fbd666f76-d264f   1/1     Running   0          3m42s   10.244.6.3     clr-worker2       &lt;none&gt;           &lt;none&gt;
+</code></pre>
+
+<p><span><span><span>The database and WordPress are both deployed on node </span></span></span><code>clr-worker2</code><span><span><span>. </span></span></span></p>
+
+<h2><span><span><span><span><strong>Set up WordPress</strong></span></span></span></span></h2>
+
+<ol><li><span><span><span>Create an address to let users access this deployed WordPress service. Since it is <span><a href="https://kubernetes.io/docs/concepts/services-networking/service/#nodeport"><span>NodePort</span></a></span> service type, use the following commands to get the format </span></span></span><code>IP:Port</code><span><span><span>.</span></span></span></li>
+</ol><pre>
+<code class="language-bash">$ kubectl get -o jsonpath="{.spec.ports[0].nodePort}" services wordpress
+30180
+$ IPAddr=`kubectl get nodes -o jsonpath="{.items[0].status.addresses[0].address}"`
+</code></pre>
+
+<ol start="2"><li>
+	<p><span><span><span>This example returned the address, </span></span></span><code>http://$(IPAddr):30180</code><span><span><span>. Open a browser and input this address. The page shown below is displayed.</span></span></span></p>
+	</li>
+</ol><!-- THEME DEBUG --><!-- THEME HOOK: 'entity_embed_container' --><!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' --><div data-align="center" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="29d769e0-c4fe-4d8e-9e94-9a7f2fac84fe" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/deploy-wp-3.png" width="927" height="857" alt="Figure 3" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<ol start="3"><li><span><span><span>Enter the required fields to finish the setup and login again. </span></span></span></li>
+</ol><p><span><span><span>When complete, WordPress is ready to use and you may now write a blog.</span></span></span></p>
+
+<h2><span><span><span><span><strong>Scale the WordPress service</strong></span></span></span></span></h2>
+
+<p><span><span><span>You can scale the WordPress service by adding additional replicas or containers running the WordPress frontend that processes incoming connections. For example, to have four replicas, use the command shown below.</span></span></span></p>
+
+<pre>
+<code>$ kubectl scale deployments/wordpress --replicas=4
+deployment.extensions/wordpress scaled</code></pre>
+
+<p><span><span><span>Check the pod status. There should be four WordPress replicas that were deployed across different nodes. </span></span></span></p>
+
+<p><span><span><span>Please note that in this example, <span><a href="https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/#control-plane-node-isolation"><span>the master node was tainted</span></a></span> to be schedulable, which means one replica was deployed to the master node.</span></span></span></p>
+
+<pre>
+<code class="language-bash">$ kubectl taint nodes --all node-role.kubernetes.io/master-
+
+$ kubectl get po -o wide
+NAME                               READY   STATUS    RESTARTS   AGE   IP             NODE             NOMINATED NODE   READINESS GATES
+nfs-provisioner-76957d5487-w4lss   1/1     Running   0          10m   10.244.1.174   clr-worker1   &lt;none&gt;           &lt;none&gt;
+wordpress-866d67dc78-5gtzg         2/2     Running   0          8s    10.244.6.7     clr-worker2        &lt;none&gt;           &lt;none&gt;
+wordpress-866d67dc78-96jxz         2/2     Running   0          8s    10.244.1.175   clr-worker1   &lt;none&gt;           &lt;none&gt;
+wordpress-866d67dc78-lhd4x         2/2     Running   0          10m   10.244.6.5     clr-worker2        &lt;none&gt;           &lt;none&gt;
+wordpress-866d67dc78-stsgd         2/2     Running   0          8s    10.244.0.244   clr-master          &lt;none&gt;           &lt;none&gt;
+wordpress-mysql-6fbd666f76-xpb2l   1/1     Running   0          10m   10.244.6.6     clr-woker2       &lt;none&gt;           &lt;none&gt;
+</code></pre>
+
+<p><span><span><span>Congratulations!</span></span></span></p>
+
+<p><span><span><span>Now you have a scalable WordPress instance.</span></span></span></p>
+
+<p><span><span><span>Happy highly-available blogging!</span></span></span></p>
+
+<p><span><span><span>As an alternative, all of the steps listed in the example above can be done in one step by using scripts<span lang="EN" xml:lang="EN" xml:lang="EN"><span><span><span><span>.</span></span></span></span></span> Refer to <span><a href="https://github.com/clearlinux/dockerfiles/tree/master/wordpress"><span>Clear Linux Dockerfiles WordPress</span></a></span> on GitHub for details.</span></span></span></p>
+
+<h1><span><span><span><span><strong>Measuring performance</strong></span></span></span></span></h1>
+
+<p><span><span><span>After scaling with more replicas, performance is expected to improve. This section describes how to measure the performance change itself. </span></span></span></p>
+
+<p><span><span><span>A simple test solution can be used as a reference, by using <span><a href="https://github.com/JoeDog/siege"><span>siege, an HTTP benchmarking</span></a></span> tool, to run with replica as one and scaled to four for example. To avoid performance degradation by siege itself, run the test from a machine not joined in the Kubernetes cluster.</span></span></span></p>
+
+<ol><li><span><span><span>Start with one replica by running these commands on the master node:</span></span></span></li>
+</ol><pre>
+<code class="language-bash">$ NodeIP==`kubectl get nodes -o \ jsonpath="{.items[0].status.addresses[0].address}"`
+
+$ kubectl scale deployments/wordpress --replicas=1
+</code></pre>
+
+<ol start="2"><li><span><span><span>From a separate test machine, start a siege load test against the Kubernetes cluster:</span></span></span></li>
+</ol><pre>
+<code class="language-bash">$ siege -c 200 -t 1 -b http://$NodeIP:30180
+</code></pre>
+
+<ol start="3"><li><span><span><span>Repeat this test with replicas scaled to four using this command on the master node:</span></span></span></li>
+</ol><pre>
+<code>$ kubectl scale deployments/wordpress --replicas=4</code></pre>
+
+<ol start="4"><li><span><span><span>From the separate test machine in step 2, start a siege load test against the Kubernetes cluster:</span></span></span></li>
+</ol><pre>
+<code class="language-bash">$ siege -c 200 -t 1 -b http://$NodeIP:30180</code></pre>
+
+<p><span><span><span>Compare the siege test data in both replicas setting, one and four. Typically, performance is better with more replicas, but how much better can it be? It depends on many factors, including node machine performance, node machine numbers, internet speed, and throughput. </span></span></span></p>
+
+<p><span><span><span>For example, a greater than 80% increase in the “throughput” by scaling from one to four was observed in one test environment. Try it in your environment. </span></span></span></p>
+
+<h1><span><span><span><span><strong>Summary</strong></span></span></span></span></h1>
+
+<p><span><span><span>This tutorial goes through a proof of concept on how to deploy a scalable WordPress on Kubernetes cluster with Clear Linux OS based containers. While it is an example, it provides insight into the scalability in the Kubernetes cluster design, while also utilizing Clear Linux OS-optimized containers for the workload. </span></span></span></p>
+
+<ul><li><span><span><span>Download the <span><a href="https://hub.docker.com/r/clearlinux/wordpress"><span>Clear Linux* OS wordpress container image</span></a></span> </span></span></span></li>
+	<li><span><span><span>Learn more about Kubernetes on Clear Linux OS:</span></span></span>
+	<ul><li><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://docs.01.org/clearlinux/latest/tutorials/kubernetes-bp.html"><span>Kubernetes best practices</span></a></span></span></span></span></li>
+		<li><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://docs.01.org/clearlinux/latest/tutorials/kubernetes.html"><span>Install, configure, and start Kubernetes using CRI+O and kata-runtime</span></a></span></span></span></span></li>
+	</ul></li>
+</ul>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="deploy-scalable-wordpress-kubernetes-clear-linux-os-containers.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/31541","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="../core/assets/vendor/jquery/jquery.min.js%3Fv=3.6.0"></script>
+<script src="../core/misc/polyfills/element.matches.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/once/once.min.js%3Fv=1.0.1"></script>
+<script src="../core/misc/drupalSettingsLoader.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.init.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/extlink/extlink.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/google_analytics/js/google_analytics.js%3Fv=9.4.8"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/js-cookie/js.cookie.min.js%3Fv=3.0.1"></script>
+<script src="../modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js%3Fv=9.4.8" defer></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js%3Frl3r25"></script>
+<script src="../libraries/codesnippet/lib/highlight/highlight.pack.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/codesnippet/js/codesnippet.js%3Fv=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

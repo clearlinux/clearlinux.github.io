@@ -1,0 +1,878 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--31597.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="Dynamically Scaling Video Inference at the Edge using Kubernetes* and Clear Linux* OS Authors: Ken Lu, Puneet Sethi" />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/blogs-news/dynamically-scaling-video-inference-edge" />
+<meta property="og:title" content="Dynamically Scaling Video Inference at the Edge" />
+<meta property="og:description" content="Dynamically Scaling Video Inference at the Edge using Kubernetes* and Clear Linux* OS Authors: Ken Lu, Puneet Sethi" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="31597.html" />
+<link rel="shortlink" href="31597.html" />
+<script src="https://clearlinux.org/sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js?rl3r25" defer></script>
+
+    <title>Dynamically Scaling Video Inference at the Edge | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/ajax-progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/align.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/autocomplete-loading.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/fieldgroup.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/container-inline.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/clearfix.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/details.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/hidden.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/item-list.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/js.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/nowrap.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/position-container.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/reset-appearance.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/resize.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/sticky-header.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-counter.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-counters.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-general-info.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tabledrag.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tablesort.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tree-child.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/filter/filter.caption.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/entity_embed/css/entity_embed.filter.caption.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/extlink/extlink.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/libraries/codesnippet/lib/highlight/styles/monokai_sublime.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="https://clearlinux.org/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+<script src="https://clearlinux.org/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
+
+</head>
+<body class="alias--blogs-news-dynamically-scaling-video-inference-edge nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="31597.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--31597.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="https://clearlinux.org/">
+                          <img class="header__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31099.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31103.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="https://clearlinux.org/software">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="https://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--31597--full.html.twig
+   * node--31597.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=2.html' title='Power and Performance'>Power and Performance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Dynamically Scaling Video Inference at the Edge</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+      <p class="blog_detail__author">
+              Puneet Sethi
+                  </p>
+  
+      <p class="blog_detail__date">19 Dec, 2019</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <h1>Dynamically Scaling Video Inference at the Edge using Kubernetes* and Clear Linux* OS</h1>
+
+<p class="text-align-center"><em>Authors: Ken Lu, Puneet Sethi</em></p>
+
+<h2>Introduction</h2>
+
+<p dir="ltr">This case study describes how to redesign a traditional video inference pipeline with a monolithic architecture into a cloud-native architecture. Our use case combines edge computing and video inference. We explore how the new cloud-native architecture allows us use Kubernetes* pod scaling for a complex edge inference solution. <br /><br />
+The demo source code is published on <a href="https://github.com/clearlinux/cloud-native-demos">GitHub</a>. The software uses the <a href="https://software.intel.com/en-us/openvino-toolkit">Intel® Distribution of OpenVINO™</a> and <a href="https://hub.docker.com/u/clearlinux">container images based on Clear Linux* OS</a>.</p>
+
+<h2><br />
+Background</h2>
+
+<p dir="ltr"><a href="https://thenewstack.io/why-kubernetes-has-emerged-as-a-key-ingredient-in-edge-computing/">Kubernetes has rapidly become a key ingredient in edge computing</a>. With Kubernetes, companies can run containers at the edge in a way that maximizes resources, makes testing easier, and allows DevOps teams to move faster and more effectively as organizations consume and analyze more data in the field. </p>
+
+<p dir="ltr">However, a challenge when moving to a container-based Kubernetes cluster is understanding how to evolve traditional software with monolithic architectures or service-oriented architectures (SOA) into cloud-native architectures that are more appropriate for <a href="https://en.wikipedia.org/wiki/Microservices">microservices</a>. </p>
+
+<p dir="ltr">Take video inference for example: A traditional video inference pipeline includes fetching a frame from a video source, performing inference on the frame against a pre-loaded model, and outputting the result - all executed within a single thread/process. This traditional single thread/process approach has limitations: Scaling resources is complex and potentially expensive. This is problematic in a cloud environment where scaling in response to dynamic needs is necessary.  </p>
+
+<p dir="ltr">In comparison, a modular <a href="https://cloud.google.com/blog/products/application-development/5-principles-for-cloud-native-architecture-what-it-is-and-how-to-master-it">cloud-native architecture</a> provides many benefits such as:</p>
+
+<ul><li dir="ltr">
+	<p dir="ltr">Flexible deployment across cloud data centers and edge</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Independent scaling on diverse edge hardware, supporting a variety of workloads</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Easier operations for devops teams</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Reduced disruption of the end-user experience</p>
+	</li>
+</ul><h2><br />
+Case Study</h2>
+
+<p dir="ltr">Video inference is at the heart of many of edge AI solutions such as self-driving systems, smart cities, and intelligent manufacturing. We use the smart retail use case to better understand the requirements of edge AI solutions with video inference . Smart retail is a term used to describe improving all aspects of the buyer and seller experience with technology. Some potential requirements for a smart retail system using video inference are:</p>
+
+<ul><li dir="ltr">
+	<p dir="ltr">When a customer enters the store, a smart store should be able to authenticate the customer and open the door at the right time.<br /><br /><strong>Solution:</strong> Have one or more cameras to detect people and perform facial recognition.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">While a customer is browsing, a smart store should be able to recognize a customer’s position in the store and present a customized shopping menu to the customer.<br /><br /><strong>Solution: </strong>Have one or more cameras to do body detection/recognition and perform behavior analysis.<br />
+	 </p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">When a customer exits the store, a smart store should be able to automatically charge payment based on the person exiting and the goods removed from the store.<br /><br /><strong>Solution: </strong>Have one or more cameras to do object detection and perform facial recognition.</p>
+	</li>
+</ul><p dir="ltr">In practice, many cameras must be in place to meet the various inference requirements such as facial recognition, people/body recognition, and object recognition. Inference engines can run in the cloud, but increasingly are also running on local servers at the edge for real-time decision making. The need for diverse inference models that can be deployed from cloud to edge has been addressed by many cloud service providers (CSP) with solutions like <a href="https://docs.microsoft.com/en-us/azure/stream-analytics/">Azure* Stream Analytics</a> and <a href="https://aws.amazon.com/greengrass/ml/?nc1=h_ls">AWS* Greengrass</a>.</p>
+
+<p dir="ltr">When developing an inference service, open source projects like OpenVINO can be used for flexible vertical scaling on heterogeneous edge computation hardware and accelerators, including CPU, GPU, VPU (Intel® Movidius™), and FPGA.</p>
+
+<p dir="ltr"> </p>
+
+<h2>Challenges with inference on Kubernetes</h2>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 1: Monolithic designs of inference services" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="cde2966b-15fd-4474-8121-8e25f559f69f" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="https://clearlinux.org/sites/default/files/dsei-fig1_0.png" width="1045" height="607" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p dir="ltr">In the <a href="https://docs.openvinotoolkit.org/latest/_docs_IE_DG_Samples_Overview.html">OpenVINO documentation examples</a>, each inference engine fetches frames directly from a camera input stream, executes model detection, and reports results. This traditional monolithic design is common for edge AI devices with low-end computation resources where scaling is limited. However, in cases where more processing power is required, a powerful edge server may be needed to handle diverse workloads on a consolidated platform. This is where scaling becomes relevant and poses unique challenges. For example:</p>
+
+<ul><li dir="ltr">
+	<p dir="ltr"><strong>Different inference models with different computation requirements.</strong><br />
+	For example, the <a href="https://docs.openvinotoolkit.org/latest/_models_intel_face_detection_adas_0001_description_face_detection_adas_0001.html">standard pre-trained facial detection model requires 2.835 GFlops computation</a>, while the <a href="https://docs.openvinotoolkit.org/latest/person-detection-retail-0002.html">pre-trained person detection model requires 12.427 GFlops computation</a>. It would not be fair to allocate the same resources for both inference services.<br />
+	 </p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr"><strong>Multiple camera inputs for inference models that require more computation resources.</strong><br />
+	It would not be resource-effective to create separate instances of an inference service for each camera stream.<br />
+	 </p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr"><strong>Multiple inference workloads.</strong><br /><a href="https://docs.openvinotoolkit.org/2018_R5/_samples_object_detection_demo_ssd_async_README.html">OpenVINO provides an asynchronous API</a> to do inference on multiple CPU threads/cores in parallel on a single node in order to improve overall frame-rate throughput. This is great for a single inference workload, but is too rigid for a Kubernetes environment managing a cluster of resources.</p>
+	</li>
+</ul><p dir="ltr"> </p>
+
+<h2>Transformation to a cloud-native design</h2>
+
+<p>After identifying limitations of the traditional approach, we redesigned the inference pipeline into a cloud-native architecture. The redesign allowed us to enable dynamic, cluster-wide, horizontal scaling.</p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 2: Changing monolithic inferences service components to microservices for cloud native" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="18444a6b-5257-403a-9239-4e6fd634fc21" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="https://clearlinux.org/sites/default/files/dsei-fig2_1.png" width="1162" height="537" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="text-align-center"> </p>
+
+<p>The key idea behind the transformation into cloud-native software was decoupling each component in the original single vertical inference stack into individual microservices that could scale independently. In our scenario there are five services:</p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 3: Diagram of interaction between decoupled cloud-native services" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="f2512eaf-f3a2-435e-9d6d-12d75f8ea504" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="https://clearlinux.org/sites/default/files/dsei-fig3_0.png" width="622" height="288" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="text-align-center"> </p>
+
+<ol><li dir="ltr">
+	<p dir="ltr"><strong>Camera/Video Service.</strong><br />
+	Responsible for capturing individual frames from a video source (such as camera devices or online media streams) and reporting them to the Frame Queue Service. The service is a Python application with image transformation algorithms, running inside an <a href="https://hub.docker.com/r/clearlinux/openvino">OpenVINO container image based on Clear Linux OS</a> which includes an OpenCV* library with AVX2/AVX512 optimizations. </p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr"><strong>Frame Queue Service.</strong><br />
+	Responsible for providing real-time frame queuing for all video/frame input for eventual processing by the Inference Service. Multiple dedicated frame queues are created for each type of model (for example a face detection queue, a body/people detection queue, or an object detection queue). The service is run inside of a <a href="https://hub.docker.com/r/clearlinux/redis">redis container image based on Clear Linux OS</a>. </p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr"><strong>Inference Service.</strong><br />
+	Responsible for doing the actual video inference against trained models. It fetches the frame from the Frame Queue Service, performs the inference, and reports the resulting output to the Inferred Stream Broker Service. The service runs inside an <a href="https://hub.docker.com/r/clearlinux/openvino">OpenVINO container image based on Clear Linux OS</a>. <br /><br />
+	By default, the OpenVINO CPU plugin is used with <a href="https://www.intel.ai/vnni-enables-inference/">VNNI (AVX-512 Vector Neural Network Instructions)</a>, with <a href="https://github.com/intel-analytics/analytics-zoo/tree/master/pyzoo/zoo/examples/vnni/openvino">OpenVINO INT8 optimized models</a>. OpenVINO also provides a <a href="https://docs.openvinotoolkit.org/latest/_docs_IE_DG_supported_plugins_HETERO.html">heterogeneous plugin</a> to allow a single network of diverse hardware with vertical scaling capability. This means multiple inference service instances can be created to match the diverse hardware available on a Kubernetes node such as CPU, GPU, VPU (Movidius), and FPGA, with automatic workload placement. </p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr"><strong>Inferred Stream Broker Service. </strong><br />
+	Responsible for receiving the information from inferred frames and publishing the results for another application to use. The service runs inside a <a href="https://hub.docker.com/r/clearlinux/redis">redis container image based on Clear Linux OS</a>. Note that this can be the same redis instance as the Frame Queue Service.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr"><strong>Gateway Service.</strong><br />
+	An example output service for displaying the inferred streams in a HTML5-based single-page application (SPA). It includes the following components: </p>
+
+	<ul><li dir="ltr">Restful API service to expose the stream information made available by the Inferred Stream Broker Service. It uses Python*’s Flask framework inside of a <a href="https://hub.docker.com/r/clearlinux/python">Python container image based on Clear Linux OS</a>.<br />
+		 </li>
+		<li dir="ltr">Websocket service to publish the stream via <a href="https://tools.ietf.org/html/rfc6455">WebSocket protocol</a>. The service is implemented as a I/O bound Python application and leverages Python’s coroutine and asyncio to reduce CPU allocation. The service runs inside a <a href="https://hub.docker.com/r/clearlinux/python">Python container image based on Clear Linux OS</a>.<br />
+		 </li>
+		<li dir="ltr">SPA web service to publish the front-end HTML5 page using the <a href="https://www.iviewui.com/">VUE iview</a> JavaScript framework. The SPA web service is an example of how the inferred stream data can be used. Inferred stream output is a simple queue that any application can pull from and then act on as desired. This is conducive to <a href="https://en.wikipedia.org/wiki/Serverless_computing">serverless functions</a>.</li>
+	</ul></li>
+</ol><p dir="ltr"> </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 4: Screenshot of the SPA showing sample video feeds with object, face, and body detection. The sample video feeds are from https://github.com/intel-iot-devkit/sample-videos and licensed under the Creative Commons Attribution 4.0 International" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="fb148ba0-049c-4ac1-a5c8-411484425ee9" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="https://clearlinux.org/sites/default/files/dsei-fig4_0.png" width="1128" height="464" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<h2><br />
+Leveraging cloud scalability</h2>
+
+<p dir="ltr">With the components of the video inference solution split into independent services, it becomes easier to see how it can scale using standard cloud-native application scaling techniques. Beyond vertical scaling, the inference service can be scaled horizontally on Kubernetes, benefiting from its stateless design. </p>
+
+<p dir="ltr">A custom <a href="https://kubernetes.io/docs/concepts/extend-kubernetes/operator/">Kubernetes Operator</a> can be defined to automate additional scaling scenarios using more intelligent metrics such as CPU utilization of different models, changing the number of input streams, or changing the rate at which frames are received versus dropped from the frame queues. For example:<br />
+ </p>
+
+<ul><li dir="ltr">
+	<p dir="ltr">The <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/">Kubernetes Horizontal Pod Autoscaler</a> (HPA) can be enabled to schedule replicas of services dynamically. This means the replica count for each inference service on Kubernetes can be scaled according to the metrics above, not just CPU utilization.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">If more cameras are added for face detection, then a Kubernetes Operator can increase replicas of the face inference service.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">If the computation requirements of a new inference model are smaller than the previous model, the Kubernetes Operator can reduce the replicas of the inference service.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">If the rate at which frames of object detection/recognition are being dropped (FPS drop) is bigger than half of the capture speed (FPS), then a Kubernetes Operator can increase the replicas of the object detection service to improve the frame rate.</p>
+	</li>
+</ul><p dir="ltr"> </p>
+
+<h2>Customizing the Kubernetes Horizontal Pod Autoscaler</h2>
+
+<p>Kubernetes provides the Horizontal Pod Autoscaler feature, which automatically scales the number of pods in a replication controller, deployment, replica set, or stateful set based on observed CPU utilization.</p>
+
+<p> </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 5: Diagram showing a custom metric “frame drop rate” being scraped by Promtheus to trigger the Kubernetes Horizontal Pod Autoscaler (HPA)" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="2e1f9497-e99e-4851-9957-100f4ad2215d" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="https://clearlinux.org/sites/default/files/dsei-fig5_0.png" width="1329" height="459" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="text-align-center"> </p>
+
+<p>To determine when to scale, CPU utilization is a good metric to start with. However, metrics closer to the actual running services will provide more accurate data for the video inference scenario to determine when to scale up or down. For example: frame capture speed from the camera service, frame drop speed from the frame queue service, or inferred frames speed reported from the inference service.  One easy way to obtain these metrics is to use Prometheus via its push gateway service.</p>
+
+<p> </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-caption="Figure 6: Diagram of Prometheus metric collection" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="0d907b20-7940-4cfd-a798-f5f8c008a987" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="https://clearlinux.org/sites/default/files/dsei-fig6_0.png" width="1341" height="471" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="text-align-center"> </p>
+
+<p>With relevant metrics being collected and accessible, the HPA could be enabled according to the <a href="https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale-walkthrough/#autoscaling-on-multiple-metrics-and-custom-metrics">Autoscaling on multiple metrics and custom metrics</a> section of the Kubernetes documentation.</p>
+
+<p class="text-align-center"> </p>
+
+<h2>Conclusion</h2>
+
+<p dir="ltr">Based on growth trends of edge computing we built a video inference solution using open-source technologies such as <a href="https://clearlinux.org/">Clear Linux OS</a>, <a href="https://software.intel.com/en-us/openvino-toolkit">OpenVINO</a>, and <a href="https://kubernetes.io/">Kubernetes</a>. We leveraged automated horizontal scaling mechanisms with improved metrics as follows:</p>
+
+<ul><li dir="ltr">
+	<p dir="ltr">Identified challenges with the traditional monolithic application design used for video inference workloads.</p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Redesigned software components with a cloud-native mindset. The inference pipeline was broken into several microservices based on <a href="https://hub.docker.com/u/clearlinux/">Clear Linux OS containers</a>, which can operate independently. Using Clear Linux OS allowed our developers to automatically adopt the hardware-specific software optimizations for greater performance. </p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Deployed the redesigned software as services on a Kubernetes cluster. This allowed us to leverage the well-known horizontal scaling abilities of a cluster.  </p>
+	</li>
+	<li dir="ltr">
+	<p dir="ltr">Improved the Kubernetes Horizontal Pod Autoscaler to operate on metrics relevant  to our application (FPS, dropped FPS, inferred FPS) in addition to the system-level (CPU, memory, storage) metrics. </p>
+	</li>
+</ul><p dir="ltr">While this case study focused on one scenario and problem, the techniques and tools described can be used to transform other software to performant cloud-native software.</p>
+
+<p dir="ltr">We encourage you to review the <a href="https://github.com/clearlinux/cloud-native-demos">source code on GitHub</a>,  check out the benefits of <a href="31099.html">Clear Linux OS</a>, and <a href="https://community.clearlinux.org/">let us know</a> what other cloud and edge problems you’d like to see solved!</p>
+
+<p dir="ltr"> </p>
+
+<p dir="ltr"> </p>
+
+<blockquote>
+<p dir="ltr"><strong>Notice and disclaimers</strong></p>
+
+<p dir="ltr">Intel technologies’ features and benefits depend on system configuration and may require enabled hardware, software or service activation. Performance varies depending on system configuration. No computer system can be absolutely secure. Check with your system manufacturer or retailer or learn more at <a href="http://www.intel.com">www.intel.com</a>.</p>
+
+<p dir="ltr">Performance results are based on testing and may not reflect all publicly available security updates. See configuration disclosure for details. No product can be absolutely secure. Cost reduction scenarios described are intended as examples of how a given Intel-based product, in the specified circumstances and configurations, may affect future costs and provide cost savings. Circumstances will vary. Intel does not guarantee any costs or cost reduction.</p>
+
+<p dir="ltr">Tests document performance of components on a particular test, in specific systems. Differences in hardware, software, or configuration will affect actual performance. For more complete information about performance and benchmark results, visit <a href="http://www.intel.com/benchmarks">http://www.intel.com/benchmarks</a>.</p>
+
+<p dir="ltr">Software and workloads used in performance tests may have been optimized for performance only on Intel microprocessors. Performance tests, such as SYSmark and MobileMark, are measured using specific computer systems, components, software, operations and functions. Any change to any of those factors may cause the results to vary. You should consult other information and performance tests to assist you in fully evaluating your contemplated purchases, including the performance of that product when combined with other products. For more complete information visit <a href="http://www.intel.com/benchmarks">http://www.intel.com/benchmarks</a>.</p>
+</blockquote>
+
+<p dir="ltr"> </p>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="31597.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/31597","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="https://clearlinux.org/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+<script src="https://clearlinux.org/core/misc/polyfills/element.matches.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="https://clearlinux.org/core/misc/drupalSettingsLoader.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.init.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/extlink/extlink.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/google_analytics/js/google_analytics.js?v=9.4.8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
+<script src="https://clearlinux.org/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=9.4.8" defer></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js?rl3r25"></script>
+<script src="https://clearlinux.org/libraries/codesnippet/lib/highlight/highlight.pack.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/codesnippet/js/codesnippet.js?v=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

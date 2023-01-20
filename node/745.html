@@ -1,0 +1,610 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--745.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="by Victor Rodriguez Bahena" />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/news-blogs/gnu-compiler-collection-8-gcc-8-transitioning-new-compiler" />
+<meta property="og:title" content="GNU* Compiler Collection 8 (GCC 8) - Transitioning to a new compiler" />
+<meta property="og:description" content="by Victor Rodriguez Bahena" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="745.html" />
+<link rel="shortlink" href="745.html" />
+<script src="https://clearlinux.org/sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js?rl3r25" defer></script>
+
+    <title>GNU* Compiler Collection 8 (GCC 8) - Transitioning to a new compiler | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/ajax-progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/align.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/autocomplete-loading.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/fieldgroup.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/container-inline.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/clearfix.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/details.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/hidden.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/item-list.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/js.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/nowrap.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/position-container.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/reset-appearance.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/resize.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/sticky-header.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-counter.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-counters.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-general-info.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tabledrag.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tablesort.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tree-child.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/filter/filter.caption.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/entity_embed/css/entity_embed.filter.caption.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/extlink/extlink.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/libraries/codesnippet/lib/highlight/styles/monokai_sublime.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="https://clearlinux.org/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+<script src="https://clearlinux.org/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
+
+</head>
+<body class="alias--news-blogs-gnu-compiler-collection-8-gcc-8-transitioning-new-compiler nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="745.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--745.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="https://clearlinux.org/">
+                          <img class="header__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31099.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="31103.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="https://clearlinux.org/software">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="https://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--745--full.html.twig
+   * node--745.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=5.html' title='Maintenance'>Maintenance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>GNU* Compiler Collection 8 (GCC 8) - Transitioning to a new compiler</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">27 Jun, 2018</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p><em>by Victor Rodriguez Bahena</em></p>
+
+<p>Every year, the Linux* community awaits the release of a new version of the GNU* Compiler Collection. The collection includes front ends for <span><a href="https://gcc.gnu.org/c99status.html"><span>C</span></a></span>, <span><a href="https://gcc.gnu.org/projects/cxx-status.html"><span>C++</span></a></span>, Objective-C, <span><a href="https://gcc.gnu.org/fortran/"><span>Fortran</span></a></span>, Ada, and Go, as well as libraries for these languages. The GCC community works hard to provide usability improvements, bug fixes, new security features, and performance improvements.</p>
+
+<p>The <span><a href="https://gcc.gnu.org/gcc-8/changes.html"><span>GCC 8 Release Series changes list</span></a></span> includes a full list of changes, new features, and fixes for this release. This blog article uses code examples to show how to use the following new compiler features:</p>
+
+<ul><li>Interprocedural optimization improvements</li>
+	<li>Control-flow enforcement technology</li>
+	<li>Changes in loop nest optimization flags</li>
+</ul><h2>Interprocedural optimization improvements</h2>
+
+<p>As the Linux community continues to redefine the boundaries of what is possible in a Linux distribution running on new silicon, performance plays an increasingly important role in the industry. Optimizations at compile time have been playing an increasing role over the last years. Interprocedural Optimization (IPO) is an automatic, multi-step process that allows the compiler to analyze your entire code to determine where you can benefit from specific optimizations in programs containing many frequently used functions.</p>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">In the new GCC 8, there are two major changes for interprocedural optimizations. The first one is reworked run-time estimation metrics, which leads to more realistic guesses driving inlining and cloning heuristics. This is an internal change on how GCC represents frequencies of basic blocks of code. In the previous GCC 7 version, it was prone to overflow.</span></p>
+
+<p>Block frequency is a relative metric that represents the number of times a block executes. The ratio of a block frequency to the entry block frequency is the expected number of times the block will execute per entry to the function. A basic block (BB) is a sequence of instructions with a single entry at the start and a single exit at the end. These blocks are linked together with the Control Flow Graph (CFG). The following figure shows a simple If statement and the corresponding CFG <span lang="EN" xml:lang="EN" xml:lang="EN">generated</span> with gcc<code> test.c -fdump-tree-all-graph</code> which generates <code>dot</code> files. </p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-type="media" data-entity-uuid="8aa563cf-68e4-4829-a637-482ff4ad2221" data-langcode="en" data-entity-embed-display-settings="[]" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="https://clearlinux.org/sites/default/files/gcc8_SimpleIfCodeCFG.png" width="577" height="782" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">Figure 1. Simple If and its basic control flow graph</span></p>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">The change made in GCC 8 to improve the accuracy basic blocks count can affect all optimizations (including <span><a href="../blogs/making-faster-web-renewal-php-7-and-beyond.html"><span>Profile Guided Optimizations</span></a></span>, inlining, and <span><a href="https://kristerw.blogspot.com/2017/05/interprocedural-optimization-in-gcc.html"><span>cloning</span></a></span> heuristics). Basic block frequencies is a core component in compiler optimizations. </span></p>
+
+<p>Another important change in GCC 8 is the Interprocedural Analysis (IPA). IPA is a form of dataflow analysis between functions. As we know, GCC builds a “call graph” recording which functions call other functions. In GCC 8, t<span>he <a href="https://github.com/gcc-mirror/gcc/blob/master/gcc/ipa-pure-const.c"><span><span>ipa-pure-const</span></span></a> pass is extended to propagate the </span><code>malloc </code><span>attribute. </span></p>
+
+<p>The keyword <code>__attribute__</code> allows you to specify special attributes when making a declaration. This keyword is followed by an attribute specification inside double parentheses. One of these is the <code>malloc</code> attribute:<code> __attribute__((malloc))</code></p>
+
+<p>The <code>malloc</code> attribute is used to inform the compiler that a function may be treated as any non-NULL pointer. Because of this, the return of the function cannot alias any other pointer valid when the function returns. In compilers, aliasing is the case where the same memory location can be accessed using different names. It is vitally important that a compiler can detect which accesses may alias each other, so that optimizations can be performed correctly.  The following example shows the use of the <code>malloc</code> attribute:</p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-embed-button="media_browser" data-entity-embed-display="entity_reference:media_thumbnail" data-entity-embed-display-settings="{&quot;image_style&quot;:&quot;large&quot;,&quot;image_link&quot;:&quot;&quot;}" data-entity-type="media" data-entity-uuid="29c0ac39-0ba9-4789-9db4-757c6fe1f85a" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_style' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-style.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img src="https://clearlinux.org/sites/default/files/styles/large/public/gcc8_malloc_0.png?itok=ZAKlVIts" width="448" height="254" alt="Thumbnail" title="gcc8 malloc" loading="lazy" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-style.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">In GCC 8, the corresponding warning option </span><code>Wsuggest-attribute=malloc</code><span lang="EN" xml:lang="EN" xml:lang="EN"> emits a diagnostic for functions that can be annotated with the </span><code>malloc</code><span lang="EN" xml:lang="EN" xml:lang="EN"> attribute. </span></p>
+
+<pre>
+<code>$ gcc malloc.c  -Wsuggest-attribute=malloc
+malloc.c: In function ‘foo’:
+malloc.c:6:8: warning: function might be candidate for attribute ‘malloc’ if it is known to return normally [-Wsuggest-attribute=malloc]
+ void * foo(int size){
+        ^~~
+</code></pre>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">When we enable the </span><code>__attribute__((malloc))</code><span lang="EN" xml:lang="EN" xml:lang="EN">,  the code looks like the following example: </span></p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-embed-button="media_browser" data-entity-embed-display="entity_reference:media_thumbnail" data-entity-embed-display-settings="{&quot;image_style&quot;:&quot;large&quot;,&quot;image_link&quot;:&quot;&quot;}" data-entity-type="media" data-entity-uuid="21a728e9-7915-4b53-985c-fb8611e18c26" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_style' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-style.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img src="https://clearlinux.org/sites/default/files/styles/large/public/gcc8_malloc_attrib_0.png?itok=_TS5wxjr" width="480" height="258" alt="Thumbnail" title="gcc8 malloc attribute" loading="lazy" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-style.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p>After this, the following compilation command line works without warnings:  </p>
+
+<pre>
+<code>$ gcc malloc.c  -Wsuggest-attribute=malloc</code></pre>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN"><span>As we have seen, </span></span>Interprocedural Optimization (IPO) allows the compiler to analyze your entire code and propose optimizations. The improvements that GCC 8 has done on this technology will play an important role on the performance of end user's applications.</p>
+
+<h2>Control-flow enforcement technology</h2>
+
+<p>Another important section for compilers is security. One of the attacks that GCC 8 helps to prevent are Return Oriented Programming (<span><a href="https://01.org/blogs/cbae1/2017/return-oriented-programming-rop"><span>ROP</span></a></span>) and call/jmp-oriented programming (COP/JOP). These attack methods have the following common elements:</p>
+
+<ul><li>Diverting the control flow instruction (e.g. RET, CALL, JMP) from its original target address to a new target (via modification in the data stack or in the register).</li>
+	<li>Attackers set a code module with execution privilege and contain small snippets of code sequence. This sequence has the characteristic that at least one instruction in the sequence is a control transfer instruction that depends on data either in the return stack or in a register for the target address.</li>
+</ul><p>GCC 8 introduces a new option <code><a href="https://gcc.gnu.org/onlinedocs/gcc/Instrumentation-Options.html">-fcf-protection</a>=[full | branch | return | none]</code> that performs code instrumentation to increase program security. When used, the <code>fcf-protection</code> option checks that target addresses of control-flow transfer instructions (such as indirect function call, function return, indirect jump) are valid.</p>
+
+<p>The new <code>fcf-protection</code> option option enables support for the <span><a href="https://software.intel.com/sites/default/files/managed/4d/2a/control-flow-enforcement-technology-preview.pdf"><span>Control-Flow Enforcement Technology (CET)</span></a></span> feature in future Intel CPUs by enabling instrumentation of control-flow transfers to increase program security. The <code>fcf-protection</code> option checks for valid target addresses of control-flow transfer instructions (such as indirect function call, function return, and indirect jump). For example, the instruction at the target of an indirect jump must be an <a href="https://software.intel.com/en-us/blogs/2016/06/09/intel-release-new-technology-specifications-protect-rop-attacks"><code>ENDBRANCH</code> instruction</a>, a particular form of NOP. This prevents diverting the flow of control to an unexpected target.</p>
+
+<p>As an additional protection, the Clear Linux project provides the option: <code><a href="https://github.com/clearlinux-pkgs/gcc/blob/master/zero-regs-gcc8.patch">mzero-caller-saved-regs</a>=[skip | used | all]</code>. This option clears caller-saved general registers upon function return. This is intended to make threats such as ROP, COP, and JOP attacks much harder. </p>
+
+<h2>Changes in loop nest optimization flags</h2>
+
+<p><span lang="EN" xml:lang="EN" xml:lang="EN">There are a few changes in the optimization flags for GCC 8. The</span> <code>floop-interchange</code> flag<span lang="EN" xml:lang="EN" xml:lang="EN"> applies a classical loop nest optimization and is enabled by default at -O3 optimization level and above. Consider the following code: </span></p>
+
+<pre>
+<code>int k[1000, 100];
+
+for (int y = 0; y &lt; 100; y++)
+
+  for (int x = 0; x &lt; 1000; x++)
+
+      k[x,y]=x*y;
+</code></pre>
+
+<p>In C, arrays are stored in <em>row major order</em>. At the beginning of our sample code execution, when the processor accesses an array element for the first time, it retrieves an entire cached line of data from main memory to the cache memory. If the rest of the data will be used soon, this is a major performance boost. If on the other hand, the rest of the data is not used, this is a net performance loss. If the array is accessed incorrectly, we will see this loss.</p>
+
+<p><span><span lang="EN" xml:lang="EN" xml:lang="EN">When </span></span>the <code>floop-interchange</code> flag<span><span lang="EN" xml:lang="EN" xml:lang="EN"> is used, this code is transformed to:</span></span></p>
+
+<pre>
+<code>for (int x = 0; x &lt; 1000; x++)
+
+  for (int y = 0; y &lt; 100; y++)
+
+      k[x,y] = x*y;</code></pre>
+
+<p>In this example, the <code>floop-interchange</code> flag exchanges the loops so the array is accessed in the optimal order, because the variable used in the inner loop switches to the outer loop. We can see this in the transformed code, where it accesses k[0,0], k[0,1], … k[0, 99], k[1,0] …k[999, 99] rather than k[0,0], k[1,0], k[ 2,0] … k[999,0], k[0, 1] … k[999, 99].</p>
+
+<p>The memory controller is optimized for consecutive memory locations. In this scenario, the transformed code accesses memory consecutively instead of reading widely differing locations.</p>
+
+<h2><span lang="EN" xml:lang="EN" xml:lang="EN"><span>Conclusion</span></span></h2>
+
+<p>The Linux community continues to redefine the boundaries of what is possible in a Linux distribution running on new silicon. Both performance and security play an increasingly important role in the industry. In the Clear Linux* Project, we decided to use and improve the latest GCC compiler technology to boost the performance and security of a Linux-based system for open source developers. We encourage users to employ the latest technologies that can improve applications for customers by boosting their performance and also providing a more robust layer of protection against security attacks.</p>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="745.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/745","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="https://clearlinux.org/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+<script src="https://clearlinux.org/core/misc/polyfills/element.matches.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="https://clearlinux.org/core/misc/drupalSettingsLoader.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/misc/drupal.init.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/extlink/extlink.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/google_analytics/js/google_analytics.js?v=9.4.8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
+<script src="https://clearlinux.org/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=9.4.8" defer></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js?rl3r25"></script>
+<script src="https://clearlinux.org/libraries/codesnippet/lib/highlight/highlight.pack.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/codesnippet/js/codesnippet.js?v=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

@@ -1,0 +1,797 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--31461.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="by Victor Rodriguez Bahena This blog describes the latest features of GNU* Compiler Collection (GCC) and GNU C Library (GLIBC)." />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/blogs-news/toolchains-fresh-wind-sails-new-tech-world" />
+<meta property="og:title" content="Toolchains—a fresh wind in the sails of a new tech world" />
+<meta property="og:description" content="by Victor Rodriguez Bahena This blog describes the latest features of GNU* Compiler Collection (GCC) and GNU C Library (GLIBC)." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="../node/31461.html" />
+<link rel="shortlink" href="../node/31461.html" />
+<script src="../sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js%3Frl3r25" defer></script>
+
+    <title>Toolchains—a fresh wind in the sails of a new tech world | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/ajax-progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/align.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/autocomplete-loading.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/fieldgroup.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/container-inline.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/clearfix.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/details.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/hidden.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/item-list.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/js.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/nowrap.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/position-container.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/reset-appearance.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/resize.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/sticky-header.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-counter.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-counters.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-general-info.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tabledrag.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tablesort.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tree-child.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/extlink/extlink.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="../libraries/codesnippet/lib/highlight/styles/monokai_sublime.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="../core/assets/vendor/modernizr/modernizr.min.js%3Fv=3.11.7"></script>
+<script src="../core/misc/modernizr-additional-tests.js%3Fv=3.11.7"></script>
+
+</head>
+<body class="alias--blogs-news-toolchains-fresh-wind-sails-new-tech-world nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="toolchains-fresh-wind-sails-new-tech-world.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--31461.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="../index.html">
+                          <img class="header__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../about.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../developer.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../software.html">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="http://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--31461--full.html.twig
+   * node--31461.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=5.html' title='Maintenance'>Maintenance</a>
+        ,              <a tabindex='3' href='../blogs%3Fcategory=2.html' title='Power and Performance'>Power and Performance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Toolchains—a fresh wind in the sails of a new tech world</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">06 Oct, 2019</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p><em>by Victor Rodriguez Bahena</em></p>
+
+<p>This blog describes the latest features of GNU* Compiler Collection (GCC) and GNU C Library (GLIBC).</p>
+
+<h2><span><span><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span><span>Introduction</span></span></span></span></span></span></span></span></h2>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">The technology industry evolves rapidly. Every day, new mobile and cloud technologies are devised to solve challenging problems. All these software projects must be built in the first place and we must have </span><span lang="EN" xml:lang="EN" xml:lang="EN"><span><span><span>tools for that. Compilers, assemblers, linkers, and libraries are some elements of the tool box needed by developers. </span></span></span></span>The open source community behind the development of GNU toolchain projects uses the innovation to propel the core of the technology we use every day.  </span></span></span></p>
+
+<p><span><span><span>A broad range of open source projects are built using the GNU toolchains. To give some examples, the operating system kernel, image processing libraries, and web server-side scripting languages are built with GNU toolchains. Every year, new functional features, performance improvements, and security protections are released on the latest toolchains key projects: GNU Compiler Collection (GCC) and GNU C Library (GLIBC).</span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">In the Clear Linux* Project, we decided to use and improve the latest GCC compiler technology to boost the performance and security of a Linux-based system for open source developers. We encourage users to employ the latest technologies that can improve applications for customers by boosting their performance and also providing a more robust layer of protection against security attacks.The following examples showcase some of these features.</span></span></span></span></p>
+
+<h2><span><span><span><span><span>GLIBC</span></span></span></span></span></h2>
+
+<h3><span><span><span><span><span>getcpu wrapper function</span></span></span></span></span></h3>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">One of the first features listed on the GNU C Library<a href="https://sourceware.org/ml/libc-announce/2019/msg00000.html"> </a></span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://sourceware.org/ml/libc-announce/2019/msg00000.html"><span>2.29 release notes</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN"> is the getcpu() wrapper function. The getcpu() function identifies the processor and node on which the calling thread or process is currently running. This functionality is shown in the following example: </span></span></span></span></p>
+
+<pre>
+<code>#define _GNU_SOURCE
+#include &lt;stdio.h&gt;
+#include &lt;sched.h&gt;
+
+int main(){
+      unsigned int *cpu;
+      unsigned int *node;
+      int ret;
+
+      ret = getcpu(cpu,node);
+      printf("cpu : %d\n",(int *)cpu);
+      printf("node : %d\n",(int *)node);
+      return ret;
+}</code></pre>
+
+<p><span><span><span>This functionality has been<span><a href="https://sourceware.org/git/?p=glibc.git;a=commit;h=a092ca9453df677053787b376322362e3bbe91ca"><span> added</span></a></span> to the GNU C Library since version 2.29. It was added to provide a fast way to identify on which node the current process is running. With this new GLIBC feature, is possible to take advantage of this CPU information at the user space level, to work on code optimizations on a multi-node NUMA (Non-uniform Memory Architecture) system.</span></span></span></p>
+
+<h3><span><span><span><span><span>Optimized mathematical functions</span></span></span></span></span></h3>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Another feature listed on the GNU C Library is a set of optimizations to the generic mathematical functions. One of these functions is sincosf(), which fulfills the need of several software applications that need sine and cosine of the same angle x. This function computes both at the same time, and stores the results in *sin and *cos pointers. An example of this is shown below:</span></span></span></span></p>
+
+<pre>
+<span><span><span><em><span lang="EN" xml:lang="EN" xml:lang="EN">     void sincosf(float x, float *sin, float *cos);</span></em></span></span></span></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">The core algorithm of this function is in s_sincosf.c file and syscall_polly.h where it uses the sincosf_poly function. This function computes the sine and cosine using the polynomial P algorithm [3]. There are some advantages to using the polynomial method. First, the memory requirements that are needed to implement such polynomials are quite small. Also, polynomials only require multiplication, addition, and subtraction of floating-point numbers that normally take very few CPU cycles for processors with floating point cores. The implementation of this algorithm for the function is part of the<a href="https://sourceware.org/git/?p=glibc.git;a=blob;f=sysdeps/x86/fpu/sincosf_poly.h;h=938013d0a561be78618bc46583683f61b0a3082d;hb=HEAD#l52"> </a></span><a href="https://sourceware.org/git/?p=glibc.git;a=blob;f=sysdeps/x86/fpu/sincosf_poly.h;h=938013d0a561be78618bc46583683f61b0a3082d;hb=HEAD#l52"><span>sincosf_poly.h</span></a></span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span><span><span><span>A series of patches were merged into the latest version of the GNU C Library. For x86_64 platforms, the patches prove the C Library was faster than s_sincosf-sse2.S, which was written in assembly</span></span></span></span></span><span lang="EN" xml:lang="EN" xml:lang="EN">. At the same time, a set of patches were integrated to update s_sincosf.h to use generic vector computations, and to use generic s_sincosf.c for s_sincosf-fma.c. An example of code using this function could be: </span></span></span></span></p>
+
+<pre>
+<code>#define _GNU_SOURCE
+#include &lt;math.h&gt;
+#include &lt;stdio.h&gt;
+
+int main(int argc, const char * argv[]){
+    float value = 0.5;
+
+    float _cosine;
+    float _sine;
+
+      sincosf(value, &amp;_sine, &amp;_cosine);
+
+    printf("The sine of %f is %f\n", value,_sine);
+    printf("The cosine of %f is %f\n", value,_cosine);
+
+    return 0;
+}</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">During the latest GLIBC release, there were several optimizations on mathematical functions such as exp, exp2, log, log2, pow, sinf, cosf, and tanf. This blog just presents the background of one of those optimizations. More information about others is public on the GLIBC </span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://sourceware.org/git/?p=glibc.git"><span>repository</span></a></span>.</span></span></span></p>
+
+<h3><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span><span>Optimize string manipulation functions Intel® AVX2 technology</span></span></span></span></span></span></h3>
+
+<p><span><span><span>Applications often need to manipulate strings. To solve this, C/C++ supports a large number of string handling functions to reduce the complexity, error-prone and waste of time recreating popular functions. During the development of GLIBC 2.29 there were <span><a href="https://sourceware.org/git/?p=glibc.git;a=commit;h=1a153e47fcc9401d8ea424ad86569a57ed0f8c52"><span>optimizations</span></a></span> to x86-64 string functions such as strcat/strncat, strcpy/strncpy, and stpcpy/stpncpy by using Intel® Advanced Vector Extensions 2 (Intel® AVX2) technology. After this change, the functions use vector comparison as much as possible. In general, the larger the source string, the greater performance gain observed compared to SSE2 unaligned routines.</span></span></span></p>
+
+<h2><span><span><span><span><span>GCC</span></span></span></span></span></h2>
+
+<p><span><span><span>Every year, the Linux* community awaits the release of a new version of the GNU Compiler Collection (GCC). The GCC community works hard to provide usability improvements, bug fixes, new security features, and performance improvements. </span></span></span></p>
+
+<p><span><span><span>The <span><a href="https://gcc.gnu.org/gcc-9/changes.html"><span>GCC 9  Release Series changes list</span></a></span> includes a full list of changes, new features, and fixes for this release. This blog provides some code examples to show how to use some of the new compiler features</span></span></span></p>
+
+<h3><span><span><span><span><span>Improve diagnostics and debugging information</span></span></span></span></span></h3>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">One of the new features is the improvement in diagnostics and debugging information provided to developers. GCC's diagnostics now print source code with a left margin showing code line numbers. For example, in default GCC9 if you compile code that is missing a semicolon ( ; ):</span></span></span></span></p>
+
+<pre>
+<code> 1 #include &lt;stdio.h&gt;
+ 2
+ 3 int main(){
+ 4  int a = 0;
+ 5  printf("%d\n",a)
+ 6 }
+</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">You get this output: </span></span></span></span></p>
+
+<pre>
+<code>diagnostic.c: In function ‘main’:
+diagnostic.c:5:18: error: expected ‘;’ before ‘}’ token
+    5 | printf("%d\n",a)
+      |         ^
+      |         ;
+    6 | }
+      |</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">The above example shows the exact line number where the error exists. If you don't want this information, you can disable line numbers with the flag </span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Diagnostic-Message-Formatting-Options.html#index-fno-diagnostics-show-line-numbers"><span>-fno-d</span></a><a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Diagnostic-Message-Formatting-Options.html#index-fno-diagnostics-show-line-numbers"><span>iagnostics-show-line-numbers</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN">:</span></span></span></span></p>
+
+<pre>
+<code> $ gcc diagnostic.c -o diagnostic -fno-diagnostics-show-line-numbers
+diagnostic.c: In function ‘main’:
+diagnostic.c:5:18: error: expected ‘;’ before ‘}’ token
+  printf("%d\n",a)
+                  ^
+                  ;
+ }
+ ~</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Another feature introduced for GCC 9 is the new option <a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Diagnostic-Message-Formatting-Options.html#index-fdiagnostics-format"><span><span><span>-fdiagnostics-format=json</span></span></span></a> for emitting diagnostics in a machine-readable format. If you have only a few warnings, it is possible to handle them by displaying them on the screen. However if you have many, you might need to post-process them with scripts. Because of this, GCC also enables the flag -fdiagnostics-format=<em>FORMAT, </em>where it is possible to select a different format for printing diagnostics. FORMAT is ‘text’ or ‘json’. The next example prints the report in json format: </span></span></span></span></p>
+
+<pre>
+<code>#include &lt;stdio.h&gt;
+
+void foo(int a){
+      a +10;
+}
+
+void main(){
+      char *a;
+      foo(a);
+}
+</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Compiling the example source code above generates this warning:</span></span></span></span></p>
+
+<pre>
+<code>diagnostic.c: In function ‘main’:
+diagnostic.c:8:6: warning: passing argument 1 of ‘foo’ makes integer from pointer without a cast [-Wint-conversion]
+    8 | foo(a);
+      |   ^
+      |   |
+      |   char *
+diagnostic.c:3:14: note: expected ‘int’ but argument is of type ‘char *’
+    3 | void foo(int a){
+      |</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Using the flag <a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Diagnostic-Message-Formatting-Options.html#index-fdiagnostics-format"><span><span><span>-fdiagnostics-format=json</span></span></span></a> generates the next output:</span> </span></span></span></p>
+
+<pre>
+<code>gcc diagnostic.c -fdiagnostics-format=json
+[{"kind": "warning", "option": "-Wint-conversion", "children": [{"kind": "note", "locations": [{"caret": {"line": 3, "file": "diagnostic.c", "column": 14}, "start": {"line": 3, "file": "diagnostic.c", "column": 10}}], "message": "expected ‘int’ but argument is of type ‘char *’"}], "locations": [{"caret": {"line": 8, "file": "diagnostic.c", "column": 6}, "label": "char *"}], "message": "passing argument 1 of ‘foo’ makes integer from pointer without a cast"}]</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Which after opening with a json editor, could be seen as:</span></span></span></span></p>
+
+<pre>
+<code>[ 
+   { 
+      "kind":"warning",
+      "option":"-Wint-conversion",
+      "children":[ 
+         { 
+            "kind":"note",
+            "locations":[ 
+               { 
+                  "caret":{ 
+                     "line":3,
+                     "file":"diagnostic.c",
+                     "column":14
+                  },
+                  "start":{ 
+                     "line":3,
+                     "file":"diagnostic.c",
+                     "column":10
+                  }
+               }
+            ],
+            "message":"expected ‘int’ but argument is of type ‘char *’"
+         }
+      ],
+      "locations":[ 
+         { 
+            "caret":{ 
+               "line":8,
+               "file":"diagnostic.c",
+               "column":6
+            },
+            "label":"char *"
+         }
+      ],
+      "message":"passing argument 1 of ‘foo’ makes integer from pointer without a cast"
+   }
+]
+</code></pre>
+
+<h3><span><span><span><span><span>Information on inlining decisions</span></span></span></span></span></h3>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">The new release of GCC also makes numerous improvements to the information provided by the<a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Developer-Options.html#index-fopt-info"> </a></span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Developer-Options.html#index-fopt-info"><span>-fopt-info</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN"> flag. In the new log, messages are </span><span lang="EN" xml:lang="EN" xml:lang="EN"><span><span><span><span>prefaced</span></span></span></span></span><span lang="EN" xml:lang="EN" xml:lang="EN"> with <em>optimized</em>, <em>missed</em>, or <em>note</em> rather than the old behavior of all messages being prefixed with the same <em>note </em>label. </span></span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">One example where the label optimization is being used to show information is <em>inlining decisions</em>. An inline decision is when the compiler decides to place a new copy of the function in each place it is called. By definition, Inline functions should be small so they can be substituted in the place of where its function call is made. </span></span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Let’s take the next simple code block as an example and see if the compiler made the inline optimization:</span></span></span></span></p>
+
+<pre>
+<code>#include &lt;stdio.h&gt;
+void foo( int * x ){
+    *x = *x + 10;
+}
+
+int main() {
+      int var = 0;
+      for(int cnt=0;cnt&lt;100;cnt++){
+            foo(&amp;var);
+      }
+      printf("var is now %d\n",var);
+      return 0;
+}
+
+$ gcc inline.c -O2 -fopt-info-inline-all
+inline.c:14:3: note: Considering inline candidate foo/11.
+inline.c:14:3: optimized: Inlining foo/11 into main/12.
+inline.c:17:2: missed: not inlinable: main/12 -&gt; printf/13, function body not available
+
+Unit growth for small function inlining: 16-&gt;16 (0%)
+
+Inlined 1 calls, eliminated 0 functions</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">The compiler found the foo function was going to be called multiple times (in this case, 100 times) and decided to inline this function into the main. This is not the case for the printf that is marked as missed and cannot be inlined.</span></span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Another example of when label optimization is displayed on the log is vectorization. The output from the vectorizer has been rationalized, so failed attempts to vectorize a loop are displayed in the form shown below:</span></span></span></span></p>
+
+<pre>
+<span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>[LOOP-LOCATION]: couldn't vectorize this loop</span></span></span></span></span>
+<span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>[PROBLEM-LOCATION]: because of [REASON]</span></span></span></span></span></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">An example of this is shown in the simple code block below:</span></span></span></span></p>
+
+<pre>
+<code>cat vect.c
+#define MAX 1000000
+
+int a[256], b[256], c[256];
+
+void foo()
+{
+    int i,x;
+    for (x=0; x&lt;MAX; x++)
+    {
+        for (i=0; i&lt;256; i++)
+        {
+            a[i] = b[i] + c[i];
+        }
+     }
+}
+
+int main()
+{
+    foo();
+    return 0;
+}</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>When you compile with the <em>-O2 -ftree-vectorize -fopt-info-all-vec</em> flags, all the debug information is displayed:</span></span></span></span></span></p>
+
+<pre>
+<code>$ gcc -O2 -ftree-vectorize -fopt-info-all-vec vect.c
+vect.c:8:5: missed: couldn't vectorize loop
+vect.c:12:18: missed: not vectorized: complicated access pattern.
+vect.c:10:9: optimized: loop vectorized using 16 byte vectors
+vect.c:5:6: note: vectorized 1 loops in function.
+vect.c:8:5: missed: couldn't vectorize loop
+vect.c:12:18: missed: not vectorized: complicated access pattern.
+vect.c:10:9: optimized: loop vectorized using 16 byte vectors
+vect.c:17:5: note: vectorized 1 loops in function.</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">It is crucial for some applications to clearly see the internal steps the compiler takes for optimization. Because of this, a new option,<a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Developer-Options.html#index-fsave-optimization-record"> </a></span><em><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Developer-Options.html#index-fsave-optimization-record"><span>-</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Developer-Options.html#index-fsave-optimization-record"><span>fsave</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Developer-Options.html#index-fsave-optimization-record"><span>-optimization-record</span></a></span></em><span lang="EN" xml:lang="EN" xml:lang="EN"> was added, which writes </span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>a &lt;SRCFILE&gt;.opt-record.json.gz</span></span><span lang="EN" xml:lang="EN" xml:lang="EN"> file describing the optimization decisions made by GCC. This is similar to the output of <em>-fopt-info</em>, but with additional metadata, such as the inlining chain and profile information (if available). </span></span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Using the previous example, the command is: </span></span></span></span></p>
+
+<pre>
+<span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>gcc -O2 -ftree-vectorize -fopt-info-all-vec vect.c -fsave-optimization-record</span></span></span></span></span></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">This generates the file: </span></span></span></span></p>
+
+<pre>
+<span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN"><span>vect.c.opt-record.json.gz</span></span></span></span></span>
+</pre>
+
+<h4><span><span><span><span><span>Improvements on code generation</span></span></span></span></span></h4>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">GCC also has improvements related to code generation. One example is the improvement made to the switch statement conversion. In this new release of GCC, the switch statements can be translated to a linear function expression by the use of the </span><em><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Optimize-Options.html#index-ftree-switch-conversion"><span>-ftree-switch-conversion</span></a></span></em><span lang="EN" xml:lang="EN" xml:lang="EN">. This means that the compiler tries to find any linear function a * x + y that can apply to the given values on the switch. Let's take one of the examples proposed in the<a href="https://github.com/gcc-mirror/gcc/commit/570c6c2ee57d1250468e5dde121d196f730732e1#diff-32e15f3f280035bc4b12b5980b580ca4"> </a></span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://github.com/gcc-mirror/gcc/commit/570c6c2ee57d1250468e5dde121d196f730732e1#diff-32e15f3f280035bc4b12b5980b580ca4"><span>patch</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN"> that introduced this change. </span></span></span></span></p>
+
+<pre>
+<code>int foo (int how) {
+  switch (how) {
+    case 2: how = 205; break;
+    case 3: how = 305; break;
+    case 4: how = 405; break;
+    case 5: how = 505; break;
+    case 6: how = 605; break;
+  }
+  return how;
+}
+
+void main(){
+      int var = 3;
+      foo(var);
+}
+</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">When we compile the code block below without the </span><em><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Optimize-Options.html#index-ftree-switch-conversion"><span>-ftree-switch-conversion</span></a></span></em><span lang="EN" xml:lang="EN" xml:lang="EN"> flag, the foo function is generated as: </span></span></span></span></p>
+
+<pre>
+<code>0000000000001129 &lt;foo&gt;:
+    1129:   83 ff 06          cmp  $0x6,%edi
+    112c:   77 34             ja  1162 &lt;foo+0x39&gt;
+    112e:   89 fa             mov  %edi,%edx
+    1130:   48 8d 0d cd 0e 00 00    lea  0xecd(%rip),%rcx    # 2004 &lt;_IO_stdin_used+0x4&gt;
+    1137:   48 63 04 91       movslq (%rcx,%rdx,4),%rax
+    113b:   48 01 c8          add  %rcx,%rax
+    113e:   ff e0             jmpq *%rax
+    1140:   b8 cd 00 00 00   mov  $0xcd,%eax
+    1145:   c3         retq
+    1146:   b8 31 01 00 00   mov  $0x131,%eax
+    114b:   eb f8             jmp  1145 &lt;foo+0x1c&gt;
+    114d:   b8 95 01 00 00   mov  $0x195,%eax
+    1152:   eb f1             jmp  1145 &lt;foo+0x1c&gt;
+    1154:   b8 f9 01 00 00   mov  $0x1f9,%eax
+    1159:   eb ea             jmp  1145 &lt;foo+0x1c&gt;
+    115b:   b8 5d 02 00 00   mov  $0x25d,%eax
+    1160:   eb e3             jmp  1145 &lt;foo+0x1c&gt;
+    1162:   89 f8             mov  %edi,%eax
+    1164:   eb df             jmp  1145 &lt;foo+0x1c&gt;</code></pre>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">However, when we compile with the flag (included in -O2 ) the objdump of the functions looks like:</span></span></span></span></p>
+
+<pre>
+<code>0000000000001129 &lt;foo&gt;:
+    1129:   89 f8             mov  %edi,%eax
+    112b:   8d 57 fe          lea  -0x2(%rdi),%edx
+    112e:   83 fa 04          cmp  $0x4,%edx
+    1131:   77 06             ja  1139 &lt;foo+0x10&gt;
+    1133:   6b c7 64          imul $0x64,%edi,%eax
+    1136:   83 c0 05          add  $0x5,%eax
+    1139:   c3         retq
+</code></pre>
+
+<p><span><span><span>The compiler took the switch statement and transformed it into <span lang="EN" xml:lang="EN" xml:lang="EN">100 * how + 5</span> (for this example). This is the linear function expression for which the compiler was searching to optimize the generated code.</span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">More examples like this are described in the </span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/gcc-9/changes.html"><span>GCC 9  Release Series changes list</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN">, </span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/git/?p=gcc.git;a=summary"><span>git history logs</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN">, and </span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/ml/gcc/"><span>community mailing list</span></a></span><span lang="EN" xml:lang="EN" xml:lang="EN">. Things like</span><em><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/onlinedocs/gcc-9.1.0/gcc/Optimize-Options.html#index-flive-patching"><span> -flive-patching</span></a></span></em><span lang="EN" xml:lang="EN" xml:lang="EN"> have been introduced in this release to provide a safe compilation for live-patching. The live-patching support gives developers control over the optimizations/behavior when compiling code for the context of applying it as a live patch.</span></span></span></span></p>
+
+<h2><span><span><span><span>Conclusion</span></span></span></span></h2>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">With the early adoption of the latest GNU toolchain technologies, the Clear Linux Project sustains their leading-edge adoption of the latest open source technologies. Many of these new features allow developers to showcase the improved performance of their applications, especially for mathematical algorithms. At the same time, these new capabilities </span></span></span></span><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">boost the developer experience with a detailed summary of the decisions being made by the compiler. The scalability and application of these new features are limited only by the imagination of world-wide developers. </span></span></span></span></p>
+
+<h2><span><span><span><span>Call to Action</span></span></span></span></h2>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Want to get involved? </span></span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Join the GCC GNU mailing list: </span><span lang="EN" xml:lang="EN" xml:lang="EN"><a href="https://gcc.gnu.org/ml/gcc/"><span>https://gcc.gnu.org/ml/gcc/</span></a></span></span></span></span></p>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Find out more about the Clear Linux Project</span></span></span></span></p>
+
+<ul><li><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Site: clearlinux.org</span></span></span></span></li>
+	<li><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Twitter: @clearlinux</span></span></span></span></li>
+	<li><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">Forum: community.clearlinux.org</span></span></span></span></li>
+</ul><h2><span><span><span><span>References</span></span></span></span></h2>
+
+<p><span><span><span><span lang="EN" xml:lang="EN" xml:lang="EN">[1]<a href="https://sourceware.org/ml/libc-announce/2019/msg00000.html"> </a></span><a href="https://sourceware.org/ml/libc-announce/2019/msg00000.html"><span>https://sourceware.org/ml/libc-announce/2019/msg00000.html</span></a></span></span></span></p>
+
+<p><span><span><span><span>[2]<a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=Glibc-2.29-Released"> </a></span><a href="https://www.phoronix.com/scan.php?page=news_item&amp;px=Glibc-2.29-Released"><span>https://www.phoronix.com/scan.php?page=news_item&amp;px=Glibc-2.29-Released</span></a></span></span></span></p>
+
+<p><span><span><span><span>[3]<a href="http://www.krisgarrett.net/upload/481408/documents/9F5ADB2DA8146659.pdf"> </a></span><span><a href="http://www.krisgarrett.net/upload/481408/documents/9F5ADB2DA8146659.pdf"><span>http://www.krisgarrett.net/upload/481408/documents/9F5ADB2DA8146659.pdf</span></a></span></span></span></span></p>
+
+<p> </p>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="toolchains-fresh-wind-sails-new-tech-world.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/31461","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="../core/assets/vendor/jquery/jquery.min.js%3Fv=3.6.0"></script>
+<script src="../core/misc/polyfills/element.matches.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/once/once.min.js%3Fv=1.0.1"></script>
+<script src="../core/misc/drupalSettingsLoader.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.init.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/extlink/extlink.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/google_analytics/js/google_analytics.js%3Fv=9.4.8"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/js-cookie/js.cookie.min.js%3Fv=3.0.1"></script>
+<script src="../modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js%3Fv=9.4.8" defer></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js%3Frl3r25"></script>
+<script src="../libraries/codesnippet/lib/highlight/highlight.pack.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/codesnippet/js/codesnippet.js%3Fv=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

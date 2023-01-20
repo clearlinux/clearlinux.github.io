@@ -1,0 +1,836 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--31385.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="Minimizing Clear Linux* OS container size via a multi-stage build By Jianjun Liu, Rusty Lynch, and Qi Zheng" />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/blogs-news/minimizing-clear-linux-os-container-sizes" />
+<meta property="og:title" content="Minimizing Clear Linux* OS container sizes" />
+<meta property="og:description" content="Minimizing Clear Linux* OS container size via a multi-stage build By Jianjun Liu, Rusty Lynch, and Qi Zheng" />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="../node/31385.html" />
+<link rel="shortlink" href="../node/31385.html" />
+<script src="../sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js%3Frl3r25" defer></script>
+
+    <title>Minimizing Clear Linux* OS container sizes | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/ajax-progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/align.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/autocomplete-loading.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/fieldgroup.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/container-inline.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/clearfix.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/details.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/hidden.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/item-list.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/js.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/nowrap.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/position-container.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/reset-appearance.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/resize.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/sticky-header.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-counter.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-counters.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-general-info.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tabledrag.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tablesort.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tree-child.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/filter/filter.caption.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/entity_embed/css/entity_embed.filter.caption.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/extlink/extlink.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="../libraries/codesnippet/lib/highlight/styles/monokai_sublime.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="../core/assets/vendor/modernizr/modernizr.min.js%3Fv=3.11.7"></script>
+<script src="../core/misc/modernizr-additional-tests.js%3Fv=3.11.7"></script>
+
+</head>
+<body class="alias--blogs-news-minimizing-clear-linux-os-container-sizes nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="minimizing-clear-linux-os-container-sizes.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--31385.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="../index.html">
+                          <img class="header__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../about.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../developer.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../software.html">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="http://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--31385--full.html.twig
+   * node--31385.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=5.html' title='Maintenance'>Maintenance</a>
+        ,              <a tabindex='3' href='../blogs%3Fcategory=2.html' title='Power and Performance'>Power and Performance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Minimizing Clear Linux* OS container sizes</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">30 Aug, 2019</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p class="text-align-center"><strong>Minimizing Clear Linux* OS container size via a multi-stage build</strong></p>
+
+<p class="text-align-center"><em>By Jianjun Liu, Rusty Lynch, and Qi Zheng</em></p>
+
+<hr /><h1> </h1>
+
+<h1><span><span><span><span>Introduction</span></span></span></span></h1>
+
+<p><span><span><span>This document describes how multi-stage build (a feature introduced in Docker* 17.05) helps to minimize the size of Clear Linux* OS containers, as well as minimizing the Clear Linux OS bundle size itself. We explain how we used multi-stage build to significantly reduce the size of the clearlinux/redis Dockerfile from 225MB to 55.9MB.</span></span></span></p>
+
+<h1><span><span><span><span>Concepts</span></span></span></span></h1>
+
+<p><span><span><span>A Docker <em>image </em>is a lightweight, stand-alone, executable package that includes everything needed to run a piece of software, including the code, a runtime, libraries, environment variables, and configuration files. It’s an immutable Docker container.A <em>Dockerfile</em> contains all the commands to build a Docker image.</span></span></span></p>
+
+<p><span><span><span>A Docker <em>container </em>is a runtime instance of a Docker image—what the image becomes in memory when actually executed. It runs completely isolated from the host environment by default, only accessing host files and ports if configured to do so. </span></span></span></p>
+
+<p><span><span><span>A Docker image is built up from a series of <em><span><a href="https://docs.docker.com/storage/storagedriver/"><span>layers</span></a></span></em>. Each layer represents an instruction in the image’s Dockerfile. Each layer except the very last one is read-only.</span></span></span></p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="21cb7a95-d042-4375-8df6-bfb3074b4c1d" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/min-cont-fig1.png" width="675" height="469" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p class="text-align-center"><a href="https://docs.docker.com/storage/storagedriver/">Image source</a></p>
+
+<p><span><span><span>Reducing Docker image size is important for saving disk space, for quickly deploying images across a network, and for running on devices with limited storage size. </span></span></span></p>
+
+<h2><span><span><span><span>Multi-stage build</span></span></span></span></h2>
+
+<p><span><span><span>The multi-stage build feature allows you to create multiple intermediate images from the same Dockerfile. With multi-stage builds, you use multiple FROM statements in your Dockerfile. Each FROM instruction can use a different base, and each of them begins a new stage of the build. You can selectively copy artifacts from one stage to another, leaving behind everything you don’t want in the final image. For example, multi-stage build can allow you to have a smaller final image by not including your application build dependencies.</span></span></span></p>
+
+<p><span><span><span>You can read more about multi-stage builds <span><a href="https://docs.docker.com/develop/develop-images/multistage-build/"><span>here</span></a></span>.</span></span></span></p>
+
+<h1><span><span><span><span>clearlinux/redis without a multi-stage build</span></span></span></span></h1>
+
+<p><span><span><span>The original <span><a href="https://github.com/clearlinux/dockerfiles/tree/master/redis"><span>clearlinux/redis</span></a></span> Dockerfile was created based on a single-stage build, with <code>clearlinux:latest</code> as the base layer.</span></span></span></p>
+
+<pre>
+<code class="language-dockerfile">FROM clearlinux:latest
+MAINTAINER 
+
+ARG swupd_args
+
+RUN swupd update --no-boot-update $swupd_args
+
+RUN swupd bundle-add redis-native $swupd_args \
+        &amp;&amp; rm -rf /var/lib/swupd/* \
+        &amp;&amp; mkdir /data &amp;&amp; chown redis:redis /data
+
+VOLUME /data
+WORKDIR /data
+
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+EXPOSE 6379
+CMD ["redis-server"]</code></pre>
+
+<h2>Image size analysis</h2>
+
+<p>The command docker history <span><span><span><code>&lt;image&gt;</code></span></span></span> shows the history of an image building process, including layer size information. This command was used to analyze the clearlinux/redis image and the diagram below shows the size information of the main layers.</p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="e1f61792-b65d-4a81-8947-5f2d8355d299" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/min-cont-fig2.png" width="724" height="445" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<p>There are three parts that compose the clearlinux/redis image size:</p>
+
+<ol><li>Base layer: contains content corresponding with the “<span><span><span><code>FROM clearlinux:latest</code></span></span></span>” line in the Dockerfile and a size of about 150MB.</li>
+	<li>Swupd update layer: contains content corresponding with the "<span><span><span><code>RUN swupd update....</code></span></span></span>" line in the Dockerfile. This layer contains newer versions of the same files as the base layer, so its size could change from tens to hundreds of MBs  depending on how many files changed in the updated Clear Linux OS release. </li>
+	<li>Application layers: contains the left contents corresponding with the RUN swupd bundle-add redis-native……, COPY docker-entrypoint.sh /usr/local/bin/, and RUN chmod +x /usr/local/bin/docker-entrypoint.sh in the Dockerfile. Its size was 5.32MB. </li>
+</ol><p>The next step was to further analyze the layer contents, using the command swupd bundle-list to list all bundles installed, and find package lists in bundle files.</p>
+
+<p>The base layer, "<span><span><span><code>FROM clearlinux:latest</code></span></span></span>", consists of two bundles, os-core and os-core-update, with packages listed as described below:</p>
+
+<table class="Table"><tbody><tr><td>
+			<p><strong>Bundles<br />
+			in clearlinux:latest<br />
+			(version:28410)</strong></p>
+			</td>
+			<td><strong>Bundle Description</strong></td>
+			<td>
+			<p><strong>Package Name</strong></p>
+			</td>
+		</tr><tr><td>
+			<p class="text-align-left">os-core (72MB, 31 packages)</p>
+			</td>
+			<td>
+			<p class="text-align-left">Provides packages necessary for running a minimal Linux userspace.</p>
+			</td>
+			<td>
+			<p class="text-align-left">ca-certs-static, clr-power-tweaks, clr-systemd-config, cnf, coreutils-bin, dbus-autostart, dbus-bin, dist-pam-configs, e2fsprogs-bin, filesystem, gawk-bin, glibc-utils, grep-bin, hostname-bin, iproute2-bin, kmod-bin, nano-bin, nano-data, netbase, nettle-lib, nss-altfiles, procps-ng-bin, sed-bin, shadow, systemd-bootchart, systemd, systemd-lib, tzdata-minimal, util-linux-bin, systemd-networkd-autostart-extras, bash-bin</p>
+			</td>
+		</tr><tr><td>
+			<p class="text-align-left">os-core-update (78MB, 27 packages)</p>
+			</td>
+			<td>
+			<p class="text-align-left">Provides packages for running the Clear Linux OS updater, swupd.</p>
+			</td>
+			<td>
+			<p class="text-align-left">btrfs-progs, bzip2, clr-boot-manager-autostart, clr-boot-manager-bin, clr-boot-manager-services, clr-bundles, clr-find-bundle, clr-hardware-files, clr-one-shot-updates, clr-service-restart-bin, clr-update-triggers, efibootmgr-bin, findutils-bin, gzip-bin, pigz-bin, swupd-client, swupd-overdue, tar-bin, xz-bin, findutils, glib-lib, icu4c-lib, libstdc++, gcc-libs-math, glibc-lib-avx2, pacrunner, p11-kit     </p>
+			</td>
+		</tr></tbody></table><p>Since os-core already provided the necessary components to run a minimal Linux userspace, we created a new container called clearlinux/os-core that only contain the os-core bundle to serve as a base for other containers. </p>
+
+<p>We decided to remove os-core-update completely from the new Dockerfile, because it contains software that is not relevant in a container context and a new container image for clearlinux/redis is published daily.</p>
+
+<p>The swupd update layer runs the Clear Linux OS command, swupd update, to sync all package files to the latest version into the current layer. A Docker image is built up from a series of layers. Each layer represents an instruction in the image’s Dockerfile. Each layer except the very last one is read-only. So the older files in the above base layer are still there. This added bloat to the container that, by definition, cannot be used by the target application. If the base layer always has the updated version, this layer can be removed.</p>
+
+<p>The application layer, RUN swupd bundle-add redis-native…, contains the necessary package to run the end user target application. There is only one package, redis-native, included. No further size minimization is needed on this layer for clearlinux/redis. </p>
+
+<table class="Table"><tbody><tr><td>
+			<p><strong>Bundles<br />
+			in clearlinux:latest<br />
+			(28410)</strong></p>
+			</td>
+			<td>
+			<p><strong>Package Name</strong></p>
+			</td>
+		</tr><tr><td>
+			<p class="text-align-left">redis-native(5.32MB)</p>
+			</td>
+			<td>
+			<p class="text-align-left">redis-native</p>
+			</td>
+		</tr></tbody></table><h1>clearlinux/redis with multi-stage build</h1>
+
+<p>Based on our analysis, we created a new clearlinux/redis Dockerfile with the updates described below:</p>
+
+<pre>
+<code class="language-dockerfile">FROM clearlinux:latest AS builder
+
+# Move to latest Clear Linux release to ensure
+# that the swupd command line arguments are
+# correct
+RUN swupd update --no-boot-update $swupd_args
+
+# Grab os-release info from the minimal base image so
+# that the new content matches the exact OS version
+COPY --from=clearlinux/os-core:latest /usr/lib/os-release /
+
+# Install additional content in a target directory
+# using the os version from the minimal base
+RUN source /os-release &amp;&amp; \
+    mkdir /install_root \
+    &amp;&amp; swupd os-install -V ${VERSION_ID} \
+    --path /install_root --statedir /swupd-state \
+    --bundles=redis-native,findutils --no-scripts
+
+# For some Host OS configuration with redirect_dir on,
+# extra data are saved on the upper layer when the same
+# file exists on different layers. To minimize docker
+# image size, remove the overlapped files before copy.
+RUN mkdir /os_core_install
+COPY --from=clearlinux/os-core:latest / /os_core_install/
+RUN cd / &amp;&amp; \
+    find os_core_install | sed -e 's/os_core_install/install_root/' | xargs rm -d || true
+
+FROM clearlinux/os-core:latest
+MAINTAINER 
+
+COPY --from=builder /install_root /
+
+RUN mkdir /data &amp;&amp; chown redis:redis /data
+
+VOLUME /data
+WORKDIR /data
+
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+EXPOSE 6379
+CMD ["redis-server"]</code></pre>
+
+<p>The base layer contains content corresponding with the “<span><span><span><code>FROM clearlinux/os-core:latest</code></span></span></span>” in the Dockerfile. The os-core bundle is included and the os-core-update bundle is not. Within the os-core bundle, certain packages, such as: “systemd-*”, “nano-*”, and “dbus-*”, have been removed as they are not necessary in a Docker environment.</p>
+
+<table><tbody><tr><td>
+			<p><strong>Bundles<br />
+			in clearlinux/os-core:latest<br />
+			(30550)</strong></p>
+			</td>
+			<td>
+			<p><strong>Package Name</strong></p>
+			</td>
+		</tr><tr><td>
+			<p class="text-align-left">os-core(48.6MB, 16 packages)</p>
+			</td>
+			<td>
+			<p class="text-align-left">bash-bin, ca-certs-static, coreutils-bin, dist-pam-configs, e2fsprogs-bin, filesystem, gawk-bin, glibc-utils, grep-bin, hostname-bin, nettle-lib, sed-bin, shadow, tzdata-minimal, util-linux-bin</p>
+
+			<p class="text-align-left">+ glibc-lib-avx2</p>
+
+			<p class="text-align-left">- systemd-bootchart, systemd, systemd-lib, systemd-networkd-autostart-extras, clr-power-tweaks,  clr-systemd-config, cnf, dbus-autostart, dbus-bin, iproute2-bin, kmod-bin, nano-bin, nano-data, netbase, nss-altfiles, procps-ng-bin</p>
+			</td>
+		</tr></tbody></table><p>These modifications reduce the base layer size from the original 150MB down to 48.6MB. Because clearlinux/os-core is the base layer of most of clearlinux/* container images, its size reduction has a multiplicative effect on saving storage disk space because all container images will share the same base layer.</p>
+
+<p>In the swupd update layer, all software package files are always the latest version because clearlinux/os-core is updated daily. No “swupd update” is needed to update package files. </p>
+
+<p>In the application layer, a multi-stage build is implemented to install the redis application in the builder stage build by copying only the redis application to the target in the target stage build. This is done during the building process because os-core-update has been removed from base layer to save space.</p>
+
+<ul><li>In the builder stage, run "<span><span><span><code>FROM clearlinux:latest</code></span></span></span>" with the updater function, "swupd", supported.
+
+	<pre>
+<code class="language-dockerfile">FROM clearlinux:latest AS builder
+RUN swupd update --no-boot-update $swupd_args</code></pre>
+	</li>
+	<li>Inherit the Clear Linux* version from its base layer (clearlinux/os-core for clearlinux/redis).
+	<pre>
+<code class="language-dockerfile">COPY --from=clearlinux/os-core:latest /usr/lib/os-release /</code></pre>
+	</li>
+	<li>Install application, redis, onto /install_root. Because os-core will be installed by default, remove package files of os-core from /install_root. Then there are only package files of redis application left.
+	<pre>
+<code class="language-dockerfile">RUN source /os-release &amp;&amp; \
+    mkdir /install_root \
+    &amp;&amp; swupd os-install -V ${VERSION_ID} \
+    --path /install_root --statedir /swupd-state \
+    --bundles=redis-native,findutils --no-scripts
+                        RUN mkdir /os_core_install
+COPY --from=clearlinux/os-core:latest / /os_core_install/
+RUN cd / &amp;&amp; \
+find os_core_install | sed -e 's/os_core_install/install_root/' | xargs rm -d || true</code></pre>
+
+	<p> </p>
+	</li>
+	<li>In the target stage, copy the application function (redis-native), onto the base layer (clearlinux/os-core):
+	<pre>
+<code class="language-dockerfile">COPY --from=builder /install_root /</code></pre>
+	</li>
+</ul><p>After implementing all of the techniques above, the total container image size was reduced from the original 225MB down to 55.9MB, as shown in the diagram below.</p>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'entity_embed_container' -->
+<!-- BEGIN OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+<div data-align="center" data-embed-button="media_browser" data-entity-embed-display="view_mode:media.embedded" data-entity-embed-display-settings="[]" data-entity-type="media" data-entity-uuid="6b156d0d-1907-4b4c-9928-3aaab523a045" data-langcode="en" class="embedded-entity">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'media' -->
+<!-- FILE NAME SUGGESTIONS:
+   * media--source-image.html.twig
+   * media--image--embedded.html.twig
+   * media--image.html.twig
+   * media--embedded.html.twig
+   x media.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/media.html.twig' -->
+<article><!-- THEME DEBUG --><!-- THEME HOOK: 'field' --><!-- FILE NAME SUGGESTIONS:
+   * field--media--image--image.html.twig
+   * field--media--image.html.twig
+   * field--media--image.html.twig
+   * field--image.html.twig
+   * field--image.html.twig
+   x field.html.twig
+--><!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' --><div class="field field--name-image field--type-image field--label-hidden field__item">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image_formatter' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' -->
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'image' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/image.html.twig' -->
+<img loading="lazy" src="../sites/default/files/min-cont-fig3.png" width="1200" height="742" alt="" typeof="foaf:Image" /><!-- END OUTPUT from 'core/themes/stable/templates/field/image.html.twig' --><!-- END OUTPUT from 'core/themes/stable/templates/field/image-formatter.html.twig' --></div>
+      
+<!-- END OUTPUT from 'themes/contrib/cog/templates/field/field.html.twig' -->
+
+
+  </article><!-- END OUTPUT from 'core/themes/stable/templates/content/media.html.twig' --></div>
+
+<!-- END OUTPUT from 'modules/contrib/entity_embed/templates/entity-embed-container.html.twig' -->
+
+<h1>clearlinux/* with multi-stage build</h1>
+
+<p>You can use the multi-stage build method described for clearlinux/redis to modify other <a href="https://github.com/clearlinux/dockerfiles">clearlinux/* Dockerfiles</a>.</p>
+
+<p>Most Clear Linux applications use clearlinux/os-core as the base layer like clearlinux/redis does. However, there are still a few Clear Linux applications that are built based on a different Clear Linux application. One example is clearlinux/cgit, which is based on clearlinux/httpd.</p>
+
+<p>In the clearlinux/cgit Dockerfile, clearlinux/httpd is the base layer, instead of clearlinux/os-core. The cgit application package files are generated in the builder stage, and copied to the target in the target stage.</p>
+
+<p>Here is the clearlinux/cgit Dockerfile after it has been modified for multi-stage build:</p>
+
+<pre>
+<code class="language-dockerfile">FROM clearlinux:latest AS builder
+
+# Move to latest Clear Linux release to ensure
+# that the swupd command line arguments are
+# correct
+RUN swupd update --no-boot-update $swupd_args
+
+# Grab os-release info from the minimal base image so
+# that the new content matches the exact OS version
+COPY --from=clearlinux/httpd:latest /usr/lib/os-release /
+
+# Install additional content in a target directory
+# using the os version from the minimal base
+RUN source /os-release &amp;&amp; \
+    mkdir /install_root \
+    &amp;&amp; swupd os-install -V ${VERSION_ID} \
+    --path /install_root --statedir /swupd-state \
+    --bundles=sudo,curl,scm-server,httpd --no-boot-update
+
+# For some Host OS configuration with redirect_dir on,
+# extra data are saved on the upper layer when the same
+# file exists on different layers. To minimize docker
+# image size, remove the overlapped files before copy.
+RUN mkdir /os_core_install
+COPY --from=clearlinux/httpd:latest / /os_core_install/
+RUN cd / &amp;&amp; \
+    find os_core_install | sed -e 's/os_core_install/install_root/' | xargs rm -d &amp;&gt; /dev/null || true
+
+FROM clearlinux/httpd:latest
+
+COPY --from=builder /install_root /
+COPY cgitrc /etc/cgitrc
+COPY httpd-cgit.conf /etc/httpd/conf.d/httpd-cgit.conf</code></pre>
+
+<h2><br />
+Summary</h2>
+
+<p>The Clear Linux OS team is constantly looking for ways to optimize system and application software to provide a performant and desirable experience. This includes our Docker images for cloud and developer use cases.</p>
+
+<p>With the multi-stage build method described in this article, most of the <a href="https://github.com/clearlinux/dockerfiles">Clear Linux* Dockerfiles at github</a> have been updated for size optimization. We encourage you to check out our images on Dockerhub and customize the Dockerfiles for your needs. You can also use the same method to optimize your own Clear Linux* based Dockerfiles.</p>
+
+<p>If you have questions and feedback, please submit them to <a href="https://github.com/clearlinux/dockerfiles/issues">https://github.com/clearlinux/dockerfiles/issues</a>. We are eager to hear any feedback from you.  </p>
+
+<p><code> </code></p>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="minimizing-clear-linux-os-container-sizes.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/31385","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="../core/assets/vendor/jquery/jquery.min.js%3Fv=3.6.0"></script>
+<script src="../core/misc/polyfills/element.matches.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/once/once.min.js%3Fv=1.0.1"></script>
+<script src="../core/misc/drupalSettingsLoader.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.init.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/extlink/extlink.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/google_analytics/js/google_analytics.js%3Fv=9.4.8"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/js-cookie/js.cookie.min.js%3Fv=3.0.1"></script>
+<script src="../modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js%3Fv=9.4.8" defer></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js%3Frl3r25"></script>
+<script src="../libraries/codesnippet/lib/highlight/highlight.pack.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/codesnippet/js/codesnippet.js%3Fv=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+

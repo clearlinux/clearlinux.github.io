@@ -1,0 +1,745 @@
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'html' -->
+<!-- FILE NAME SUGGESTIONS:
+   * html--node--31877.html.twig
+   * html--node--%.html.twig
+   * html--node.html.twig
+   x html.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
+<head>
+    <meta charset="utf-8" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
+<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
+<meta name="description" content="by Victor Rodriguez Bahena Discover some of the latest features of GCC release 10.1, integrated in Clear Linux OS, and learn how to use them." />
+<meta property="og:site_name" content="Clear Linux* Project" />
+<meta property="og:type" content="Blog" />
+<meta property="og:url" content="https://clearlinux.org/blogs-news/major-improvements-gcc-101" />
+<meta property="og:title" content="Major improvements in GCC 10.1" />
+<meta property="og:description" content="by Victor Rodriguez Bahena Discover some of the latest features of GCC release 10.1, integrated in Clear Linux OS, and learn how to use them." />
+<meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
+<meta name="MobileOptimized" content="width" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
+<link rel="icon" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="canonical" href="../node/31877.html" />
+<link rel="shortlink" href="../node/31877.html" />
+<script src="../sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js%3Frl3r25" defer></script>
+
+    <title>Major improvements in GCC 10.1 | Clear Linux* Project</title>
+    <link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/ajax-progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/align.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/autocomplete-loading.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/fieldgroup.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/container-inline.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/clearfix.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/details.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/hidden.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/item-list.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/js.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/nowrap.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/position-container.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/progress.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/reset-appearance.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/resize.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/sticky-header.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-counter.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-counters.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/system-status-report-general-info.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tabledrag.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tablesort.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../core/themes/stable/css/system/components/tree-child.module.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/contrib/extlink/extlink.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
+<link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
+<link rel="stylesheet" media="all" href="../libraries/codesnippet/lib/highlight/styles/monokai_sublime.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="../modules/custom/clearlinux_org/themes/clearlinux_theme/css/styles.css%3Frl3r25.css" />
+<link rel="stylesheet" media="all" href="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
+
+    <script src="../core/assets/vendor/modernizr/modernizr.min.js%3Fv=3.11.7"></script>
+<script src="../core/misc/modernizr-additional-tests.js%3Fv=3.11.7"></script>
+
+</head>
+<body class="alias--blogs-news-major-improvements-gcc-101 nodetype--blog logged-out">
+<div id="skip">
+    <a class="visually-hidden focusable skip-link" href="major-improvements-gcc-101.html#main-menu">
+        Skip to main navigation
+    </a>
+</div>
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'off_canvas_page_wrapper' -->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+  <div class="dialog-off-canvas-main-canvas" data-off-canvas-main-canvas>
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'page' -->
+<!-- FILE NAME SUGGESTIONS:
+   * page--node--blog.html.twig
+   * page--node--31877.html.twig
+   * page--node--%.html.twig
+   * page--node.html.twig
+   x page.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+  <!-- ______________________ HEADER _______________________ -->
+  
+  
+
+<header id="header">
+  <div class="container padding-md--left-right">
+    <div class="header__menu_mobile">
+      <i class="fa fa-bars header__menu_mobile__control" aria-hidden="true"></i>
+    </div>
+
+    <div id="header__site_info">
+        <div class="header__site_img_wrapper">
+          <a href ="../index.html">
+                          <img class="header__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          </a>
+        </div>
+    </div>
+
+          <nav class="header__menu">
+        <ul class="header__menu_list">
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../about.html">About</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../developer.html">Developer</a>
+              </li>
+                         <li class="header__menu_list_item   ">
+                <a tabindex='1' href="../software.html">Software</a>
+              </li>
+                   </ul>
+      </nav>
+    
+    <div class="header__search">
+      <i class="fa fa-search visible header__search_icon" aria-hidden="true"></i>
+      
+
+<div class="header__search_form__wrapper">
+  <form method="get" class=" header__search_form" action="http://clearlinux.org/search">
+    <i class="fa fa-search header__search_placeholder_icon" aria-hidden="true"></i>
+    <input type="text" name="search" class="header__search_form__input" placeholder="Search Clear Linux* Project" value="" />
+    <input type="submit" value="Submit">
+  </form>
+  <div class="header__search_cancel__wrapper">
+    <span class="header__search_cancel">Cancel</span>
+  </div>
+</div>
+    </div>
+
+  </div>
+</header>
+<!-- /header -->
+  <div class="header__menu-submenu green">
+    <div class="toolbar__container">
+      <div class="container   padding-md--left-right">
+        <ul class='Header__main'>
+                  </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+<div class="wrapper banner blog"  >
+  <div class="banner__gradient  "></div>
+    <div class="container banner__container ">
+    <div class="banner__content">
+              <h1 class="banner__title">Blogs &amp; News</h1>
+      
+      
+      
+          </div>
+
+      </div>
+</div>
+
+<!-- Page Header -->
+<div class="page_header">
+  <div class="page_header__main">
+    
+    <!-- tabs -->
+        
+  </div>
+</div>
+<!-- End Page Header -->
+
+<!-- ______________________ MAIN _______________________ -->
+<main  class="page-standard padding-md--top padding-lg--bottom padding-md--left-right container-xl">
+    
+
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'region' -->
+<!-- FILE NAME SUGGESTIONS:
+   x region--content.html.twig
+   * region.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   * block--clearlinux-theme-messages.html.twig
+   x block--system-messages-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+<div data-drupal-messages-fallback class="hidden"></div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/block/block--system-messages-block.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--sharethis.html.twig
+   * block--sharethis-block.html.twig
+   x block--sharethis.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
+  <div class="sharethis-wrapper">
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+  </div>
+</div>
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'block' -->
+<!-- FILE NAME SUGGESTIONS:
+   x block--clearlinux-theme-content.html.twig
+   * block--system-main-block.html.twig
+   * block--system.html.twig
+   * block.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * node--31877--full.html.twig
+   * node--31877.html.twig
+   x node--blog--full.html.twig
+   * node--blog.html.twig
+   * node--full.html.twig
+   * node.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<div class="blog_detail">
+
+      <div class="blog_detail__categories">
+              <a tabindex='2' href='../blogs%3Fcategory=2.html' title='Power and Performance'>Power and Performance</a>
+                  </div>
+  
+      <h1 class="blog_detail__title">
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--title--blog.html.twig
+   x field--node--title.html.twig
+   * field--node--blog.html.twig
+   * field--title.html.twig
+   * field--string.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+<span>Major improvements in GCC 10.1</span>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/field/field--node--title.html.twig' -->
+
+</h1>
+  
+  
+      <p class="blog_detail__date">27 Jul, 2020</p>
+  
+  
+  
+  
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'links__node' -->
+<!-- FILE NAME SUGGESTIONS:
+   * links--node.html.twig
+   x links.html.twig
+-->
+<!-- BEGIN OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+<!-- END OUTPUT from 'themes/contrib/cog/templates/navigation/links.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'field' -->
+<!-- FILE NAME SUGGESTIONS:
+   * field--node--body--blog.html.twig
+   x field--node--body.html.twig
+   * field--node--blog.html.twig
+   * field--body.html.twig
+   * field--text-with-summary.html.twig
+   * field.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+<div class="Text__description">
+      <p class="normal"><em>by Victor Rodriguez Bahena</em></p>
+
+<p class="normal">Discover some of the latest features of GCC release 10.1, integrated in Clear Linux OS, and learn how to use them.</p>
+
+<h2><span><span><span><span><span><span>Introduction</span></span></span></span></span></span></h2>
+
+<p><span><span><span><span><span><span>It's been 33 years since the first release of GCC, and the GNU community keeps offering new features that surprise and inspire the imagination of developers.  In 2020, the GNU* Compiler Collection (GCC) community gladly announced another major release, GCC 10.1. This release came with various optimization enhancements and bug fixes, several new hardware enablement changes, and enhancements to the compiler back-ends. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>In the Clear Linux* Project, we want our users to easily access these new technologies to improve applications for customers by boosting their performance and providing a more robust layer of security protection against attacks. Included in GCC 10.1 is a new static analysis system that detects potential security vulnerabilities. This helps to speed up the development cycle as well as reduce debug time. In this blog post, I review some of the latest features of GCC release 10.1 already present in Clear Linux, explain some of their pros and cons, and show how to use them.  I presented parts of this material as </span></span></span></span></span></span><a href="https://elinux.org/images/2/26/Tool_chain_update_Victor_R.pdf"><span><span><span><span><span><span><span><span>Toolchains in the New Era</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> at the Embedded Linux* Conference 2020. </span></span></span></span></span></span></p>
+
+<h3><span><span><span><span><span><span>Security (-fanalyzer)</span></span></span></span></span></span></h3>
+
+<p><span><span><span><span><span><span>In the GCC release 10.1 a new option, </span></span></span></span></span></span><em><a href="https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Static-Analyzer-Options.html"><span><span><span><span><span><span><span><span>-fanalyzer</span></span></span></span></span></span></span></span></a></em><span><span><span><span><span><span>, was introduced to enable a new static analysis pass and associated warnings. This pass performs an exploration of paths through the code in the hope of detecting various common errors. Static security analysis is one of the many code review tools that can be implemented without executing the software. Enabling this option effectively activates </span></span></span></span></span></span><a href="https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Static-Analyzer-Options.html"><span><span><span><span><span><span>some</span></span></span></span></span></span></a><span><span><span><span><span><span> of these warnings:</span></span></span></span></span></span></p>
+
+<ul><li><span><span><span><span><span><span>Wanalyzer-double-fclose</span></span></span></span></span></span></li>
+	<li><span><span><span><span><span><span>Wanalyzer-double-free</span></span></span></span></span></span></li>
+	<li><span><span><span><span><span><span>Wanalyzer-exposure-through-output-file</span></span></span></span></span></span></li>
+	<li><span><span><span><span><span><span>Wanalyzer-file-leak</span></span></span></span></span></span></li>
+	<li><span><span><span><span><span><span>Wanalyzer-free-of-non-heap</span></span></span></span></span></span></li>
+	<li><span><span><span><span><span><span>Wanalyzer-malloc-leak</span></span></span></span></span></span></li>
+</ul><p><span><span><span><span><span><span>Having a static analysis tool native at compilation time can help to improve developer productivity. These warnings help developers to catch security vulnerabilities early. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>One static analysis tool is the </span></span></span></span></span></span><span><span><span><span><em><span>Wanalyzer-double-free</span></em></span></span></span></span><span><span><span><span><span><span> warning that detects situations when </span></span></span></span></span></span><span><span><span><span><em><span>free() </span></em></span></span></span></span><span><span><span><span><span><span>is called more than once with the same memory address as an argument. When a program calls </span></span></span></span></span></span><span><span><span><span><em><span>free()</span></em></span></span></span></span><span><span><span><span><span><span> twice with the same argument, the program’s memory management data structures become corrupted and could allow a malicious user to write values in arbitrary memory spaces. This corruption can cause the program to crash or, in some circumstances, alter the execution flow.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>David Malcom explains the motivation behind </span></span></span></span></span></span><a href="https://developers.redhat.com/blog/2020/03/26/static-analysis-in-gcc-10/"><span><span><span><span><span><span><span><span>Static analysis in GCC 10</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> , where he applies the tool to an actual bug, CVE-2005-1689, showing how double free memory is exploited. This security bug was discovered on the Kerberos* computer-network authentication protocol a few years ago. The double free vulnerability in the krb5_recvauth function in MIT Kerberos 5 (krb5), in versions 1.4.1 and earlier, allows remote attackers to execute arbitrary code via certain error conditions. When doing a compilation with GCC10 and the new flag <em>-fanalyzer</em>,a warning appears on the same line of code where the</span></span></span></span></span></span><a href="http://web.mit.edu/kerberos/advisories/2005-003-patch_1.4.1.txt"><span><span><span><span><span><span> </span></span></span></span></span></span><span><span><span><span><span><span><span><span>patch</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> for the fix is present.  Developers  can also take advantage of other flags, such as <em>-fdiagnostics-format=json</em> and <em>-fdiagnostics-path-format=separate-events</em>.  An automation process can be implemented using these flags to post-process the verbose output log of the compiler in JSON format. This can be  published as an HTML report, providing automated security checks. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Another example of a security vulnerability warning, present in <em>-fanaliyzer</em>, is </span></span></span></span></span></span><span><span><span><span><em><span>Unsafe-call-within-signal-handler</span></em></span></span></span></span><span><span><span><span><span><span>. A signal handler is a function which is called when the corresponding signal (a software interrupt delivered to a process) occurs. This diagnostic warns for paths through the code in which a function known to be async-signal-unsafe, such as fprintf,  is called from a signal handler. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>There are several circumstances where a function uses a signal handler that may result in the corruption of memory due to exploits of the process. Attackers may be able to exploit a signal handler to cause the software state to be corrupted, possibly leading to a denial of service or even code execution. The following code sample shows how the </span></span></span></span></span></span><span><span><span><span><em><span>Unsafe-call-within-signal-handler </span></em></span></span></span></span><span><span><span><span><span><span>warning detects a printf vulnerability. </span></span></span></span></span></span></p>
+
+<pre>
+<code>#include &lt;stdio.h&gt;
+#include &lt;signal.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;unistd.h&gt;
+
+void handle_sigint(int sig){
+       if (sig == SIGINT){
+             printf("SIGNAL: %d", sig);
+             exit(-1);
+    }
+}
+
+int main() {
+             signal(SIGINT, handle_sigint);
+             while (1)
+             sleep(1);
+             return 0;
+}</code></pre>
+
+<p><span><span><span><span><span><span>In the following example, the compiler warns us from a call to ‘printf’ from within the signal handler. CWE-479  identifies a Signal Handler Use of a Non-reentrant Function, found in the common weakness enumeration (CWE™) database. A Non-reentrant function is a kind of function that cannot safely be called, interrupted, and then recalled before the first call has finished without resulting in memory corruption [2]. </span></span></span></span></span></span></p>
+
+<pre>
+<code>$ gcc test.c -fanalyzer
+test.c: In function ‘handle_sigint’:
+test.c:8:3: warning: call to ‘printf’ from within signal handler [CWE-479]
+[-Wanalyzer-unsafe-call-within-signal-handler]
+
+     8 |   printf("SIGNAL: %d", sig);
+     |    ^~~~~~~~~~~~~~~~~~~~~~~~~
+‘main’: events 1-2
+     |
+     |     13 | int main() {
+     |          |          ^~~~
+     |          |          |
+     |          |         (1) entry to ‘main’
+     |     14 |         signal(SIGINT, handle_sigint);
+     |          | ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     |          |          |
+     |          |          (2) registering ‘handle_sigint’ as signal handler
+     |
+
+event 3
+     |
+     | cc1:
+     |    (3): later on, when the signal is delivered to the process
+     |
+     +--&gt; ‘handle_sigint’: events 4-7
+     |
+     |             6 | void handle_sigint(int sig){
+     |             |        ^~~~~~~~~~~~~
+     |             |        |
+     |             |       (4) entry to ‘handle_sigint’
+     |             7  |  if (sig == SIGINT){
+     |             |        ~
+     |             |         |
+     |             |       (5) following ‘true’ branch (when ‘sig == 2’)...
+     |             8   |     printf("SIGNAL: %d", sig);
+     |             |   ~~~~~~~~~~~~~~~~~~~~~~~~~
+     |             |   |
+     |             |   (6) ...to here
+     |             |   (7) call to ‘printf’ from within signal handler    
+</code></pre>
+
+<p><span><span><span><span><span><span>After being warned about this security issue, a developer can adjust the code in </span></span></span></span></span></span>multiple <span><span><span><span><span><span>ways to ensure that non-reentrant functions are not present in the signal handlers, or ensure that they’re not being called outside the handler when the signal happens.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Despite the advantages of the new <em>-fanalyzer</em> static analysis system, there are some disadvantages. One of these is the large amount of spurious warnings/errors generated on the output log. As shown earlier, developers can take advantage of flags such as <em>-fdiagnostics-format=json</em> and <em>-fdiagnostics-path-format=separate-events</em> in order to post-process the output logs. The GCC community is investing time improving this to make developers pay attention to errors that matter and enhance the development speed.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Another disadvantage of <em>-fanalyzer</em> is the large amount of time it takes to run the analysis, which could slow down developer productivity. We should evaluate further the increase in compilation time and the fact that non-C code is unlikely to work (this analysis is much more expensive than other GCC warnings). I should acknowledge that the  analyzer is in an experimental state; however I believe that the developer community will leverage and improve the static code analyzer available at the compiler. For more information about <em>-fanalyzer</em>, please refer to the </span></span></span></span></span></span><a href="https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Static-Analyzer-Options.html"><span><span><span><span><span><span>official GNU</span></span></span></span></span></span></a><span><span><span><span><span><span> documentation</span></span></span></span></span></span><span><span><span><span><span><span> as well as the great work done in </span></span></span></span></span></span><a href="https://developers.redhat.com/blog/2020/03/26/static-analysis-in-gcc-10/"><span><span><span><span><span><span><span><span>Static analysis in GCC 10</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span> blog.</span></span></span></span></span></span></p>
+
+<h2><span><span><span><span><span><span>Profiling</span></span></span></span></span></span></h2>
+
+<p><span><span><span><span><span><span>Commonly, compilers have a section called code-optimization. The code-optimization phase attempts to improve the intermediate code so that better target code could be generated. Usually, better means faster, yet other objectives may also be desired, such as shorter code, better memory management, or target code that consumes less power. [3]</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>The compilers do these optimizations by using known heuristics, making most probable guesses about code execution. However, having exact information about which paths are taken during execution of the code, could help the compiler to avoid guessing and take the best action that best suits the needs of the users of the program. The profile-guided optimization (PGO) solves this problem. But how?</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>The PGO method is used by compilers to produce optimal code by analyzing application runtime data. Because this data comes directly from the application, the compiler can make much more accurate decisions. PGO optimizations have some significant advantage over traditional static optimizations as they are based upon how the application is likely to perform in a production environment. This allows the compiler to optimize for speed for common code paths and optimize for size for uncommon user scenarios. The result is faster and smaller code for the application with significant performance gains.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>The PGO consists of three phases: </span></span></span></span></span></span></p>
+
+<ul><li><span><span><span><strong><span><span>Instrumentation</span></span></strong></span></span></span><span><span><span><span><span><span> : A compiler produces an instrumented binary that tracks and records  information, such as direction taken by branches as well as the number of times a basic block runs.</span></span></span></span></span></span>
+
+	<ul><li><em><span><span><span><span><span><span>gcc -fprofile-generate=&lt;profile_dir&gt; my_app.c -o my_app_instrumented</span></span></span></span></span></span></em></li>
+	</ul></li>
+	<li><span><span><span><strong><span><span>Profiled execution</span></span></strong></span></span></span><span><span><span><span><span><span> : Developers must execute the instrumented binary in the same way as users are expected to run the applications. Benchmarks and test cases are useful for this phase.</span></span></span></span></span></span>
+	<ul><li><em><span><span><span><span><span><span>./my_app_instrumented</span></span></span></span></span></span></em></li>
+	</ul></li>
+	<li><span><span><span><strong><span><span>Optimization</span></span></strong></span></span></span><span><span><span><span><span><span>: Information from the profiled execution compiler can better estimate the program’s control flow. The compiler produces a new executable file, relying on runtime information rather than the static heuristics.</span></span></span></span></span></span>
+	<ul><li><em><span><span><span><span><span><span>gcc -fprofile-use=&lt;profile_dir&gt; my_app.c</span></span></span></span></span></span></em></li>
+	</ul></li>
+</ul><p><span><span><span><span><span><span>In the GCC release 10.1, a new option for profiling: <em>-</em></span></span></span></span></span></span><em><span><span><span><span><span><span>fprofile-partial-training</span></span></span></span></span></span></em><span><span><span><span><span><span> was introduced apart from </span></span></span></span></span></span><em><span><span><span><span><span><span>-fprofile-use</span></span></span></span></span></span></em><span><span><span><span><span><span>. With <em>-fprofile-use</em> (Figure 1) all portions of programs not executed during the training run are optimized aggressively for size rather than speed. </span></span></span></span></span></span></p>
+
+<p><img alt="Regular fprofile-use flow" data-entity-type="file" data-entity-uuid="949d3a71-1bed-4300-a46d-f4f4dda84a23" src="../sites/default/files/inline-images/test_1.png" width="820" height="335" loading="lazy" /></p>
+
+<p><strong><span><span><span><span><span><span>Figure 1 Regular fprofile-use flow</span></span></span></span></span></span></strong></p>
+
+<p><span><span><span><span><span><span>As shown in Figure 1, it’s not always practical to train all possible paths in the program. There might be blocks that are not covered during the profile execution due to the scope of the benchmark or test case. What happens when the users’ corner cases are not included in the profiled execution? Should they experience bad performance?</span></span></span></span></span></span></p>
+
+<p><br /><span><span><span><span><span><span>With</span></span></span></span></span></span><span><span><span><span><span><span> <em>-fprofile-partial-training</em> </span></span></span></span></span></span><span><span><span><span><span><span>(Figure 2) profile feedback will be ignored for all functions not executed during a training run, which leads them to be optimized as if they were compiled without profile feedback and should not be optimized for size. </span></span></span></span></span></span></p>
+
+<p> </p>
+
+<p><img alt="New fprofile-partial-training flow" data-entity-type="file" data-entity-uuid="9f35233b-d7bb-41b4-87a5-1f30a0ba5151" src="../sites/default/files/inline-images/test_2-1.png" width="820" height="335" loading="lazy" /></p>
+
+<p><strong><span><span><span><span><span><span>Figure 2 New fprofile-partial-training flow</span></span></span></span></span></span></strong></p>
+
+<p><span><span><span><span><span><span>Some of the most </span></span></span></span></span></span><a href="https://developer.ibm.com/technologies/systems/articles/gcc-profile-guided-optimization-to-accelerate-aix-applications/"><span><span><span><span><span><span>common</span></span></span></span></span></span></a><span><span><span><span><span><span> and effective techniques during profile optimizations are function inlining, block ordering, and register allocation, among others. Following is a very simple example where profile optimizations improve the code:</span></span></span></span></span></span></p>
+
+<pre>
+<code>#include &lt;stdio.h&gt;
+#include &lt;time.h&gt;
+#include &lt;stdlib.h&gt;
+
+void B(int n);
+int L(int n);
+
+
+void B(int n){
+	printf("Fibonacci !!!\n");
+    int i, t1 = 0, t2 = 1, nextTerm;
+
+    for (i = 1; i &lt;= n; ++i) {
+   	   printf("%d, ", t1);
+   	   nextTerm = t1 + t2;
+   	   t1 = t2;
+   	   t2 = nextTerm;
+    }
+}
+
+int L(int n){
+	// Lucas number
+	if (n == 0)
+    	return 2;
+	if (n == 1)
+    	return 1;
+
+	return L(n - 1) +
+       	L(n - 2);
+}
+
+int main(int argc, char *argv[]){
+	int i, n;
+	time_t t;
+	srand((unsigned) time(&amp;t));
+	int rand_num = rand() % 50;
+	printf("Random number = %d\n", rand_num);
+
+    if(argc&gt;=2)
+    	B(rand_num);
+    else
+    	printf("Lucas number:%d\n",L(rand_num));
+
+	return 0;
+}
+</code></pre>
+
+<p><span><span><span><span><span><span>When we compile this code in Clear Linux* OS version 33470 ( </span></span></span></span></span></span><span><span><span><span><span><span>gcc profiling.c</span></span></span></span></span></span><span><span><span><span><span><span>), we see that the order of the execution inside the main function represents the logic that we had in the source code: </span></span></span></span></span></span></p>
+
+<pre>
+<code>if(argc&gt;=2)
+    	B(rand_num);
+else
+    	printf("Lucas number:%d\n",L(rand_num));
+ 
+
+000000000000121c &lt;main&gt;:
+[...]
+1269:	jle	127e &lt;main+0x62&gt;
+	126d:	callq  1189 &lt;B&gt;
+[...]
+	127e:	mov	%ebx,%edi
+	1280:	callq  11e8 &lt;L&gt;
+</code></pre>
+
+<p><span><span><span><span><span><span>Here we compile with </span></span></span></span></span></span><em><span><span><span><span><span><span>-fprofile-generate=. .</span></span></span></span></span></span></em></p>
+
+<pre>
+<code>gcc -fprofile-generate=./data profile.c -o profile
+</code></pre>
+
+<p><span><span><span><span><span><span>When we execute the binary without any argument, the branch that is always chosen is the </span></span></span></span></span></span><strong><span><span><span><span><span><span>else</span></span></span></span></span></span></strong><span><span><span><span><span><span><strong> part</strong> of the control flow. After this, the profile data stored in ./data directory will inform the compiler that the Lucas function is the one that has to be considered first.</span></span></span></span></span></span></p>
+
+<pre>
+<code>if(argc&gt;=2)
+    	B(rand_num);
+ else
+    	printf("Lucas number:%d\n",L(rand_num));
+
+</code></pre>
+
+<pre>
+<code>$ ./profiling
+Rand number = 40
+Lucas number:228826127
+$ ./profiling
+Rand number = 11
+Lucas number:199
+$ ./profiling
+Rand number = 44
+Lucas number:1568397607
+$ ./profiling
+Rand number = 40
+Lucas number:228826127</code></pre>
+
+<p><span><span><span><span><span><span>When we recompile the code with this information we can see that the order of logic has changed and the function used to calculate the Lucas number is closer to main since it is the function that has been executed more during our training use case: </span></span></span></span></span></span></p>
+
+<pre>
+<code>$ gcc -fprofile-use=./data profiling.c -o profiling</code></pre>
+
+<pre>
+<code>0000000000001189 &lt;main&gt;:
+	11c0:	callq  1040 &lt;printf@plt&gt;
+	11c5:	cmp	$0x1,%ebx
+	11c8:	jg 	11f0 &lt;main+0x67&gt;
+	11ca:	mov	%ebp,%edi
+	11cc:	callq  11f9 &lt;L&gt;
+[...]
+	11f0:	mov	%ebp,%edi
+	11f2:	callq  122e &lt;B&gt;
+	11f7:	jmp	11e4 &lt;main+0x5b&gt;</code></pre>
+
+<p><span><span><span><span><span><span>At this point we can see that the compiler has made a better decision based on the runtime information. However, what happens with the functions not exercised during runtime execution? When we compare </span></span></span></span></span></span><a href="https://github.com/VictorRodriguez/hobbies/blob/master/c_programing_exercises/profiling/documentation/fibonacci_wo_profiling.md"><span><span><span><span><span><span><span><span>function B</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span>, untouched during runtime execution after the compiler optimizes with </span></span></span></span></span></span><span><span><span><span><span><span><em>-fprofile-use=</em>,</span></span></span></span></span></span><span><span><span><span><span><span> we see that the compiler does some </span></span></span></span></span></span><a href="https://github.com/VictorRodriguez/hobbies/blob/master/c_programing_exercises/profiling/documentation/fibonacci_w_profiling.md"><span><span><span><span><span><span><span><span>optimizations</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span><a href="https://github.com/VictorRodriguez/hobbies/blob/master/c_programing_exercises/profiling/documentation/fibonacci_w_profiling.md"> </a>that we didn’t request.</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>When we compile with the new GCC 10 option </span></span></span></span></span></span><em><span><span><span><span><span><span>-fprofile-partial-training</span></span></span></span></span></span></em><span><span><span><span><span><span>, we’re asking the compiler to ignore all functions not executed during the training run:</span></span></span></span></span></span></p>
+
+<pre>
+<code>$ gcc -fprofile-partial-training -fprofile-use=./data profile.c -o profile
+</code></pre>
+
+<p><span><span><span><span><span><span>Analyzing the </span></span></span></span></span></span><a href="https://github.com/VictorRodriguez/hobbies/blob/master/c_programing_exercises/profiling/documentation/fibonacci_wo_optimizations.md"><span><span><span><span><span><span><span><span>binary</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span><a href="https://github.com/VictorRodriguez/hobbies/blob/master/c_programing_exercises/profiling/documentation/fibonacci_wo_optimizations.md"> </a>generated by the compiler, we see the expected results in the Fibonacci function.  While it may seem counterintuitive to create a function without any kind of optimizations, in reality by not having any optimization, the code becomes neutral. This produces better performance for all the paths, even when the training run is not representative and leads to significantly more code. Before  <em> </em></span></span></span></span></span></span><span><span><span><span><span><span><em>fprofile-partial-training</em>, </span></span></span></span></span></span><span><span><span><span><span><span>some optimizations could have a slight negative impact on non-profiled code paths. </span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>There are other profile options included on the GCC release 10.1, such as </span></span></span></span></span></span><em><a href="https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Instrumentation-Options.html#index-fprofile-reproducible"><span><span><span><span><span><span>-fprofile-reproducible</span></span></span></span></span></span></a></em><span><span><span><span><span><span> which controls the level of reproducibility of profiles gathered by </span></span></span></span></span></span><em><a href="https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Instrumentation-Options.html#index-fprofile-generate"><span><span><span><span><span><span>-fprofile-generate</span></span></span></span></span></span></a></em><span><span><span><span><span><span>. This is useful for distribution packages. For more information about profile-partial-training  please refer to the </span></span></span></span></span></span><a href="https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Static-Analyzer-Options.html"><span><span><span><span><span><span>official GNU</span></span></span></span></span></span></a><span><span><span><span><span><span><a href="https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Static-Analyzer-Options.html"> documentatio</a>n.</span></span></span></span></span></span></p>
+
+<h2><span><span><span><span><span><span>Code health (-fno-common)</span></span></span></span></span></span></h2>
+
+<p><span><span><span><span><span><span>One of the most </span></span></span></span></span></span><a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=85678"><span><span><span><span><span><span><span><span>controversial</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span><a href="https://gcc.gnu.org/bugzilla/show_bug.cgi?id=85678"> </a>changes is that now GCC 10 defaults to <em>-fno-common</em>. As a result, GCC will reject multiple definitions of global variables, as shown here:</span></span></span></span></span></span></p>
+
+<pre>
+<code>$ cat a.c
+int a = 10;
+
+$ cat main.c
+int a;
+int main(){}
+
+$ gcc a.c main.c -o main
+/usr/bin/ld: /tmp/ccNzXJEe.o:(.bss+0x0): multiple definition of `a'; /tmp/cc55Za4a.o:(.data+0x0): first defined here
+collect2: error: ld returned 1 exit status
+</code></pre>
+
+<p><span><span><span><span><span><span>There are two ways to fix this problem: </span></span></span></span></span></span></p>
+
+<ul><li><span><span><span><span><span><span>Explicitly mark declarations as such and avoid multiple definitions in order to fix the bug. In the C programming language, an external variable<br />
+	is a variable defined outside any function block</span></span></span></span></span></span>
+
+	<pre>
+<code>extern int a = 10;</code></pre>
+	</li>
+	<li><span><span><span><span><span><span>As a workaround, legacy C code where all tentative definitions should be placed into a common block can be compiled with -fcommon</span></span></span></span></span></span>
+	<pre>
+<code>gcc a.c main.c -o main -fcommon</code></pre>
+	</li>
+</ul><p><span><span><span><span><span><span>The addition of <em>-fno-common </em>will force other maintainers to adapt their packages to accommodate it. Some distributions and upstream projects already have </span></span></span></span></span></span><a href="https://bugs.gentoo.org/705764"><span><span><span><span><span><span><span><span>patches</span></span></span></span></span></span></span></span></a><span><span><span><span><span><span><a> </a>to fix these problems. For more information about <em>-fanalyzer</em> please refer to the </span></span></span></span></span></span><a href="https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Static-Analyzer-Options.html"><span><span><span><span><span><span>official GNU</span></span></span></span></span></span></a><span><span><span><span><span><span><a href="https://gcc.gnu.org/onlinedocs/gcc-10.1.0/gcc/Static-Analyzer-Options.html"> documentation</a>.</span></span></span></span></span></span></p>
+
+<h2><span><span><span><span><span><span>Conclusion</span></span></span></span></span></span></h2>
+
+<p><span><span><span><span><span><span>With the early adoption of the latest GNU toolchain technologies, the Clear Linux Project sustains its leading-edge adoption of the latest open source technologies. GCC release 10.1 provides features to help developers detect security vulnerabilities and improve performance based on real use cases and new instructions for incoming hardware. In the Part 2 of this blog series, I will cover </span></span></span></span></span></span><span><span><span><span><span><span>changes to improve control flow enforcement technology (CET) support and the new instructions for the Cooper Lake processors, among others changes in GCC10.</span></span></span></span></span></span><span><span><span><span><span><span>There is always extra work on the enablement of new toolchains. However in the Clear Linux team, we believe that this effort is worth it, since these new capabilities inspire the imagination of developers across the world.</span></span></span></span></span></span></p>
+
+<h2><span><span><span><span><span><span>Call to Action</span></span></span></span></span></span></h2>
+
+<p><span><span><span><span><span><span>Want to get involved?</span></span></span></span></span></span></p>
+
+<p><span><span><span><span><span><span>Join the GCC GNU mailing list:</span></span></span></span></span></span><a href="https://gcc.gnu.org/ml/gcc/"><span><span><span><span><span><span><span><span> https://gcc.gnu.org/ml/gcc/</span></span></span></span></span></span></span></span></a></p>
+
+<p><span><span><span><span><span><span>Find out more about the Clear Linux Project: </span></span></span></span></span></span></p>
+
+<ul><li><span><span><span><span><span><span>Site:</span></span></span></span></span></span><a href="https://clearlinux.org"><span><span><span><span><span><span><span><span>clearlinux.org</span></span></span></span></span></span></span></span></a></li>
+	<li><span><span><span><span><span><span>Twitter:</span></span></span></span></span></span><a href="https://twitter.com/clearlinux"><span><span><span><span><span><span><span><span> @clearlinux</span></span></span></span></span></span></span></span></a></li>
+	<li><span><span><span><span><span><span>Forum:</span></span></span></span></span></span><a href="https://community.clearlinux.org/"><span><span><span><span><span><span><span><span>community.clearlinux.org</span></span></span></span></span></span></span></span></a></li>
+</ul><h2><span><span><span><span><span><span>References</span></span></span></span></span></span></h2>
+
+<p><span><span><span><span><span><span>[1] </span></span></span></span></span></span><a href="https://owasp.org/www-community/vulnerabilities/Doubly_freeing_memory"><span><span><span><span><span><span><span><span>https://owasp.org/www-community/vulnerabilities/Doubly_freeing_memory</span></span></span></span></span></span></span></span></a></p>
+
+<p><span><span><span><span><span><span>[2] </span></span></span></span></span></span><a href="https://www.gnu.org/software/libc/manual/html_node/Nonreentrancy.html"><span><span><span><span><span><span><span><span>https://www.gnu.org/software/libc/manual/html_node/Nonreentrancy.html</span></span></span></span></span></span></span></span></a></p>
+
+<p><span><span><span><span><span><span>[3] Aho, A. V., Lam, M. S., Sethi, R., Ullman, J. D., &amp; Aho, A. V. (2007). Compilers: Principles, techniques, &amp; tools. Pp 10</span></span></span></span></span></span></p>
+
+<p> </p>
+  </div>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+
+
+
+  </div>
+
+
+
+<a class="back_to_top" href="major-improvements-gcc-101.html#">
+  <i class="fa fa-angle-up"> </i>
+</a>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+
+
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+
+
+  </main>
+
+  <!-- /main -->
+
+
+<footer class="footer">
+  <div class="container padding-md--top-bottom padding-md--left-right">
+    <div class="footer__logo">
+      <div class="footer__logo__wrapper">
+                  <img class="footer__site_img_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="../modules/custom/clearlinux_org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+      </div>
+    </div>
+    <div class="footer__details">
+              <div class="footer__top">
+                      <div class="footer__social_media">
+              <ul class="footer__social_media__list">
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://github.com/clearlinux" title="Github"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://www.youtube.com/channel/UChpmukwyvvdSmTA9gxKL_Fg" title="YouTube"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
+                  </li>
+                                  <li class="footer__social_media__list_item">
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
+                  </li>
+                              </ul>
+            </div>
+            <hr>
+                                <div class="footer__menu">
+              <ul class="footer__menu__list">
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/legal/trademarks.html">*Trademarks</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="http://www.intel.com/content/www/us/en/privacy/intel-cookie-notice.html">Cookies</a>
+                  </li>
+                                  <li class="footer__menu__list_item">
+                    <a tabindex='1' href="https://www.intel.com/content/www/us/en/privacy/intel-privacy-notice.html">Privacy terms</a>
+                  </li>
+                              </ul>
+            </div>
+                  </div>
+            <div class="footer__bottom">
+        <p class="footer__copyright">© 2022  Intel Corporation. All Rights Reserved.<br>*Other names and brands may be claimed as the property of others.</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer_bottom">
+    <div class="container padding-md--left-right">
+      <div class="footer_bottom__copyright">
+        <i class="fa fa-copyright"></i>  &nbsp; This project belongs to 01.org, Intel's opensource platform.      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'core/themes/stable/templates/content/off-canvas-page-wrapper.html.twig' -->
+
+
+
+<script type="application/json" data-drupal-selector="drupal-settings-json">{"path":{"baseUrl":"\/","scriptPath":null,"pathPrefix":"","currentPath":"node\/31877","currentPathIsAdmin":false,"isFront":false,"currentLanguage":"en"},"pluralDelimiter":"\u0003","suppressDeprecationErrors":true,"data":{"extlink":{"extTarget":true,"extTargetNoOverride":false,"extNofollow":false,"extNoreferrer":false,"extFollowNoOverride":false,"extClass":"ext","extLabel":"(link is external)","extImgClass":false,"extSubdomains":false,"extExclude":"","extInclude":"","extCssExclude":"","extCssExplicit":".nodetype--documentation","extAlert":false,"extAlertText":"This link will take you to an external web site. We are not responsible for their content.","mailtoClass":"0","mailtoLabel":"(link sends email)","extUseFontAwesome":false,"extIconPlacement":"append","extFaLinkClasses":"fa fa-external-link","extFaMailtoClasses":"fa fa-envelope-o","whitelistedDomains":null}},"google_analytics":{"account":"UA-61272224-1","trackOutbound":true,"trackMailto":true,"trackDownload":true,"trackDownloadExtensions":"7z|aac|arc|arj|asf|asx|avi|bin|csv|doc(x|m)?|dot(x|m)?|exe|flv|gif|gz|gzip|hqx|jar|jpe?g|js|mp(2|3|4|e?g)|mov(ie)?|msi|msp|pdf|phps|png|ppt(x|m)?|pot(x|m)?|pps(x|m)?|ppam|sld(x|m)?|thmx|qtm?|ra(m|r)?|sea|sit|tar|tgz|torrent|txt|wav|wma|wmv|wpd|xls(x|m|b)?|xlt(x|m)|xlam|xml|z|zip","trackDomainMode":2,"trackCrossDomains":["docs.01.org\/clearlinux"]},"eu_cookie_compliance":{"cookie_policy_version":"1.0.0","popup_enabled":true,"popup_agreed_enabled":false,"popup_hide_agreed":false,"popup_clicking_confirmation":false,"popup_scrolling_confirmation":false,"popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EBy clicking any link on this page you are giving your consent for us to set cookies.\u003C\/p\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","use_mobile_message":false,"mobile_popup_html_info":"\u003Cdiv aria-labelledby=\u0022popup-text\u0022  class=\u0022eu-cookie-compliance-banner eu-cookie-compliance-banner-info eu-cookie-compliance-banner--opt-in\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n        \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \n              \u003Cbutton type=\u0022button\u0022 class=\u0022find-more-button eu-cookie-compliance-more-button\u0022\u003ENo, give me more info\u003C\/button\u003E\n          \u003C\/div\u003E\n\n    \n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n            \u003Cbutton type=\u0022button\u0022 class=\u0022agree-button eu-cookie-compliance-secondary-button\u0022\u003EOK, I agree\u003C\/button\u003E\n              \u003Cbutton type=\u0022button\u0022 class=\u0022decline-button eu-cookie-compliance-default-button\u0022\u003ENo, thanks\u003C\/button\u003E\n          \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","mobile_breakpoint":768,"popup_html_agreed":false,"popup_use_bare_css":false,"popup_height":"auto","popup_width":"100%","popup_delay":1000,"popup_link":"http:\/\/www.intel.com\/privacy","popup_link_new_window":true,"popup_position":false,"fixed_top_position":false,"popup_language":"en","store_consent":false,"better_support_for_screen_readers":false,"cookie_name":"","reload_page":false,"domain":"","domain_all_sites":false,"popup_eu_only":false,"popup_eu_only_js":false,"cookie_lifetime":100,"cookie_session":0,"set_cookie_session_zero_on_disagree":0,"disagree_do_not_show_popup":false,"method":"opt_in","automatic_cookies_removal":true,"allowed_cookies":"","withdraw_markup":"\u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-tab\u0022\u003EPrivacy settings\u003C\/button\u003E\n\u003Cdiv aria-labelledby=\u0022popup-text\u0022 class=\u0022eu-cookie-withdraw-banner\u0022\u003E\n  \u003Cdiv class=\u0022popup-content info eu-cookie-compliance-content\u0022\u003E\n    \u003Cdiv id=\u0022popup-text\u0022 class=\u0022eu-cookie-compliance-message\u0022 role=\u0022document\u0022\u003E\n      \u003Ch2\u003EWe use cookies on this site to enhance your user experience\u003C\/h2\u003E\u003Cp\u003EYou have given your consent for us to set cookies.\u003C\/p\u003E\n    \u003C\/div\u003E\n    \u003Cdiv id=\u0022popup-buttons\u0022 class=\u0022eu-cookie-compliance-buttons\u0022\u003E\n      \u003Cbutton type=\u0022button\u0022 class=\u0022eu-cookie-withdraw-button \u0022\u003EWithdraw consent\u003C\/button\u003E\n    \u003C\/div\u003E\n  \u003C\/div\u003E\n\u003C\/div\u003E","withdraw_enabled":false,"reload_options":0,"reload_routes_list":"","withdraw_button_on_info_popup":false,"cookie_categories":[],"cookie_categories_details":[],"enable_save_preferences_button":true,"cookie_value_disagreed":"0","cookie_value_agreed_show_thank_you":"1","cookie_value_agreed":"2","containing_element":"body","settings_tab_enabled":false,"olivero_primary_button_classes":"","olivero_secondary_button_classes":"","close_button_action":"close_banner","open_by_default":true,"modules_allow_popup":true,"hide_the_banner":false,"geoip_match":true},"user":{"uid":0,"permissionsHash":"ce6b94fb1f70d500917305b57367c3f1c5be4be0eb1b4b225be314e030d71fa7"}}</script>
+<script src="../core/assets/vendor/jquery/jquery.min.js%3Fv=3.6.0"></script>
+<script src="../core/misc/polyfills/element.matches.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/once/once.min.js%3Fv=1.0.1"></script>
+<script src="../core/misc/drupalSettingsLoader.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.js%3Fv=9.4.8"></script>
+<script src="../core/misc/drupal.init.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/extlink/extlink.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/google_analytics/js/google_analytics.js%3Fv=9.4.8"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/src/clearlinux_theme.js%3Fv=9.4.8"></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js%3Fv=9.4.8"></script>
+<script src="../core/assets/vendor/js-cookie/js.cookie.min.js%3Fv=3.0.1"></script>
+<script src="../modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js%3Fv=9.4.8" defer></script>
+<script src="../modules/custom/clearlinux_org/themes/clearlinux_theme/js/dist/layout/header/header.js%3Frl3r25"></script>
+<script src="../libraries/codesnippet/lib/highlight/highlight.pack.js%3Fv=9.4.8"></script>
+<script src="../modules/contrib/codesnippet/js/codesnippet.js%3Fv=9.4.8"></script>
+
+</body>
+</html>
+
+<!-- END OUTPUT from 'modules/custom/clearlinux_org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+
