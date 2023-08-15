@@ -213,7 +213,7 @@ table {
   font-family: 'IntelClearPro-Bold';
   src: url("../fonts/IntelFonts/fonts/IntelClearPro_W_Bd.eot");
   src: url("../fonts/IntelFonts/fonts/IntelClearPro_W_Bd.eot%3F") format("embedded-opentype");
-  src: url("http://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/fonts/IntelFonts/fonts/IntelClearPro_W_Bd.ttf") format("truetype");
+  src: url("http://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/fonts/IntelFonts/fonts/IntelClearPro_W_Bd.ttf") format("truetype");
   src: url("../fonts/IntelFonts/fonts/IntelClearPro_W_Bd.woff") format("woff");
   font-weight: normal;
 }
@@ -3504,7 +3504,7 @@ article.embedded-entity.align-right img {
 }
 
 #cboxLoadingGraphic {
-  background: url(http://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/css/images/loading.gif) no-repeat center center;
+  background: url(http://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/css/images/loading.gif) no-repeat center center;
 }
 
 #cboxLoadingOverlay {
@@ -3536,7 +3536,7 @@ article.embedded-entity.align-right img {
   height: 20px;
   position: absolute;
   top: -20px;
-  background: url(http://clearlinux.org/modules/custom/clearlinux_org/themes/clearlinux_theme/css/images/controls.png) no-repeat 0 0;
+  background: url(http://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/css/images/controls.png) no-repeat 0 0;
 }
 
 /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating) */
