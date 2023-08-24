@@ -8,7 +8,7 @@
    * html--node.html.twig
    x html.html.twig
 -->
-<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
 <head>
@@ -18,7 +18,7 @@
 <meta name="description" content="A typical Linux* OS offers many options for reducing the storage space of data. The typical list of compression options includes things like zlib, xz, bzip2 as well as lz4 and Snappy. Several of these compression algorithms provide a tunable, called &quot;level&quot;, a number from 0 to 9 that changes the behavior of the algorithm. The result are many choices and this blog post tries to show the differences between these choices.  About data compression  " />
 <meta property="og:site_name" content="Clear Linux* Project" />
 <meta property="og:type" content="Blog" />
-<meta property="og:url" content="https://clearlinux.github.io/news-blogs/linux-os-data-compression-options-comparing-behavior" />
+<meta property="og:url" content="https://clearlinux.org/news-blogs/linux-os-data-compression-options-comparing-behavior" />
 <meta property="og:title" content="Linux OS data compression options: Comparing behavior" />
 <meta property="og:description" content="A typical Linux* OS offers many options for reducing the storage space of data. The typical list of compression options includes things like zlib, xz, bzip2 as well as lz4 and Snappy. Several of these compression algorithms provide a tunable, called &quot;level&quot;, a number from 0 to 9 that changes the behavior of the algorithm. The result are many choices and this blog post tries to show the differences between these choices.  About data compression  " />
 <meta name="Generator" content="Drupal 9 (https://www.drupal.org)" />
@@ -26,44 +26,44 @@
 <meta name="HandheldFriendly" content="true" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <style>div#sliding-popup, div#sliding-popup .eu-cookie-withdraw-banner, .eu-cookie-withdraw-tab {background: #0779BF} div#sliding-popup.eu-cookie-withdraw-wrapper { background: transparent; } #sliding-popup h1, #sliding-popup h2, #sliding-popup h3, #sliding-popup p, #sliding-popup label, #sliding-popup div, .eu-cookie-compliance-more-button, .eu-cookie-compliance-secondary-button, .eu-cookie-withdraw-tab { color: #ffffff;} .eu-cookie-withdraw-tab { border-color: #ffffff;}</style>
-<link rel="icon" href="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
+<link rel="icon" href="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/favicon.ico" type="image/vnd.microsoft.icon" />
 <link rel="canonical" href="670.html" />
 <link rel="shortlink" href="670.html" />
-<script src="https://clearlinux.github.io/sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js?rl3r25" defer></script>
+<script src="https://clearlinux.org/sites/default/files/eu_cookie_compliance/eu_cookie_compliance.script.js?rl3r25" defer></script>
 
     <title>Linux OS data compression options: Comparing behavior | Clear Linux* Project</title>
-    <link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/ajax-progress.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/align.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/autocomplete-loading.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/fieldgroup.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/container-inline.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/clearfix.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/details.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/hidden.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/item-list.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/js.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/nowrap.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/position-container.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/progress.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/reset-appearance.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/resize.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/sticky-header.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/system-status-counter.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/system-status-report-counters.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/system-status-report-general-info.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/tabledrag.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/tablesort.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/core/themes/stable/css/system/components/tree-child.module.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/modules/contrib/extlink/extlink.css?rl3r25" />
+    <link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/ajax-progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/align.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/autocomplete-loading.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/fieldgroup.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/container-inline.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/clearfix.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/details.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/hidden.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/item-list.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/js.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/nowrap.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/position-container.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/progress.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/reset-appearance.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/resize.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/sticky-header.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-counter.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-counters.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/system-status-report-general-info.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tabledrag.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tablesort.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/core/themes/stable/css/system/components/tree-child.module.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/eu_cookie_compliance/css/eu_cookie_compliance.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/contrib/extlink/extlink.css?rl3r25" />
 <link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/all.css" />
 <link rel="stylesheet" media="all" href="https://use.fontawesome.com/releases/v6.1.0/css/v4-shims.css" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/libraries/codesnippet/lib/highlight/styles/monokai_sublime.css?rl3r25" />
-<link rel="stylesheet" media="all" href="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/css/styles.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/libraries/codesnippet/lib/highlight/styles/monokai_sublime.css?rl3r25" />
+<link rel="stylesheet" media="all" href="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/css/styles.css?rl3r25" />
 <link rel="stylesheet" media="all" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/assets/owl.carousel.min.css" integrity="sha256-AWqwvQ3kg5aA5KcXpX25sYKowsX97sTCTbeo33Yfyk0=" crossorigin="anonymous" />
 
-    <script src="https://clearlinux.github.io/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
-<script src="https://clearlinux.github.io/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
+    <script src="https://clearlinux.org/core/assets/vendor/modernizr/modernizr.min.js?v=3.11.7"></script>
+<script src="https://clearlinux.org/core/misc/modernizr-additional-tests.js?v=3.11.7"></script>
 
 </head>
 <body class="alias--news-blogs-linux-os-data-compression-options-comparing-behavior nodetype--blog logged-out">
@@ -90,7 +90,7 @@
    * page--node.html.twig
    x page.html.twig
 -->
-<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
   <!-- ______________________ HEADER _______________________ -->
   
   
@@ -103,9 +103,9 @@
 
     <div id="header__site_info">
         <div class="header__site_img_wrapper">
-          <a href ="https://clearlinux.github.io/">
-                          <img class="header__site_img_object" src="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
-                        <img class="header__site_txt_object" src="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
+          <a href ="https://clearlinux.org/">
+                          <img class="header__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                        <img class="header__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/sass/components/layout/header/assets/clear-linux-text.svg" />
           </a>
         </div>
     </div>
@@ -119,7 +119,7 @@
                 <a tabindex='1' href="31103.html">Developer</a>
               </li>
                          <li class="header__menu_list_item   ">
-                <a tabindex='1' href="https://clearlinux.github.io/software">Software</a>
+                <a tabindex='1' href="https://clearlinux.org/software">Software</a>
               </li>
                    </ul>
       </nav>
@@ -181,7 +181,7 @@
    x region--content.html.twig
    * region.html.twig
 -->
-<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
 
 
 <!-- THEME DEBUG -->
@@ -207,15 +207,15 @@
    x block--sharethis.html.twig
    * block.html.twig
 -->
-<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
 <div id="block-sharethis" data-block-plugin-id="sharethis_block" class="block block-sharethis block-sharethis-block social_share">  
   <div class="sharethis-wrapper">
-    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.github.io%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
-    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.github.io%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
-    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.github.io%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
+    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&amp%3Bsrc=sdkpreparse" class="st_facebook_custom"></a>
+    <a target="_blank" href="https://twitter.com/intent/tweet?text=Clear%20Linux*%20Project&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux" class="st_twitter_custom"></a>
+    <a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fclearlinux.org%2Fnews-blogs%2Fwhere-etcfstab-clear-linux&title=Clear%20Linux*%20Project" class="st_linkedin_custom"></a>
   </div>
 </div>
-<!-- END OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
+<!-- END OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/block/block--sharethis.html.twig' -->
 
 
 
@@ -227,7 +227,7 @@
    * block--system.html.twig
    * block.html.twig
 -->
-<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
     
 
 <!-- THEME DEBUG -->
@@ -240,7 +240,7 @@
    * node--full.html.twig
    * node.html.twig
 -->
-<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
 <div class="blog_detail">
 
       <div class="blog_detail__categories">
@@ -296,7 +296,7 @@
    * field--text-with-summary.html.twig
    * field.html.twig
 -->
-<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+<!-- BEGIN OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
 
 
 <div class="Text__description">
@@ -330,7 +330,7 @@
 
 <p><span><span> </span></span><span>To show the differences between these levels, I have measured both the compression ratio, how much smaller did the data get, and the time it took to compress the reference file I used. The results are plotted on figure 1. The reference file I used is the source code tar file of the Linux 4.9 kernel which is 664 megabytes in size.</span></p>
 
-<p><img alt="Figure 1: zlib compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.github.io/sites/default/files/1zlib-curve.png" /></p>
+<p><img alt="Figure 1: zlib compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/1zlib-curve.png" /></p>
 
 <p><span>Figure 1: zlib compression curve</span></p>
 
@@ -338,7 +338,7 @@
 
 <p><span><span> </span></span><span>Now, regarding the performance of zlib, details matter and various Linux distributions end up having different performances and, specifically, the Clear Linux* OS distribution (a project I work on) ships with an optimized implementation of zlib. Figure 2 shows this difference.</span></p>
 
-<p><img alt="Figure 2: zlib compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.github.io/sites/default/files/2zlib-curve-distro.png" /></p>
+<p><img alt="Figure 2: zlib compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/2zlib-curve-distro.png" /></p>
 
 <p><span>Figure 2: zlib compression curve</span></p>
 
@@ -350,7 +350,7 @@
 
 <p><span><span> </span></span><span>As much as zlib is the default standard algorithm, you likely have seen a lot of files with the </span><span>xz</span><span> extension. The </span><span>xz </span><span>implementation is based on the earlier </span><span>lzma</span><span> implementation and in many ways modernizes the zlib algorithm. Where the zlib algorithm and file format are limited to a history or "window" of 32 kilobytes, showing its 1995 age, the xz implementation uses a much larger history size. This means the algorithm is going to find more repeating patterns than zlib does and can gain a higher compression ratio than zlib. At the same time, this ability to look further back also consumes more CPU cycles and memory. The xz implementation has 10 levels (0 - 9) of compression and the compression ratio vs. time tradeoff for the levels is shown in figure 3.</span></p>
 
-<p><img alt="Figure 3: XZ/LZMA compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.github.io/sites/default/files/3xz-curve-distro.png" /></p>
+<p><img alt="Figure 3: XZ/LZMA compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/3xz-curve-distro.png" /></p>
 
 <p><span>Figure 3: XZ/LZMA compression curve</span></p>
 
@@ -366,7 +366,7 @@
 
 <p><span>In the past, the </span><span>bzip2</span><span> algorithm was popular but bzip2 is now mostly replaced by the xz implementation. To show why and how zlib, xz, and bzip2 compare, I've put all three measurements in figure 4.</span></p>
 
-<p><span><span><img alt="Figure 4: zlib, XZ, and BZIP2 combined compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.github.io/sites/default/files/4bzip2-xz-zlib-curve.png" /> </span></span></p>
+<p><span><span><img alt="Figure 4: zlib, XZ, and BZIP2 combined compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/4bzip2-xz-zlib-curve.png" /> </span></span></p>
 
 <p><span>Figure 4: zlib, XZ, and BZIP2 combined compression curve</span></p>
 
@@ -374,13 +374,13 @@
 
 <p><span>The high zlib compression levels (8 and 9) are both slower and achieve lower compression than the lowest xz compression levels, see figure 5 for a closeup. Unless you care about the compatibility of the file format, it makes no sense to pick these high zlib levels. you can pick level 0 or 1 of xz instead and get better compression at less cpu time.</span></p>
 
-<p><img alt="Figure 5: High level zlib vs. low level xz" data-entity-type="" data-entity-uuid="" src="https://clearlinux.github.io/sites/default/files/5xz-zlib-coomed.png" /></p>
+<p><img alt="Figure 5: High level zlib vs. low level xz" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/5xz-zlib-coomed.png" /></p>
 
 <p><span>Figure 5: High level zlib vs. low level xz</span></p>
 
 <p><span>Secondly, the bzip2 algorithm is always slower than the xz algorithm, except for an area around xz level 3 and bzip levels 6 to 9, see figure 6. xz just about always being better explains why use of bzip2 has gone out of favor for general purpose compression. Bzip2 is still used in some special places because there are some common types of data, not the Linux kernel source code, such as large sparse matrices, where bzip2 ends up doing surprisingly well. </span></p>
 
-<p><span><span> <img alt="Figure 6: BZIP2 vs. XZ" data-entity-type="" data-entity-uuid="" src="https://clearlinux.github.io/sites/default/files/6bzip2-xz-zoomed.png" /></span></span></p>
+<p><span><span> <img alt="Figure 6: BZIP2 vs. XZ" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/6bzip2-xz-zoomed.png" /></span></span></p>
 
 <p><span>Figure 6: BZIP2 vs. XZ<span> </span></span></p>
 
@@ -390,7 +390,7 @@
 
 <p><span><span> </span></span><span>For some usages, for example, the live streaming of data over the internet, limiting compute time is more important than compression ratio, and I've compared two common algorithms designed for this sweet spot: LZ4 and Snappy.</span></p>
 
-<p><span><span><img alt="Figure 7: zlib, Snappy, and LZ4 combined compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.github.io/sites/default/files/7pasted%20image%20.png" /> </span></span></p>
+<p><span><span><img alt="Figure 7: zlib, Snappy, and LZ4 combined compression curve" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/7pasted%20image%20.png" /> </span></span></p>
 
 <p> </p>
 
@@ -414,7 +414,7 @@
 
 <p> </p>
 
-<p><img alt="XZ is faster and can compress a bit more" data-entity-type="" data-entity-uuid="" src="https://clearlinux.github.io/sites/default/files/8with-zstd.png" /></p>
+<p><img alt="XZ is faster and can compress a bit more" data-entity-type="" data-entity-uuid="" src="https://clearlinux.org/sites/default/files/8with-zstd.png" /></p>
 
 <p><span><span> </span></span></p>
 
@@ -449,7 +449,7 @@
 <p><span>*Other names and brands may be claimed as the property of others. </span></p>
   </div>
 
-<!-- END OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
+<!-- END OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/field/field--node--body.html.twig' -->
 
 
 
@@ -461,15 +461,15 @@
   <i class="fa fa-angle-up"> </i>
 </a>
 
-<!-- END OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
+<!-- END OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/content/node--blog--full.html.twig' -->
 
 
 
-<!-- END OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
+<!-- END OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/block/block--clearlinux-theme-content.html.twig' -->
 
 
 
-<!-- END OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
+<!-- END OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/layout/region--content.html.twig' -->
 
 
   </main>
@@ -481,8 +481,8 @@
   <div class="container padding-md--top-bottom padding-md--left-right">
     <div class="footer__logo">
       <div class="footer__logo__wrapper">
-                  <img class="footer__site_img_object" src="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
-                <img class="footer__site_txt_object" src="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
+                  <img class="footer__site_img_object" src="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/clear_linux_logo.svg" alt="Logo Clear Linux* Project"/>
+                <img class="footer__site_txt_object" src="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/sass/components/layout/footer/assets/clear-linux-text-white.svg" />
       </div>
     </div>
     <div class="footer__details">
@@ -499,7 +499,7 @@
                     <a target="_blank" tabindex='1' href="http://twitter.com/clearlinux" title="Twitter"><i class="fa "></i></a>
                   </li>
                                   <li class="footer__social_media__list_item">
-                    <a target="_blank" tabindex='1' href="https://community.clearlinux.github.io/" title="Discourse"><i class="fa "></i></a>
+                    <a target="_blank" tabindex='1' href="https://community.clearlinux.org/" title="Discourse"><i class="fa "></i></a>
                   </li>
                               </ul>
             </div>
@@ -531,7 +531,7 @@
   </div>
 </footer>
 
-<!-- END OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/layout/page.html.twig' -->
+<!-- END OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/layout/page.html.twig' -->
 
 
   </div>
@@ -540,23 +540,23 @@
 
 
 
-<script src="https://clearlinux.github.io/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
-<script src="https://clearlinux.github.io/core/misc/polyfills/element.matches.js?v=9.4.8"></script>
-<script src="https://clearlinux.github.io/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
-<script src="https://clearlinux.github.io/modules/contrib/extlink/extlink.js?v=9.4.8"></script>
-<script src="https://clearlinux.github.io/modules/contrib/google_analytics/js/google_analytics.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/jquery/jquery.min.js?v=3.6.0"></script>
+<script src="https://clearlinux.org/core/misc/polyfills/element.matches.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/once/once.min.js?v=1.0.1"></script>
+<script src="https://clearlinux.org/modules/contrib/extlink/extlink.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/google_analytics/js/google_analytics.js?v=9.4.8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
-<script src="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/js/src/jquery.colorbox.min.js?v=9.4.8"></script>
-<script src="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/js/src/clearlinux_theme.js?v=9.4.8"></script>
-<script src="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js?v=9.4.8"></script>
-<script src="https://clearlinux.github.io/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
-<script src="https://clearlinux.github.io/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=9.4.8" defer></script>
-<script src="https://clearlinux.github.io/modules/custom/clearlinux.github.io/themes/clearlinux_theme/js/dist/layout/header/header.js?rl3r25"></script>
-<script src="https://clearlinux.github.io/libraries/codesnippet/lib/highlight/highlight.pack.js?v=9.4.8"></script>
-<script src="https://clearlinux.github.io/modules/contrib/codesnippet/js/codesnippet.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/js/src/clearlinux_theme.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/bower_components/clipboard/dist/clipboard.min.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/core/assets/vendor/js-cookie/js.cookie.min.js?v=3.0.1"></script>
+<script src="https://clearlinux.org/modules/contrib/eu_cookie_compliance/js/eu_cookie_compliance.min.js?v=9.4.8" defer></script>
+<script src="https://clearlinux.org/modules/custom/clearlinux.org/themes/clearlinux_theme/js/dist/layout/header/header.js?rl3r25"></script>
+<script src="https://clearlinux.org/libraries/codesnippet/lib/highlight/highlight.pack.js?v=9.4.8"></script>
+<script src="https://clearlinux.org/modules/contrib/codesnippet/js/codesnippet.js?v=9.4.8"></script>
 
 </body>
 </html>
 
-<!-- END OUTPUT from 'modules/custom/clearlinux.github.io/themes/clearlinux_theme/templates/layout/html.html.twig' -->
+<!-- END OUTPUT from 'modules/custom/clearlinux.org/themes/clearlinux_theme/templates/layout/html.html.twig' -->
 
