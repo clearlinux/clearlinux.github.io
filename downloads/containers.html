@@ -13,7 +13,7 @@
 <html lang="en" dir="ltr" prefix="content: http://purl.org/rss/1.0/modules/content/  dc: http://purl.org/dc/terms/  foaf: http://xmlns.com/foaf/0.1/  og: http://ogp.me/ns#  rdfs: http://www.w3.org/2000/01/rdf-schema#  schema: http://schema.org/  sioc: http://rdfs.org/sioc/ns#  sioct: http://rdfs.org/sioc/types#  skos: http://www.w3.org/2004/02/skos/core#  xsd: http://www.w3.org/2001/XMLSchema# ">
 <head>
     <meta charset="utf-8" />
-
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61272224-1"></script>
 <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments)};gtag("js", new Date());gtag("config", "UA-61272224-1", {"groups":"default","linker":{"domains":["docs.01.org\/clearlinux"]},"anonymize_ip":true,"allow_ad_personalization_signals":false});</script>
 <meta property="og:site_name" content="Clear Linux* Project" />
 <meta property="og:type" content="Generic Page" />
@@ -290,10 +290,10 @@
 	Clear Linux OS is a performance-driven Linux distro for running workloads in the cloud.<strong> </strong>Clear Linux OS <a href="https://www.phoronix.com/scan.php?page=article&amp;item=6-linux-eoy2017&amp;num=1">ranks faster on several benchmarks when tested on Intel® Core i9 and Intel® Xeon® processors</a>. <span>Software and libraries in Clear Linux OS are compiled with the latest optimizations, including Intel® Advanced Vector Extensions AVX-512 (Intel® AVX2-512). </span></p>
 	</li>
 	<li dir="ltr">
-	<p><strong>Up-to-date software</strong><br /><span>Clear Linux OS is a rolling release that <a href="https://docs.01.org/clearlinux/latest/guides/clear/bundles.html">bundles software</a> which follows upstream source</span><span> closely and updates frequently.</span></p>
+	<p><strong>Up-to-date software</strong><br /><span>Clear Linux OS is a rolling release that <a href="https://docs.01.org/clearlinux/guides/clear/bundles.html">bundles software</a> which follows upstream source</span><span> closely and updates frequently.</span></p>
 	</li>
 	<li dir="ltr">
-	<p><strong>Security</strong><br /><span>Clear Linux OS follows an aggressive security model and best practices</span><span> for CVE patching. See </span><span><a href="https://docs.01.org/clearlinux/latest/guides/clear/security.html">our security page</a> for more information.</span></p>
+	<p><strong>Security</strong><br /><span>Clear Linux OS follows an aggressive security model and best practices</span><span> for CVE patching. See </span><span><a href="https://docs.01.org/clearlinux/guides/clear/security.html">our security page</a> for more information.</span></p>
 	</li>
 	<li dir="ltr">
 	<p><strong>Small size</strong><br /><span>As a host, </span>Clear Linux OS is lean and can host multiple containers without requiring many unnecessary packages. For containers, <span>images are built using a <a href="../node/31385.html">multi-staged build approach</a> to</span><span> produce reduced container image size.</span><br />
@@ -303,7 +303,7 @@
 
 <p>Clear Linux offers an <a href="https://hub.docker.com/_/clearlinux">official Docker* build of Clear Linux OS</a> as well as <a href="https://hub.docker.com/search?q=clearlinux&amp;type=image">images of popular application based on Clear Linux OS</a>.<strong> </strong>Clear Linux OS container images are designed to have <strong>familiar syntax </strong><span>by using the same container run syntax as the official versions images</span><span>. With </span><a href="https://hub.docker.com/_/clearlinux/">over 1M downloads</a> and counting, getting started is easy!</p>
 
-<p>Visit the <a href="https://docs.01.org/clearlinux/latest/get-started/containers/container-images.html">documentation about container images</a> to learn more.<br />
+<p>Visit the <a href="https://docs.01.org/clearlinux/get-started/containers/container-images.html">documentation about container images</a> to learn more.<br />
  </p>
 
 <hr /><h2><br /><strong>Clear Linux OS as a container host </strong></h2>
@@ -313,8 +313,8 @@
 
 <h3><strong>Clear Linux OS and Docker* </strong></h3>
 
-<p>Getting started to run containers with Docker is as simple as <a href="https://docs.01.org/clearlinux/latest/tutorials/docker.html">adding the <em>containers-basic</em></a> bundle.<br /><br />
-Visit the <a href="https://docs.01.org/clearlinux/latest/tutorials/docker.html">documentation about Docker on Clear Linux OS</a> to learn more.<br />
+<p>Getting started to run containers with Docker is as simple as <a href="https://docs.01.org/clearlinux/tutorials/docker.html">adding the <em>containers-basic</em></a> bundle.<br /><br />
+Visit the <a href="https://docs.01.org/clearlinux/tutorials/docker.html">documentation about Docker on Clear Linux OS</a> to learn more.<br />
  </p>
 
 <h3><strong>Clear Linux OS and Kata Containers*  </strong></h3>
@@ -323,7 +323,7 @@ Visit the <a href="https://docs.01.org/clearlinux/latest/tutorials/docker.html">
 
 <p>Kata Containers provide a dedicated kernel, enabling isolation of network, I/O, and memory, as well as support for industry standards such as OCI container format, Kubernetes* CRI, and legacy virtualization. </p>
 
-<p>Visit the <a href="https://docs.01.org/clearlinux/latest/tutorials/kata.html">documentation about Kata on Clear Linux OS </a>to learn more.<br />
+<p>Visit the <a href="https://docs.01.org/clearlinux/tutorials/kata.html">documentation about Kata on Clear Linux OS </a>to learn more.<br />
  </p>
 
 <h3 dir="ltr"><strong>Clear Linux OS and Kubernetes* </strong></h3>
@@ -333,7 +333,7 @@ Visit the <a href="https://docs.01.org/clearlinux/latest/tutorials/docker.html">
 <p dir="ltr">As an open source container orchestration system, Kubernetes* automates deployment, scaling, maintenance, and scheduling of application containers across clusters of nodes. Nodes in a cluster can run your applications or workloads. Installing Kubernetes on a Clear Linux node is simple and can be done automatically with <a href="https://github.com/clearlinux/cloud-native-setup/">Clear Linux cloud-native-setup scripts.</a> To get started, you need only add one bundle: <a href="../node/30213.html"><em>cloud-native-basic</em></a>.</p>
 
 <p dir="ltr">Kubernetes offers integration with various container runtimes (CRI) including runc and CRI+O. Kubernetes on Clear Linux makes it easy to configure integrations with Kata as a container runtime.<br /><br />
-Learn how to install, configure, and deploy <a href="https://docs.01.org/clearlinux/latest/tutorials/kubernetes.html">Kubernetes on Clear Linux OS</a>.<br />
+Learn how to install, configure, and deploy <a href="https://docs.01.org/clearlinux/tutorials/kubernetes.html">Kubernetes on Clear Linux OS</a>.<br />
  </p>
 
 <hr /><h2><br />
@@ -472,7 +472,7 @@ Case studies and examples</h2>
 <script src="../core/misc/polyfills/element.matches.js"></script>
 <script src="../core/assets/vendor/once/once.min.js"></script>
 <script src="../modules/contrib/extlink/extlink.js"></script>
-
+<script src="../modules/contrib/google_analytics/js/google_analytics.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.min.js" integrity="sha256-s5TTOyp+xlSmsDfr/aZhg0Gz+JejYr5iTJI8JxG1SkM=" crossorigin="anonymous"></script>
 <script src="../modules/custom/clearlinux.org/themes/clearlinux_theme/js/src/jquery.colorbox.min.js"></script>
 <script src="../modules/custom/clearlinux.org/themes/clearlinux_theme/js/src/clearlinux_theme.js"></script>
